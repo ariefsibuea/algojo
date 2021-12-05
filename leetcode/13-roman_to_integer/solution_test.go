@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	rti "github.com/ariefsibuea/dsa/leetcode/13-roman_to_integer"
+	lib "github.com/ariefsibuea/dsa/leetcode/13-roman_to_integer"
 )
 
 func Test_RomanToInteger(t *testing.T) {
@@ -38,7 +38,7 @@ func Test_RomanToInteger(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := rti.RomanToInt(testcase.input)
+			res := lib.RomanToInt(testcase.input)
 			require.Equal(t, testcase.result, res)
 		})
 	}

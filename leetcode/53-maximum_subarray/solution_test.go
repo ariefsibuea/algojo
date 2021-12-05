@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	ms "github.com/ariefsibuea/dsa/leetcode/53-maximum_subarray"
+	lib "github.com/ariefsibuea/dsa/leetcode/53-maximum_subarray"
 )
 
 func Test_MaximumSubarray(t *testing.T) {
@@ -30,7 +30,7 @@ func Test_MaximumSubarray(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := ms.MaxSubArray(testcase.nums)
+			res := lib.MaxSubArray(testcase.nums)
 			require.Equal(t, testcase.output, res)
 		})
 	}

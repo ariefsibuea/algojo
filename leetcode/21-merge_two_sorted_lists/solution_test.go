@@ -6,21 +6,21 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	mtsl "github.com/ariefsibuea/dsa/leetcode/21-merge_two_sorted_lists"
+	lib "github.com/ariefsibuea/dsa/leetcode/21-merge_two_sorted_lists"
 )
 
 func Test_MergeTwoSortedLists(t *testing.T) {
-	l1c := mtsl.ListNode{4, nil}
-	l1b := mtsl.ListNode{2, &l1c}
-	l1a := mtsl.ListNode{1, &l1b}
+	l1c := lib.ListNode{4, nil}
+	l1b := lib.ListNode{2, &l1c}
+	l1a := lib.ListNode{1, &l1b}
 
-	l2c := mtsl.ListNode{4, nil}
-	l2b := mtsl.ListNode{3, &l2c}
-	l2a := mtsl.ListNode{1, &l2b}
+	l2c := lib.ListNode{4, nil}
+	l2b := lib.ListNode{3, &l2c}
+	l2a := lib.ListNode{1, &l2b}
 
 	testcases := []struct {
-		l1     *mtsl.ListNode
-		l2     *mtsl.ListNode
+		l1     *lib.ListNode
+		l2     *lib.ListNode
 		result []int
 	}{
 		{
@@ -32,7 +32,7 @@ func Test_MergeTwoSortedLists(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := mtsl.MergeTwoLists(testcase.l1, testcase.l2)
+			res := lib.MergeTwoLists(testcase.l1, testcase.l2)
 
 			sorted := make([]int, 0)
 			for res != nil {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lolw "github.com/ariefsibuea/dsa/leetcode/58-length_of_last_world"
+	lib "github.com/ariefsibuea/dsa/leetcode/58-length_of_last_world"
 )
 
 func Test_LengthOfLastWord(t *testing.T) {
@@ -30,7 +30,7 @@ func Test_LengthOfLastWord(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			out := lolw.LengthOfLastWord(testcase.s)
+			out := lib.LengthOfLastWord(testcase.s)
 			require.Equal(t, testcase.output, out)
 		})
 	}

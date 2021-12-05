@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	is "github.com/ariefsibuea/dsa/leetcode/28-implement_strstr"
+	lib "github.com/ariefsibuea/dsa/leetcode/28-implement_strstr"
 )
 
 func Test_StrStr(t *testing.T) {
@@ -34,7 +34,7 @@ func Test_StrStr(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := is.StrStr(testcase.haystack, testcase.needle)
+			res := lib.StrStr(testcase.haystack, testcase.needle)
 			require.Equal(t, testcase.output, res)
 		})
 	}

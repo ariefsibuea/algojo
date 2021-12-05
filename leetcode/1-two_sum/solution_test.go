@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	ts "github.com/ariefsibuea/dsa/leetcode/1-two_sum"
+	lib "github.com/ariefsibuea/dsa/leetcode/1-two_sum"
 )
 
 func Test_TwoSum(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_TwoSum(t *testing.T) {
 
 	for i, testCase := range testCases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := ts.TwoSum(testCase.nums, testCase.target)
+			res := lib.TwoSum(testCase.nums, testCase.target)
 			require.Equal(t, testCase.result, res)
 		})
 	}

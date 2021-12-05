@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	vp "github.com/ariefsibuea/dsa/leetcode/20-valid_parentheses"
+	lib "github.com/ariefsibuea/dsa/leetcode/20-valid_parentheses"
 )
 
 func Test_ValidParentheses(t *testing.T) {
@@ -38,7 +38,7 @@ func Test_ValidParentheses(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := vp.IsValid(testcase.input)
+			res := lib.IsValid(testcase.input)
 			require.Equal(t, testcase.result, res)
 		})
 	}

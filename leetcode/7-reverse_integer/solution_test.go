@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	ri "github.com/ariefsibuea/dsa/leetcode/7-reverse_integer"
+	lib "github.com/ariefsibuea/dsa/leetcode/7-reverse_integer"
 )
 
 func Test_ReverseInteger(t *testing.T) {
@@ -38,7 +38,7 @@ func Test_ReverseInteger(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := ri.Reverse(testcase.x)
+			res := lib.Reverse(testcase.x)
 			require.Equal(t, testcase.result, res)
 		})
 	}

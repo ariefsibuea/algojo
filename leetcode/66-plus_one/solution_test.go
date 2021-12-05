@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	po "github.com/ariefsibuea/dsa/leetcode/66-plus_one"
 	"github.com/stretchr/testify/require"
+
+	lib "github.com/ariefsibuea/dsa/leetcode/66-plus_one"
 )
 
 func Test_PlusOne(t *testing.T) {
@@ -29,7 +30,7 @@ func Test_PlusOne(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			out := po.PlusOne(testcase.digits)
+			out := lib.PlusOne(testcase.digits)
 			require.Equal(t, testcase.output, out)
 		})
 	}

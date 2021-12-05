@@ -6,16 +6,16 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	rdfsl "github.com/ariefsibuea/dsa/leetcode/83-remove_duplicates_from_sorted_list"
+	lib "github.com/ariefsibuea/dsa/leetcode/83-remove_duplicates_from_sorted_list"
 )
 
 func Test_RemoveDuplicatesFromSortedList(t *testing.T) {
-	a3 := &rdfsl.ListNode{2, nil}
-	a2 := &rdfsl.ListNode{1, a3}
-	a1 := &rdfsl.ListNode{1, a2}
+	a3 := &lib.ListNode{2, nil}
+	a2 := &lib.ListNode{1, a3}
+	a1 := &lib.ListNode{1, a2}
 
 	testcases := []struct {
-		head   *rdfsl.ListNode
+		head   *lib.ListNode
 		output []int
 	}{
 		{
@@ -26,7 +26,7 @@ func Test_RemoveDuplicatesFromSortedList(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			out := rdfsl.DeleteDuplicates(testcase.head)
+			out := lib.DeleteDuplicates(testcase.head)
 
 			length := 0
 			for out != nil {
