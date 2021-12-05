@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lcp "github.com/ariefsibuea/dsa/leetcode/14-longest_common_prefix"
+	lib "github.com/ariefsibuea/dsa/leetcode/14-longest_common_prefix"
 )
 
 func Test_LongetCommonPrefix(t *testing.T) {
@@ -30,7 +30,7 @@ func Test_LongetCommonPrefix(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := lcp.LongestCommonPrefix(testcase.input)
+			res := lib.LongestCommonPrefix(testcase.input)
 			require.Equal(t, testcase.result, res)
 		})
 	}

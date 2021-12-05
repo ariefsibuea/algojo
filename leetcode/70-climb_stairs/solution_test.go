@@ -1,4 +1,4 @@
-package sqrt_test
+package climbstairs_test
 
 import (
 	"fmt"
@@ -6,27 +6,27 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	sqrt "github.com/ariefsibuea/dsa/leetcode/69-sqrt"
+	lib "github.com/ariefsibuea/dsa/leetcode/70-climb_stairs"
 )
 
-func Test_Sqrt(t *testing.T) {
+func Test_ClimbStairs(t *testing.T) {
 	testcases := []struct {
-		x      int
+		n      int
 		output int
 	}{
 		{
-			x:      4,
+			n:      2,
 			output: 2,
 		},
 		{
-			x:      8,
-			output: 2,
+			n:      3,
+			output: 3,
 		},
 	}
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			out := sqrt.MySqrt(testcase.x)
+			out := lib.ClimbStairs(testcase.n)
 			require.Equal(t, testcase.output, out)
 		})
 	}

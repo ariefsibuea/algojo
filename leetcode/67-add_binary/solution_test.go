@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	ab "github.com/ariefsibuea/dsa/leetcode/67-add_binary"
 	"github.com/stretchr/testify/require"
+
+	lib "github.com/ariefsibuea/dsa/leetcode/67-add_binary"
 )
 
 func Test_AddBinary(t *testing.T) {
@@ -28,7 +29,7 @@ func Test_AddBinary(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			out := ab.AddBinary(testcase.a, testcase.b)
+			out := lib.AddBinary(testcase.a, testcase.b)
 			require.Equal(t, testcase.output, out)
 		})
 	}

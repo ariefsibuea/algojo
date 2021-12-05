@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	sip "github.com/ariefsibuea/dsa/leetcode/35-search_index_position"
+	lib "github.com/ariefsibuea/dsa/leetcode/35-search_index_position"
 )
 
 func Test_SearchInsert(t *testing.T) {
@@ -44,7 +44,7 @@ func Test_SearchInsert(t *testing.T) {
 
 	for i, testcase := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			res := sip.SearchInsert(testcase.nums, testcase.target)
+			res := lib.SearchInsert(testcase.nums, testcase.target)
 			require.Equal(t, testcase.output, res)
 		})
 	}
