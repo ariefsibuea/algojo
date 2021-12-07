@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/1032-stream_of_characters"
+	lib "github.com/ariefsibuea/cobra/leetcode/1032-stream_of_characters"
 )
 
 func Test_StreamOfCharacters(t *testing.T) {

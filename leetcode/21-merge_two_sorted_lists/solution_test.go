@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/21-merge_two_sorted_lists"
+	lib "github.com/ariefsibuea/cobra/leetcode/21-merge_two_sorted_lists"
 )
 
 func Test_MergeTwoSortedLists(t *testing.T) {

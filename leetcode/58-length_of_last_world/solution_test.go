@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/58-length_of_last_world"
+	lib "github.com/ariefsibuea/cobra/leetcode/58-length_of_last_world"
 )
 
 func Test_LengthOfLastWord(t *testing.T) {
