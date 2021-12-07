@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/28-implement_strstr"
+	lib "github.com/ariefsibuea/cobra/leetcode/28-implement_strstr"
 )
 
 func Test_StrStr(t *testing.T) {

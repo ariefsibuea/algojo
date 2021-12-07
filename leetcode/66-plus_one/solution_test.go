@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/66-plus_one"
+	lib "github.com/ariefsibuea/cobra/leetcode/66-plus_one"
 )
 
 func Test_PlusOne(t *testing.T) {

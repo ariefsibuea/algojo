@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/70-climb_stairs"
+	lib "github.com/ariefsibuea/cobra/leetcode/70-climb_stairs"
 )
 
 func Test_ClimbStairs(t *testing.T) {

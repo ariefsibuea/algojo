@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/20-valid_parentheses"
+	lib "github.com/ariefsibuea/cobra/leetcode/20-valid_parentheses"
 )
 
 func Test_ValidParentheses(t *testing.T) {

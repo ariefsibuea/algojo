@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/dsa/leetcode/7-reverse_integer"
+	lib "github.com/ariefsibuea/cobra/leetcode/7-reverse_integer"
 )
 
 func Test_ReverseInteger(t *testing.T) {

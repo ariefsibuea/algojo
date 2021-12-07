@@ -1,4 +1,4 @@
-module github.com/ariefsibuea/dsa
+module github.com/ariefsibuea/cobra
 
 go 1.16
 
