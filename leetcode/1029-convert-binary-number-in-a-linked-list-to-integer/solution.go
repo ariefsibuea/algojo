@@ -8,24 +8,10 @@ type ListNode struct {
 }
 
 func GetDecimalValue(head *ListNode) int {
-	if head == nil {
-		return 0
-	}
-
-	binaryNums := make([]int, 0)
-	currentNode := head
-	for {
-		binaryNums = append([]int{currentNode.Val}, binaryNums...)
-		if currentNode.Next == nil {
-			break
-		}
-		currentNode = currentNode.Next
-	}
-
-	decimalNum := 0
-	for i, n := range binaryNums {
-		num := n << i
-		decimalNum += num
+	decimalNum := head.Val
+	for head.Next != nil {
+		decimalNum = (decimalNum * 2) + head.Next.Val
+		head = head.Next
 	}
 	return decimalNum
 }
