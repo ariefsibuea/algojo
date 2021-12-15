@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/938-range_sum_of_bst"
 	"github.com/stretchr/testify/require"
+
+	lib "github.com/ariefsibuea/cobra/leetcode/938-range_sum_of_bst"
 )
 
 func Test_RangeSumBST(t *testing.T) {
