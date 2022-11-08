@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/167-two_sum_ii_input_array_is_sorted"
+	lib "algojo.ariefsibuea.dev/leetcode/167-two_sum_ii_input_array_is_sorted"
 )
 
 func Test_TwoSum(t *testing.T) {

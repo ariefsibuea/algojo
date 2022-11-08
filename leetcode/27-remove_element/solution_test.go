@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/27-remove_element"
+	lib "algojo.ariefsibuea.dev/leetcode/27-remove_element"
 )
 
 func Test_RemoveElemetn(t *testing.T) {

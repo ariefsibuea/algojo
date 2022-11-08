@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/13-roman_to_integer"
+	lib "algojo.ariefsibuea.dev/leetcode/13-roman_to_integer"
 )
 
 func Test_RomanToInteger(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/876-middle_of_the_linked_list"
+	lib "algojo.ariefsibuea.dev/leetcode/876-middle_of_the_linked_list"
 )
 
 func Test_MiddleNode(t *testing.T) {

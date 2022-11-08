@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/1306-jump_game_iii"
+	lib "algojo.ariefsibuea.dev/leetcode/1306-jump_game_iii"
 )
 
 func Test_CanReach(t *testing.T) {

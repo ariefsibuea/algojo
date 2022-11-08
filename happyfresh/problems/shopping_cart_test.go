@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	pro "github.com/ariefsibuea/cobra/happyfresh/problems"
+	pro "algojo.ariefsibuea.dev/happyfresh/problems"
 )
 
 func Test_FindLowestPrice(t *testing.T) {

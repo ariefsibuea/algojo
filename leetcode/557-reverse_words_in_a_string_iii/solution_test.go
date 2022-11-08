@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/557-reverse_words_in_a_string_iii"
+	lib "algojo.ariefsibuea.dev/leetcode/557-reverse_words_in_a_string_iii"
 )
 
 func Test_ReverseWords(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/337-house_robber_iii"
+	lib "algojo.ariefsibuea.dev/leetcode/337-house_robber_iii"
 )
 
 func Test_Rob(t *testing.T) {

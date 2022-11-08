@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/1200-minimum_absolute_difference"
+	lib "algojo.ariefsibuea.dev/leetcode/1200-minimum_absolute_difference"
 )
 
 func Test_MinimumAbsDifference(t *testing.T) {

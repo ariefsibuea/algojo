@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/19-remove_nth_node_from_end_of_list"
+	lib "algojo.ariefsibuea.dev/leetcode/19-remove_nth_node_from_end_of_list"
 )
 
 func Test_RemoveNthFromEnd(t *testing.T) {

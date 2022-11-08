@@ -1,4 +1,4 @@
-module github.com/ariefsibuea/cobra
+module algojo.ariefsibuea.dev
 
 go 1.16
 

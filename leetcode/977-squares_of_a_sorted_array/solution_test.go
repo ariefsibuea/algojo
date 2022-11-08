@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/977-squares_of_a_sorted_array"
+	lib "algojo.ariefsibuea.dev/leetcode/977-squares_of_a_sorted_array"
 )
 
 func Test_SortedSquares(t *testing.T) {

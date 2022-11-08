@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/143-reorder_list"
+	lib "algojo.ariefsibuea.dev/leetcode/143-reorder_list"
 )
 
 func Test_ReorderList(t *testing.T) {

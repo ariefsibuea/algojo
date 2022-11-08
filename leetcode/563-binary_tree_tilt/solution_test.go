@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/563-binary_tree_tilt"
+	lib "algojo.ariefsibuea.dev/leetcode/563-binary_tree_tilt"
 )
 
 func Test_FindTilt(t *testing.T) {

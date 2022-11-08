@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/1029-convert-binary-number-in-a-linked-list-to-integer"
+	lib "algojo.ariefsibuea.dev/leetcode/1029-convert-binary-number-in-a-linked-list-to-integer"
 )
 
 func Test_GetDecimalValue(t *testing.T) {

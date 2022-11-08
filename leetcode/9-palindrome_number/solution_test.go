@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/9-palindrome_number"
+	lib "algojo.ariefsibuea.dev/leetcode/9-palindrome_number"
 )
 
 func Test_PalindromeNumber(t *testing.T) {

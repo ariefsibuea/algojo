@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/53-maximum_subarray"
+	lib "algojo.ariefsibuea.dev/leetcode/53-maximum_subarray"
 )
 
 func Test_MaximumSubarray(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/283-move_zeroes"
+	lib "algojo.ariefsibuea.dev/leetcode/283-move_zeroes"
 )
 
 func Test_MoveZeroes(t *testing.T) {

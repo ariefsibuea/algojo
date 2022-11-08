@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/14-longest_common_prefix"
+	lib "algojo.ariefsibuea.dev/leetcode/14-longest_common_prefix"
 )
 
 func Test_LongetCommonPrefix(t *testing.T) {

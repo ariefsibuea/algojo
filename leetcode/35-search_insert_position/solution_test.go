@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/35-search_insert_position"
+	lib "algojo.ariefsibuea.dev/leetcode/35-search_insert_position"
 )
 
 func Test_SearchInsert(t *testing.T) {

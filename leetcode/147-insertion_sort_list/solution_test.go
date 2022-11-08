@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/147-insertion_sort_list"
+	lib "algojo.ariefsibuea.dev/leetcode/147-insertion_sort_list"
 )
 
 func Test_InsertionSortList(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/416-partition_equal_subset_sum"
+	lib "algojo.ariefsibuea.dev/leetcode/416-partition_equal_subset_sum"
 )
 
 func Test_CanPartition(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/69-sqrt"
+	lib "algojo.ariefsibuea.dev/leetcode/69-sqrt"
 )
 
 func Test_Sqrt(t *testing.T) {

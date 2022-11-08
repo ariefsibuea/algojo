@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/83-remove_duplicates_from_sorted_list"
+	lib "algojo.ariefsibuea.dev/leetcode/83-remove_duplicates_from_sorted_list"
 )
 
 func Test_RemoveDuplicatesFromSortedList(t *testing.T) {

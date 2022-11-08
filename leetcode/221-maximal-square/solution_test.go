@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/221-maximal-square"
+	lib "algojo.ariefsibuea.dev/leetcode/221-maximal-square"
 )
 
 func Test_MaximalSquare(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/3-longest_substring_without_repeating_characters"
+	lib "algojo.ariefsibuea.dev/leetcode/3-longest_substring_without_repeating_characters"
 )
 
 func Test_LengthOfLongestSubstring(t *testing.T) {

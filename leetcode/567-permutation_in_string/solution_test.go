@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/567-permutation_in_string"
+	lib "algojo.ariefsibuea.dev/leetcode/567-permutation_in_string"
 )
 
 func Test_CheckInclusion(t *testing.T) {

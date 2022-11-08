@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/67-add_binary"
+	lib "algojo.ariefsibuea.dev/leetcode/67-add_binary"
 )
 
 func Test_AddBinary(t *testing.T) {

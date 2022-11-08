@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/189-rotate_array"
+	lib "algojo.ariefsibuea.dev/leetcode/189-rotate_array"
 )
 
 func Test_Rotate(t *testing.T) {

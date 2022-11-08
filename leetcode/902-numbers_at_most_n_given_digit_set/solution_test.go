@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/902-numbers_at_most_n_given_digit_set"
+	lib "algojo.ariefsibuea.dev/leetcode/902-numbers_at_most_n_given_digit_set"
 )
 
 func Test_AtMostNGivenDigitSet(t *testing.T) {

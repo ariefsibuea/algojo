@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/231-power_of_two"
+	lib "algojo.ariefsibuea.dev/leetcode/231-power_of_two"
 )
 
 func Test_IsPowerOfTwo(t *testing.T) {

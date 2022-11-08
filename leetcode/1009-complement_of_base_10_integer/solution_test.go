@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/1009-complement_of_base_10_integer"
+	lib "algojo.ariefsibuea.dev/leetcode/1009-complement_of_base_10_integer"
 )
 
 func Test_BitwiseComplement(t *testing.T) {

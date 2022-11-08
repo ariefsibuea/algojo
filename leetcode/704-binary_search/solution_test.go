@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/704-binary_search"
+	lib "algojo.ariefsibuea.dev/leetcode/704-binary_search"
 )
 
 func Test_Search(t *testing.T) {

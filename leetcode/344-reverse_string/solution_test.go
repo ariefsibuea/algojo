@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	lib "github.com/ariefsibuea/cobra/leetcode/344-reverse_string"
+	lib "algojo.ariefsibuea.dev/leetcode/344-reverse_string"
 )
 
 func Test_ReverseString(t *testing.T) {
