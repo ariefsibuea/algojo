@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	hf "algojo.ariefsibuea.dev/hackerrank"
+	hr "algojo.ariefsibuea.dev/hackerrank"
 )
 
 func Test_SolveMeFirst(t *testing.T) {
@@ -28,7 +28,7 @@ func Test_SolveMeFirst(t *testing.T) {
 
 	for i, testCase := range testCases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			out := hf.SolveMeFirst(testCase.input.a, testCase.input.b)
+			out := hr.SolveMeFirst(testCase.input.a, testCase.input.b)
 			require.Equal(t, testCase.output, out)
 		})
 	}
