@@ -1,4 +1,4 @@
-package problems
+package happyfresh
 
 func Mystery(a, b int32) int32 {
 	x := a

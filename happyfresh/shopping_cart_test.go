@@ -1,4 +1,4 @@
-package problems_test
+package happyfresh_test
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	pro "algojo.ariefsibuea.dev/happyfresh/problems"
+	hf "algojo.ariefsibuea.dev/happyfresh"
 )
 
 func Test_FindLowestPrice(t *testing.T) {
@@ -49,7 +49,7 @@ func Test_FindLowestPrice(t *testing.T) {
 
 	for i, tc := range testcases {
 		t.Run(fmt.Sprintf("case-%d", i+1), func(t *testing.T) {
-			require.Equal(t, tc.want, pro.FindLowestPrice(tc.got.products, tc.got.discouns))
+			require.Equal(t, tc.want, hf.FindLowestPrice(tc.got.products, tc.got.discouns))
 		})
 	}
 }
