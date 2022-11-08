@@ -3,3 +3,7 @@ main.go
 
 # dependencies folder
 vendor
+
+# IDE settings
+.idea
+.vscode
