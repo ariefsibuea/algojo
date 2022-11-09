@@ -3,8 +3,9 @@ package hackerrank_test
 import (
 	"testing"
 
-	"algojo.ariefsibuea.dev/hackerrank"
 	"github.com/stretchr/testify/require"
+
+	hr "algojo.ariefsibuea.dev/hackerrank"
 )
 
 func Test_DiagonalDifference(t *testing.T) {
@@ -31,7 +32,7 @@ func Test_DiagonalDifference(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		out := hackerrank.DiagonalDifference(testCase.input)
+		out := hr.DiagonalDifference(testCase.input)
 		require.Equal(t, testCase.output, out)
 	}
 }
