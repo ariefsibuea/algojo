@@ -3,8 +3,9 @@ package hackerrank_test
 import (
 	"testing"
 
-	hr "algojo.ariefsibuea.dev/hackerrank"
 	"github.com/stretchr/testify/require"
+
+	hr "algojo.ariefsibuea.dev/hackerrank"
 )
 
 func Test_AVeryBigSum(t *testing.T) {

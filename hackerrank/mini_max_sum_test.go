@@ -3,8 +3,9 @@ package hackerrank_test
 import (
 	"testing"
 
-	"algojo.ariefsibuea.dev/hackerrank"
 	"github.com/stretchr/testify/require"
+
+	hr "algojo.ariefsibuea.dev/hackerrank"
 )
 
 type outMiniMaxSum struct {
@@ -34,7 +35,7 @@ func Test_MiniMaxSum(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		totalMin, totalMax := hackerrank.MiniMaxSum(testCase.input)
+		totalMin, totalMax := hr.MiniMaxSum(testCase.input)
 		require.Equal(t, testCase.output.totalMin, totalMin)
 		require.Equal(t, testCase.output.totalMax, totalMax)
 	}
