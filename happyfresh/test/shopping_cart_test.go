@@ -1,4 +1,4 @@
-package happyfresh_test
+package test_test
 
 import (
 	"fmt"
