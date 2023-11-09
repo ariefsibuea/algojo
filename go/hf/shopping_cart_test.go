@@ -1,4 +1,4 @@
-package happyfresh_test
+package hf_test
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	hf "algojo.ariefsibuea.dev/happyfresh"
+	hf "algojo.ariefsibuea.dev/hf"
 )
 
 func Test_FindLowestPrice(t *testing.T) {

@@ -1,8 +1,5 @@
 *.txt
 
-# dependencies folder
-vendor
-
 # IDE settings
 .idea
 .vscode

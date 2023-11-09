@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"algojo.ariefsibuea.dev/leetcode"
-	"algojo.ariefsibuea.dev/testcase"
+	"algojo.ariefsibuea.dev/test/testcase"
 )
 
 type config struct {
