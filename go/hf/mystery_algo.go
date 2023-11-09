@@ -1,4 +1,4 @@
-package happyfresh
+package hf
 
 func Mystery(a, b int32) int32 {
 	x := a

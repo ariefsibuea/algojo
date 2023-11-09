@@ -1,4 +1,4 @@
-package happyfresh
+package hf
 
 import (
 	"math"
