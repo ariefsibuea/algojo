@@ -20,7 +20,7 @@ package leetcode
 
 // RemoveNthFromEnd implements two pointers technique to solve remove nth
 // node from the end of the linked list.
-func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
+func (soln Solution) RemoveNthFromEnd(head *ListNode, n int) *ListNode {
 	slow, fast := head, head
 
 	i := 0

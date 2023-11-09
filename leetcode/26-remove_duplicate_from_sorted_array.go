@@ -21,7 +21,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 package leetcode
 
-func RemoveDuplicates(nums []int) int {
+func (soln Solution) RemoveDuplicates(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}

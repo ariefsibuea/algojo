@@ -20,7 +20,7 @@ Output: [0]
 
 package leetcode
 
-func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+func (soln Solution) MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	switch {
 	case l1 == nil && l2 == nil:
 		return nil

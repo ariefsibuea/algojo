@@ -18,7 +18,7 @@ Output: [1,5,2,4,3]
 
 package leetcode
 
-func ReorderList(head *ListNode) {
+func (soln Solution) ReorderList(head *ListNode) {
 	if head.Next == nil {
 		return
 	}

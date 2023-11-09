@@ -1,0 +1,19 @@
+TestCases:
+  case#1:
+    input:
+      - "hello"
+      - "ll"
+    output:
+      - 2
+  case#2:
+    input:
+      - "aaaaa"
+      - "bba"
+    output:
+      - -1
+  case#3:
+    input:
+      - ""
+      - ""
+    output:
+      - 0

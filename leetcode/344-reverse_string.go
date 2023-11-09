@@ -16,7 +16,7 @@ Output: ["h","a","n","n","a","H"]
 package leetcode
 
 // ReverseString implements two pointers technique to reverse string
-func ReverseString(s []byte) {
+func (soln Solution) ReverseString(s []byte) {
 	start, end := 0, len(s)-1
 	for start < end {
 		temp := s[end]

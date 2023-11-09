@@ -16,7 +16,7 @@ Output: [0]
 package leetcode
 
 // MoveZeroes implements two pointers technique to solve move zeroes problem
-func MoveZeroes(nums []int) {
+func (soln Solution) MoveZeroes(nums []int) {
 	lastNonZero := 0
 	for index := range nums {
 		if nums[index] == 0 {

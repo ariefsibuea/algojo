@@ -30,7 +30,7 @@ Thus, the result should be [1,0].
 
 package leetcode
 
-func PlusOne(digits []int) []int {
+func (soln Solution) PlusOne(digits []int) []int {
 	remainder, index := 1, len(digits)-1
 
 	for index >= 0 {

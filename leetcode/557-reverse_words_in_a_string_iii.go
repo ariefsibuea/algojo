@@ -17,7 +17,7 @@ package leetcode
 
 import "strings"
 
-func ReverseWords(s string) string {
+func (soln Solution) ReverseWords(s string) string {
 	words := strings.Split(s, " ")
 	for i := range words {
 		word := make([]byte, len(words[i]))

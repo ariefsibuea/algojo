@@ -19,7 +19,7 @@ Solve this problem using Dynamic Programming
 
 package leetcode
 
-func CanPartition(nums []int) bool {
+func (soln Solution) CanPartition(nums []int) bool {
 	sum := 0
 	for _, num := range nums {
 		sum += num

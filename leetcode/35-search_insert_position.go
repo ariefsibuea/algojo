@@ -22,13 +22,11 @@ Source Solution: https://www.programiz.com/dsa/binary-search
 
 package leetcode
 
-import "fmt"
-
-func SearchInsert(nums []int, target int) int {
+func (soln Solution) SearchInsert(nums []int, target int) int {
 	low, high, mid := 0, len(nums)-1, 0
 	for low <= high {
 		mid = (low + high) / 2
-		fmt.Println("test mid =", mid)
+
 		switch {
 		case nums[mid] == target:
 			return mid

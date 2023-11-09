@@ -19,7 +19,7 @@ Output: 0
 
 package leetcode
 
-func MaximalSquare(matrix [][]byte) int {
+func (soln Solution) MaximalSquare(matrix [][]byte) int {
 	rows, cols := len(matrix), len(matrix[0])
 
 	var max int

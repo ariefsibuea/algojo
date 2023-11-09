@@ -25,7 +25,7 @@ Explanation: 10 is "1010" in binary, with complement "0101" in binary, which is 
 
 package leetcode
 
-func BitwiseComplement(n int) int {
+func (soln Solution) BitwiseComplement(n int) int {
 	if n == 1 {
 		return 0
 	}

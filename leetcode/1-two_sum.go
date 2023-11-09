@@ -20,7 +20,7 @@ Output: [0,1]
 
 package leetcode
 
-func TwoSum(nums []int, target int) []int {
+func (soln Solution) TwoSum(nums []int, target int) []int {
 	m := map[int]int{}
 	for i := range nums {
 		complement := target - nums[i]

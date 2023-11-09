@@ -17,7 +17,7 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 
 package leetcode
 
-func MySqrt(x int) int {
+func (soln Solution) MySqrt(x int) int {
 	if x < 2 {
 		return x
 	}

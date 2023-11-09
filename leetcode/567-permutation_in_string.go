@@ -17,7 +17,7 @@ Output: false
 package leetcode
 
 // CheckInclusion implements sliding window technique to solve check permutation of s1 in s2 problem.
-func CheckInclusion(s1 string, s2 string) bool {
+func (soln Solution) CheckInclusion(s1 string, s2 string) bool {
 	if len(s1) > len(s2) {
 		return false
 	}

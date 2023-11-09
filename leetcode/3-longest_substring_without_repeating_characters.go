@@ -31,7 +31,7 @@ import (
 	"strings"
 )
 
-func LengthOfLongestSubstring(s string) int {
+func (soln Solution) LengthOfLongestSubstring(s string) int {
 	maxLength := 0
 	sub := ""
 	for i := range s {

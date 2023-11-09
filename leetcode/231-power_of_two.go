@@ -22,7 +22,7 @@ package leetcode
 
 import "math"
 
-func IsPowerOfTwo(n int) bool {
+func (soln Solution) IsPowerOfTwo(n int) bool {
 	if n == 0 {
 		return false
 	}

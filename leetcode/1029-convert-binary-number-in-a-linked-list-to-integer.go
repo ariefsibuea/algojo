@@ -19,7 +19,7 @@ Output: 0
 
 package leetcode
 
-func GetDecimalValue(head *ListNode) int {
+func (soln Solution) GetDecimalValue(head *ListNode) int {
 	decimalNum := head.Val
 	for head.Next != nil {
 		decimalNum = (decimalNum * 2) + head.Next.Val
