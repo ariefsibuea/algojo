@@ -31,7 +31,7 @@ var romans = map[string]int{
 	"M": 1000,
 }
 
-func RomanToInt(s string) int {
+func (soln Solution) RomanToInt(s string) int {
 	result, lastnum, currnum := 0, 0, 0
 	for _, v := range s {
 		currnum = romans[string(v)]

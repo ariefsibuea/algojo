@@ -22,7 +22,7 @@ Solution source: https://www.programiz.com/dsa/binary-search
 package leetcode
 
 // FirstBadVersion implements binary tree to find the first bad version
-func FirstBadVersion(n int) int {
+func (soln Solution) FirstBadVersion(n int) int {
 	// list of version
 	low, high, mid := 1, n, 0
 	firstBad := n

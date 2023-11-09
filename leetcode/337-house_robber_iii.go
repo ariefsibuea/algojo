@@ -48,7 +48,7 @@ func ExploreNode(node *TreeNode) TotalValue {
 	return totalValue
 }
 
-func Rob(root *TreeNode) int {
+func (soln Solution) Rob(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

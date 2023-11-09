@@ -25,7 +25,7 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 package leetcode
 
 // TwoSum implements two pointers technique to solve two sum with sorted array problem
-func TwoSumII(numbers []int, target int) []int {
+func (soln Solution) TwoSumII(numbers []int, target int) []int {
 	start, end := 0, len(numbers)-1
 	for start < end {
 		if numbers[start]+numbers[end] == target {

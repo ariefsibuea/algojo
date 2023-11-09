@@ -15,7 +15,7 @@ Output: [-1,0,3,4,5]
 
 package leetcode
 
-func InsertionSortList(head *ListNode) *ListNode {
+func (soln Solution) InsertionSortList(head *ListNode) *ListNode {
 	root := head
 	head = head.Next
 	root.Next = nil

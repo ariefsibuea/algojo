@@ -15,7 +15,7 @@ Output: [1,2,3]
 
 package leetcode
 
-func DeleteDuplicates(head *ListNode) *ListNode {
+func (soln Solution) DeleteDuplicates(head *ListNode) *ListNode {
 	if head == nil {
 		return head
 	}

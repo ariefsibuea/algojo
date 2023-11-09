@@ -33,7 +33,7 @@ import (
 	"strconv"
 )
 
-func AtMostNGivenDigitSet(digits []string, n int) int {
+func (soln Solution) AtMostNGivenDigitSet(digits []string, n int) int {
 	sort.Slice(digits, func(i, j int) bool {
 		return digits[i] < digits[j]
 	})

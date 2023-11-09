@@ -21,7 +21,7 @@ package leetcode
 
 import "math"
 
-func Reverse(x int) int {
+func (soln Solution) Reverse(x int) int {
 	if x > math.MaxInt32 || x < math.MinInt32 {
 		return 0
 	}

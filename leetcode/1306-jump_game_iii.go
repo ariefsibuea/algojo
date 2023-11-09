@@ -48,7 +48,7 @@ func (q *Queue) Dequeue() int {
 	return e
 }
 
-func CanReach(arr []int, start int) bool {
+func (soln Solution) CanReach(arr []int, start int) bool {
 	minIndex, maxIndex := 0, len(arr)-1
 
 	q := Queue{}

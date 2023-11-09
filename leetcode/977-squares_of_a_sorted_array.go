@@ -20,7 +20,7 @@ Solution source: https://www.callicoder.com/squares-of-a-sorted-array/
 package leetcode
 
 // SortedSquares implements two pointers technique to find squares of array
-func SortedSquares(nums []int) []int {
+func (soln Solution) SortedSquares(nums []int) []int {
 	sortedSqrs := make([]int, len(nums))
 	left, right := 0, len(nums)-1
 	// index start from the end

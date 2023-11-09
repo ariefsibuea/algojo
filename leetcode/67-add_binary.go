@@ -19,7 +19,7 @@ import (
 	"strings"
 )
 
-func AddBinary(a string, b string) string {
+func (soln Solution) AddBinary(a string, b string) string {
 	ra := []rune(a)
 	rb := []rune(b)
 

@@ -52,7 +52,7 @@ func NewNode() *Node {
 	}
 }
 
-func Constructor(words []string) StreamChecker {
+func (soln Solution) Constructor(words []string) StreamChecker {
 	streamChecker := StreamChecker{
 		Root:   NewNode(),
 		Stream: make([]byte, 0),
@@ -74,13 +74,13 @@ func Constructor(words []string) StreamChecker {
 	return streamChecker
 }
 
-func (this *StreamChecker) Query(letter byte) bool {
-	this.Stream = append(this.Stream, letter)
+func (check *StreamChecker) Query(letter byte) bool {
+	check.Stream = append(check.Stream, letter)
 
 	// because we want to check suffix, iterate the stream from end of stream
-	currentNode := this.Root
-	for i := len(this.Stream) - 1; i >= 0; i-- {
-		letter = this.Stream[i]
+	currentNode := check.Root
+	for i := len(check.Stream) - 1; i >= 0; i-- {
+		letter = check.Stream[i]
 		if currentNode.Next[letter] == nil {
 			return false
 		}

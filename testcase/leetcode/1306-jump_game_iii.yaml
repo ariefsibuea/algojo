@@ -1,0 +1,19 @@
+TestCases:
+  case#1:
+    input:
+      - [4, 2, 3, 0, 3, 1, 2]
+      - 5
+    output:
+      - true
+  case#2:
+    input:
+      - [4, 2, 3, 0, 3, 1, 2]
+      - 0
+    output:
+      - true
+  case#3:
+    input:
+      - [3, 0, 2, 1, 2]
+      - 2
+    output:
+      - false

@@ -28,7 +28,7 @@ var pairs = map[string]string{
 	"]": "[",
 }
 
-func IsValid(s string) bool {
+func (solns Solution) IsValid(s string) bool {
 	opens := make([]string, 0)
 
 	for _, p := range s {

@@ -20,7 +20,7 @@ package leetcode
 
 import "strings"
 
-func StrStr(haystack string, needle string) int {
+func (soln Solution) StrStr(haystack string, needle string) int {
 	if needle == "" {
 		return 0
 	}

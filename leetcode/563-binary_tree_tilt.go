@@ -60,7 +60,7 @@ func exploreNode(node *TreeNode) NodeValue {
 	return nodeVal
 }
 
-func FindTilt(root *TreeNode) int {
+func (soln Solution) FindTilt(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

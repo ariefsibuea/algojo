@@ -22,7 +22,7 @@ Explanation: There are three ways to climb to the top.
 
 package leetcode
 
-func ClimbStairs(n int) int {
+func (soln Solution) ClimbStairs(n int) int {
 	if n == 0 || n == 1 {
 		return 1
 	}

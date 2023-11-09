@@ -18,7 +18,7 @@ package leetcode
 
 import "strings"
 
-func LongestCommonPrefix(strs []string) string {
+func (soln Solution) LongestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
 	}

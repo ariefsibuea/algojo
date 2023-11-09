@@ -21,7 +21,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 package leetcode
 
-func IsPalindrome(x int) bool {
+func (soln Solution) IsPalindrome(x int) bool {
 	if x < 0 {
 		return false
 	}

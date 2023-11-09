@@ -21,7 +21,7 @@ Solution source: https://www.programiz.com/dsa/binary-search
 package leetcode
 
 // Search implements binary search to find target and returns the target index
-func Search(nums []int, target int) int {
+func (soln Solution) Search(nums []int, target int) int {
 	// list of index
 	low, high, mid := 0, len(nums)-1, 0
 

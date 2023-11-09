@@ -21,7 +21,7 @@ package leetcode
 
 import "math"
 
-func MaxSubArray(nums []int) int {
+func (soln Solution) MaxSubArray(nums []int) int {
 	sum, max := 0, math.MinInt32
 
 	for _, v := range nums {

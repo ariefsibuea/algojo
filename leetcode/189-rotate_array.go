@@ -31,7 +31,7 @@ func gcd(x, y int) int {
 }
 
 // Rotate implements juggling algorithm to rotate array elements to the right
-func Rotate(nums []int, k int) {
+func (soln Solution) Rotate(nums []int, k int) {
 	n := len(nums)
 	k = k % n
 	numSet := gcd(k, n)

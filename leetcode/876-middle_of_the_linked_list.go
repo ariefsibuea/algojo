@@ -18,7 +18,7 @@ Explanation: Since the list has two middle nodes with values 3 and 4, we return 
 package leetcode
 
 // MiddleNode implements two pointers technique to find middle of linked list
-func MiddleNode(head *ListNode) *ListNode {
+func (soln Solution) MiddleNode(head *ListNode) *ListNode {
 	mid, cur := head, head
 	for cur != nil && cur.Next != nil {
 		cur = cur.Next.Next

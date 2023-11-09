@@ -36,6 +36,6 @@ func traverseTree(node *TreeNode, low, hight int) int {
 	return leftSum + rightSum
 }
 
-func RangeSumBST(root *TreeNode, low int, high int) int {
+func (soln Solution) RangeSumBST(root *TreeNode, low int, high int) int {
 	return traverseTree(root, low, high)
 }
