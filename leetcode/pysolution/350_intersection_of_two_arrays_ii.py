@@ -10,6 +10,21 @@ from typing import List
 
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        """
+        Finds the intersection of two arrays, allowing duplicate elements. Given two integer arrays `nums1` and `nums2`,
+        this method returns an array that represents their intersection. Each element in the result appears as many
+        times as it shows in both arrays.
+        Args:
+            nums1 (List[int]): The first list of integers.
+            nums2 (List[int]): The second list of integers.
+        Returns:
+            List[int]: A list containing the intersection of `nums1` and `nums2`, including duplicates.
+        Example:
+            nums1 = [1, 2, 2, 1]
+            nums2 = [2, 2]
+            intersect(nums1, nums2) -> [2, 2]
+        """
+
         nums1_map = {}
         for num in nums1:
             nums1_map[num] = nums1_map.get(num, 0) + 1

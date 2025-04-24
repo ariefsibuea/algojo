@@ -10,6 +10,15 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Finds two numbers in the given list that add up to the target and returns their indices.
+        Args:
+            nums (List[int]): A list of integers.
+            target (int): The target sum.
+        Returns:
+            List[int]: A list containing the indices of the two numbers that add up to the target.
+        """
+
         nums_map = {}
         for i, num in enumerate(nums):
             complement = target - num

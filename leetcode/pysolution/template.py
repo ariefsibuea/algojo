@@ -12,6 +12,7 @@ class Solution:
     def solve(self, *args: Any, **kwargs: Any) -> Any:
         pass
 
+
 def run_tests():
     inputs = {}
     outputs = {}
@@ -21,8 +22,9 @@ def run_tests():
     for case, input in inputs.items():
         result = solution.solve(input[0], input[1])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
-    
+
     print("✅ All tests passed!")
+
 
 if __name__ == "__main__":
     run_tests()

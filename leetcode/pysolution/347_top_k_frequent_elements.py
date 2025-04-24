@@ -13,19 +13,15 @@ class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         """
         Finds the k most frequent elements in the given list of integers.
-
         Args:
             nums (List[int]): A list of integers.
             k (int): The number of most frequent elements to return.
-
         Returns:
             List[int]: A list containing the k most frequent elements in descending order of frequency.
             If there are ties in frequency, the order of elements in the result may vary.
-
         Example:
             >>> topKFrequent([1, 1, 1, 2, 2, 3], 2)
             [1, 2]
-
         Notes:
             - The function uses a bucket sort approach to group elements by their frequency.
             - The time complexity is O(n), where n is the length of the input list, assuming the number of unique elements is much smaller than n.
