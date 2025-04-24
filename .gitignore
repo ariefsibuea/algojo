@@ -3,3 +3,6 @@
 # IDE settings
 .idea
 .vscode
+
+# Env
+.venv

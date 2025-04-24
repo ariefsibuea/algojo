@@ -1,0 +1,41 @@
+"""
+LeetCode Problem : Intersection of Two Arrays II
+Topic            : Array, Hash Table, Two Pointers, Binary Search, Sorting
+Level            : Easy
+URL              : https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+"""
+
+from typing import List
+
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        nums1_map = {}
+        for num in nums1:
+            nums1_map[num] = nums1_map.get(num, 0) + 1
+
+        result = []
+
+        for num in nums2:
+            if nums1_map.get(num, 0) > 0:
+                result.append(num)
+                nums1_map[num] -= 1
+
+        return result
+
+
+def run_tests():
+    inputs = {"case_1": [[1, 2, 2, 1], [2, 2]], "case_2": [[4, 9, 5], [9, 4, 9, 8, 4]]}
+    outputs = {"case_1": [2, 2], "case_2": [9, 4]}
+
+    solution = Solution()
+
+    for case, input in inputs.items():
+        result = solution.intersect(input[0], input[1])
+        assert result == outputs[case], f"Expected {outputs[case]}, got {result}"
+
+    print("✅ All tests passed!")
+
+
+if __name__ == "__main__":
+    run_tests()
