@@ -24,6 +24,12 @@ class Solution:
             isValid("(]") -> False
             isValid("([)]") -> False
             isValid("{[]}") -> True
+        Solution:
+            Stack approach
+        Time Complexity:
+            O(n): Each character in the string is processed exactly once.
+        Space Complexity:
+            O(n): The stack grows linearly with the inout size.
         """
 
         bracket_pair = {
