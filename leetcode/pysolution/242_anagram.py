@@ -30,8 +30,10 @@ class Solution:
             - Iterate through the second string and decrement the count of each character in the dictionary.
             - If a character in the second string is not in the dictionary or its count becomes negative, return False.
             - Finally, check if the dictionary is empty, which indicates the strings are anagrams.
-        Time Complexity: O(n)
-        Space Complexity: O(n)
+        Time Complexity:
+            O(n): Loop through s and t
+        Space Complexity:
+            O(n): O(26) fixed-size for letters
         """
 
         if len(s) != len(t):
