@@ -7,7 +7,6 @@ URL              : https://leetcode.com/problems/min-stack/description/
 
 
 class MinStack:
-
     """
     NOTE:
         Below is my previous solution. There are some issues:
@@ -15,6 +14,7 @@ class MinStack:
             2. Inefficient pop, setting self.stack[self.top_index] = None does not reduce memory usage.
             3. Fragile state management, mixing size and top_index increases the risk of bugs e.g., invalid indices.
     """
+
     # def __init__(self):
     #     self.stack = []
     #     self.size = 0

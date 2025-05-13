@@ -21,6 +21,8 @@ class Solution:
             1
             >>> solution.lengthOfLongestSubstring("pwwkew")
             3
+        Solution:
+            Sliding window
         Notes:
             - The function uses a sliding window approach with a hash map to track the last seen index of each character.
             - The time complexity is O(n), where n is the length of the input string.

@@ -17,6 +17,10 @@ class Solution:
             target (int): The target sum.
         Returns:
             List[int]: A list containing the indices of the two numbers that add up to the target.
+        Soulution:
+            Hash table search approach
+        Time Complexity: O(n)
+        Space Complexity: O(n)
         """
 
         nums_map = {}
