@@ -25,6 +25,12 @@ class Solution:
         Notes:
             - The function uses a bucket sort approach to group elements by their frequency.
             - The time complexity is O(n), where n is the length of the input list, assuming the number of unique elements is much smaller than n.
+        Solution:
+            Bucket sort
+        Time Complexity:
+            O(n) where we iterate through buckets from the highest frequency downwards. In the worst case, we traverse all frequencies (up to n).
+        Space Complexity:
+            O(n) for the hash map and buckets.
         """
 
         count = Counter(nums)
