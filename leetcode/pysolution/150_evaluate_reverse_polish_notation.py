@@ -39,10 +39,10 @@ class Solution:
 
         number_stack = []
         valid_operators = {
-            '+': lambda a, b: a + b,
-            '-': lambda a, b: a - b,
-            '*': lambda a, b: a *b,
-            '/': lambda a, b: int(a/b)
+            "+": lambda a, b: a + b,
+            "-": lambda a, b: a - b,
+            "*": lambda a, b: a * b,
+            "/": lambda a, b: int(a / b),
         }
 
         for token in tokens:
@@ -56,24 +56,13 @@ class Solution:
         return number_stack[0]
 
 
-
 def run_tests():
     inputs = {
-        "case_1": [
-            ["2","1","+","3","*"]
-        ],
-        "case_2": [
-            ["4","13","5","/","+"]
-        ],
-        "case_3": [
-            ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
-        ]
+        "case_1": [["2", "1", "+", "3", "*"]],
+        "case_2": [["4", "13", "5", "/", "+"]],
+        "case_3": [["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]],
     }
-    outputs = {
-        "case_1": 9,
-        "case_2": 6,
-        "case_3": 22
-    }
+    outputs = {"case_1": 9, "case_2": 6, "case_3": 22}
 
     solution = Solution()
 

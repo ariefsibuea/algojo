@@ -66,7 +66,7 @@ def run_tests():
 def tree_to_list_bfs(root: Optional[TreeNode]) -> List:
     if not root:
         return []
-    
+
     result = []
     queue = deque([root])
 
@@ -80,6 +80,7 @@ def tree_to_list_bfs(root: Optional[TreeNode]) -> List:
             queue.append(node.right)
 
     return result
+
 
 if __name__ == "__main__":
     run_tests()
