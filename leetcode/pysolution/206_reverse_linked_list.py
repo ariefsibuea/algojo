@@ -14,6 +14,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         """
@@ -32,7 +33,7 @@ class Solution:
         Space Complexity:
             O(1): Uses a constant amount of extra space.
         """
-        
+
         previous = None
         current = head
 
@@ -47,38 +48,13 @@ class Solution:
 
 def run_tests():
     linked_list_case_1 = ListNode(
-        val=1,
-        next=ListNode(
-            val=2,
-            next=ListNode(
-                val=3,
-                next=ListNode(
-                    val=4,
-                    next=ListNode(
-                        val=5,
-                        next=None
-                    )
-                )
-            )
-        )
+        val=1, next=ListNode(val=2, next=ListNode(val=3, next=ListNode(val=4, next=ListNode(val=5, next=None))))
     )
 
-    linked_list_case_2 = ListNode(
-        val=1,
-        next=ListNode(
-            val=2,
-            next=None
-        )
-    )
+    linked_list_case_2 = ListNode(val=1, next=ListNode(val=2, next=None))
 
-    inputs = {
-        "case_1": [linked_list_case_1],
-        "case_2": [linked_list_case_2]
-    }
-    outputs = {
-        "case_1": [5,4,3,2,1],
-        "case_2": [2,1]
-    }
+    inputs = {"case_1": [linked_list_case_1], "case_2": [linked_list_case_2]}
+    outputs = {"case_1": [5, 4, 3, 2, 1], "case_2": [2, 1]}
 
     solution = Solution()
 
