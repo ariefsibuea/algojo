@@ -29,13 +29,13 @@ class Solution:
         if len(nums) == 0 or len(nums) == 1:
             return len(nums)
 
-        numUnique = 1
+        num_unique = 1
         for counter in range(1, len(nums)):
-            if nums[counter] != nums[numUnique - 1]:
-                nums[numUnique] = nums[counter]
-                numUnique = numUnique + 1
+            if nums[counter] != nums[num_unique - 1]:
+                nums[num_unique] = nums[counter]
+                num_unique = num_unique + 1
 
-        return numUnique
+        return num_unique
 
 
 def run_tests():
