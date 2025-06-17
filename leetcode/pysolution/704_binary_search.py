@@ -30,7 +30,7 @@ class Solution:
         Space Complexity:
             O(1) where uses only constant space for pointers (low, high, mid).
         """
-        
+
         low, high = 0, len(nums) - 1
         while low <= high:
             mid = low + (high - low) // 2

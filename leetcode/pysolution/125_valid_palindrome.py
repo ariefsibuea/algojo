@@ -10,7 +10,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         """
         Check if a string is a palindrome considering only alphanumeric characters and ignoring case.
-        A string is a palindrome if it reads the same forward and backward after converting all uppercase letters 
+        A string is a palindrome if it reads the same forward and backward after converting all uppercase letters
         into lowercase letters and removing all non-alphanumeric characters.
         Args:
             s (str): The input string to check.

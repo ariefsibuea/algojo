@@ -38,7 +38,7 @@ class Solution:
         Time Complexity:
             O(n) where n is number of nodes in linked list
 
-        Space Complexity: 
+        Space Complexity:
             O(1) because it's only using two pointers
         """
 

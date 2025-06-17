@@ -31,7 +31,7 @@ class Solution:
         Examples:
             Input: root = [3,9,20,null,null,15,7]
             Output: true
-            
+
             Input: root = [1,2,2,3,3,null,null,4,4]
             Output: false
 
