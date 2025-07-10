@@ -19,26 +19,19 @@ class TreeNode:
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        """
-        Given the root of a binary tree, return the level order traversal of its nodes' values.
-        The result should be a list of lists, where each inner list contains values of nodes at the same level.
+        """Returns the level order traversal of a binary tree's nodes' values.
+        
         Args:
-            root (Optional[TreeNode]): Root node of binary tree, can be None
+            root (Optional[TreeNode]): Root node of binary tree, can be None.
+            
         Returns:
-            List[List[int]]: List of lists containing node values at each level from top to bottom
-        Example:
-            Input: root = [3,9,20,null,null,15,7]
-            Output: [[3],[9,20],[15,7]]
-            Input: root = [1]
-            Output: [[1]]
-            Input: root = []
-            Output: []
-        Solution:
-            Breadth-First Search with queue
+            List[List[int]]: List of lists containing node values at each level from top to bottom.
+            
         Time Complexity:
-            O(n) where n is the number of nodes in the binary tree.
+            O(n): Where n is the number of nodes in the binary tree.
+            
         Space Complexity:
-            O(n) where the queue stores up to n nodes in the worst case.
+            O(n): Where the queue stores up to n nodes in the worst case.
         """
 
         if not root:

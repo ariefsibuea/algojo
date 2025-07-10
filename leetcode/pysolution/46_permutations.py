@@ -10,25 +10,19 @@ from typing import List
 
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        """
-        Given an array nums of distinct integers, returns all possible permutations.
+        """Generates all possible permutations of an array of distinct integers using backtracking.
+        
         Args:
-            nums (List[int]): Array of distinct integers
+            nums (List[int]): Array of distinct integers.
+            
         Returns:
-            List[List[int]]: List of all possible permutations
-        Example:
-            >>> Solution().permute([1,2,3])
-            [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
-            >>> Solution().permute([0,1])
-            [[0,1], [1,0]]
-            >>> Solution().permute([1])
-            [[1]]
-        Solution:
-            Backtracking approach to generate all possible permutations by exploring different paths and tracking used numbers.
+            List[List[int]]: List of all possible permutations.
+            
         Time Complexity:
-            O(n!) where n is the length of input array
+            O(n!): Where n is the length of input array, as we generate all permutations.
+            
         Space Complexity:
-            O(n) for recursion stack and tracking used numbers
+            O(n): Space used for recursion stack and tracking used numbers.
         """
 
         def backtrack(path: List[int], used: List[bool]):

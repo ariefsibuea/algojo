@@ -10,26 +10,19 @@ from typing import Any
 
 class Solution:
     def climbStairs(self, n: int) -> int:
-        """
-        Calculates the number of distinct ways to climb n stairs.
-        You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps.
-        In how many distinct ways can you climb to the top?
+        """Calculates the number of distinct ways to climb n stairs, taking either 1 or 2 steps at a time.
+        
         Args:
-            n (int): Number of stairs to climb, where 1 <= n <= 45
+            n (int): Number of stairs to climb, where 1 <= n <= 45.
+            
         Returns:
-            int: Number of distinct ways to climb the stairs
-        Example:
-            >>> solution = Solution()
-            >>> solution.climbStairs(2)
-            2  # Can climb: 1. 1+1 steps, 2. 2 steps
-            >>> solution.climbStairs(3)
-            3  # Can climb: 1. 1+1+1 steps, 2. 1+2 steps, 3. 2+1 steps
-        Solution:
-            Iterative approach, similar to memoization but we only need to memorize 2 latest result.
+            int: Number of distinct ways to climb the stairs.
+            
         Time Complexity:
-            O(n) we iterate through the sequence n times
-        Space complexity:
-            O(1) we only use two variables regardless of input size
+            O(n): We iterate through the sequence n times.
+            
+        Space Complexity:
+            O(1): Only constant extra space is used regardless of input size.
         """
 
         if n == 1:

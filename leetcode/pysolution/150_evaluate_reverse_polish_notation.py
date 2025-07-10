@@ -10,31 +10,19 @@ from typing import Any, List
 
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        """
-        Evaluates the value of an arithmetic expression in Reverse Polish Notation (RPN).
-        Valid operators are +, -, *, and /. Each operand may be an integer or another expression.
-        Division between two integers always truncates toward zero.
-        It is guaranteed that the given RPN expression is always valid.
+        """Evaluates the value of an arithmetic expression in Reverse Polish Notation (RPN).
+        
         Args:
-            tokens (List[str]): An array of strings representing arithmetic expression in RPN
+            tokens (List[str]): An array of strings representing arithmetic expression in RPN.
+            
         Returns:
-            int: Result of evaluating the expression
-        Examples:
-            >>> evalRPN(["2","1","+","3","*"])
-            9
-            >>> evalRPN(["4","13","5","/","+"])
-            6
-            >>> evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"])
-            22
-        Note:
-            - 1 <= tokens.length <= 10^4
-            - tokens[i] is either an operator: "+", "-", "*", "/" or an integer in range [-200, 200]
-        Solution:
-            Stack with manual operation
+            int: Result of evaluating the expression.
+            
         Time Complexity:
-            O(n) where each token is processed once.
+            O(n): Where n is the number of tokens, as each token is processed once.
+            
         Space Complexity:
-            O(n) where stack stores up to n/2 numbers in the worse case.
+            O(n): In the worst case, the stack may store up to n/2 numbers.
         """
 
         number_stack = []

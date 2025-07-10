@@ -17,29 +17,19 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        """
-        Given head of linked list, determine if linked list has a cycle in it.
-        Cycle exists when node can be reached again by continuously following 'next' pointer.
-
+        """Determines if a linked list contains a cycle using Floyd's Cycle Finding Algorithm.
+        
         Args:
-            head: Optional[ListNode] - head of the linked list
-
+            head (Optional[ListNode]): Head of the linked list.
+            
         Returns:
-            bool - True if cycle exists, False otherwise
-
-        Examples:
-            Input: head = [3,2,0,-4], pos = 1
-            Output: true
-            Explanation: There is a cycle in the linked list, where tail connects to 1st position
-
-        Solutions:
-            Floyd's Cycle Finding Algorithm (Tortoise and Hare)
-
+            bool: True if the linked list has a cycle, False otherwise.
+            
         Time Complexity:
-            O(n) where n is number of nodes in linked list
-
+            O(n): Where n is the number of nodes in the linked list.
+            
         Space Complexity:
-            O(1) because it's only using two pointers
+            O(1): Only constant extra space is used for two pointers.
         """
 
         slow, fast = head, head

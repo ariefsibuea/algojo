@@ -6,3 +6,5 @@
 
 # Env
 .venv
+
+.DS_Store

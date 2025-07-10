@@ -13,22 +13,19 @@ def isBadVersion(version: int) -> bool:
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        """
-        Find first version where code broken by using binary search approach.
-        Assuming the version order goes from 1 to n.
+        """Finds the first bad version in a sequence of versions using binary search.
+        
         Args:
-            n: int representing the total number of versions
+            n (int): The total number of versions.
+            
         Returns:
-            int: the first bad version number
-        Examples:
-            n = 5, bad = 4 -> output = 4
-            All versions from 4 onwards are bad
-        Solutions:
-            Binary Search
+            int: The first bad version number.
+            
         Time Complexity:
-            O(log n) - binary search halves search space each iteration
+            O(log n): Binary search halves the search space in each iteration.
+            
         Space Complexity:
-            O(1) - only uses a constant amount of extra space
+            O(1): Only constant extra space is used.
         """
 
         low, high = 1, n

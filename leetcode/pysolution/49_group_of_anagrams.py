@@ -11,23 +11,19 @@ from typing import List
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        """
-        Groups anagrams from a list of strings.
-        This function takes a list of strings and groups them based on their anagram relationships.
-        Two strings are considered anagrams if they contain the same characters with the same frequencies.
+        """Groups strings that are anagrams of each other from a given list.
+        
         Args:
             strs (List[str]): A list of strings to be grouped.
+            
         Returns:
             List[List[str]]: A list of lists where each inner list contains strings that are anagrams of each other.
-        Example:
-            >>> groupAnagrams(["eat","tea","tan","ate","nat","bat"])
-            [["bat"],["nat","tan"],["ate","eat","tea"]]
-        Solution:
-            Character frequency counting
+            
         Time Complexity:
-            O(N * K) where N is length of input array and K is maximum length of a string in input.
+            O(N * K): Where N is the length of input array and K is the maximum length of a string in the input.
+            
         Space Complexity:
-            O(N * K) to stores frequency tuples and grouped anagrams.
+            O(N * K): Space used to store frequency tuples and grouped anagrams.
         """
 
         # defaultdict is a subclass of the built-in dict class from the collection module. It is used to provide a default

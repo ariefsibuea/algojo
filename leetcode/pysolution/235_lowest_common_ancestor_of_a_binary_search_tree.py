@@ -18,25 +18,21 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root: "TreeNode", p: "TreeNode", q: "TreeNode") -> "TreeNode":
-        """
-        Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
-        The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).
+        """Finds the lowest common ancestor of two nodes in a binary search tree.
+        
         Args:
-            root (TreeNode): The root node of the binary search tree
-            p (TreeNode): First node to find ancestor for
-            q (TreeNode): Second node to find ancestor for
+            root (TreeNode): The root node of the binary search tree.
+            p (TreeNode): First node to find ancestor for.
+            q (TreeNode): Second node to find ancestor for.
+            
         Returns:
-            TreeNode: The lowest common ancestor node of p and q
-        Example:
-            Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
-            Output: 6
-            Explanation: The LCA of nodes 2 and 8 is 6.
-        Solution:
-            Iterative searching in binary search tree
-        Time complexity:
-            O(h) where h is the height of the tree
-        Space complexity:
-            O(1)
+            TreeNode: The lowest common ancestor node of p and q.
+            
+        Time Complexity:
+            O(h): Where h is the height of the tree, as we traverse at most one path from root to leaf.
+            
+        Space Complexity:
+            O(1): Only constant extra space is used for the current pointer.
         """
 
         current = root

@@ -2,34 +2,31 @@
 LeetCode Problem : Valid Parentheses
 Topic            : String, Stack
 Level            : Easy
-URL              : https://leetcode.com/problems/valid-parentheses/description/
+URL              : https://leetcode.com/problems/valid-parentheses/description
 """
 
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        """
-        Determines if the input string of parentheses is valid.
-        A string is considered valid if:
-        1. Open brackets are closed by the same type of brackets.
-        2. Open brackets are closed in the correct order.
-        3. Every close bracket has a corresponding open bracket of the same type.
+        """Determines if the input string of parentheses is valid. A string is considered valid if:
+            1. Open brackets are closed by the same type of brackets.
+            2. Open brackets are closed in the correct order.
+            3. Every close bracket has a corresponding open bracket of the same type.
+
         Args:
             s (str): The input string containing parentheses, braces, or brackets.
+
         Returns:
             bool: True if the input string is valid, False otherwise.
-        Example:
-            isValid("()") -> True
-            isValid("()[]{}") -> True
-            isValid("(]") -> False
-            isValid("([)]") -> False
-            isValid("{[]}") -> True
+
         Solution:
             Stack approach
+
         Time Complexity:
             O(n): Each character in the string is processed exactly once.
+
         Space Complexity:
-            O(n): The stack grows linearly with the inout size.
+            O(n): The stack can grow up to the size of the input string in the worst case.
         """
 
         bracket_pair = {

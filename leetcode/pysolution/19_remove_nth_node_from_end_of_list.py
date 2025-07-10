@@ -17,24 +17,23 @@ class ListNode:
 
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        """
-        Remove the nth node from the end of a linked list and return its head.
+        """Remove the nth node from the end of a linked list and return its head.
+
         Args:
             head (Optional[ListNode]): The head of the linked list
             n (int): The position from the end of the list of the node to be removed (1-based)
+
         Returns:
             Optional[ListNode]: Head of the modified linked list after removing the nth node from the end
-        Examples:
-            Given linked list: 1->2->3->4->5, n = 2
-            After removing the second node from the end: 1->2->3->5
-            Given linked list: 1, n = 1
-            After removing the first node from the end: []
+
         Solution:
-            Wwo pointers (slow and fast) to find and remove the nth node from the end.
+            Two pointers (slow and fast) to find and remove the nth node from the end.
+
         Time Complexity:
-            O(n) where n is the length of the linked list
+            O(n): n is the length of the linked list
+
         Space Complexity:
-            O(1) as only constant extra space is used
+            O(1): only constant extra space is used
         """
 
         dummy = ListNode(0, head)

@@ -17,22 +17,23 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        """
-        Merge two sorted linked lists and return it as a sorted list.
+        """Merge two sorted linked lists and return it as a sorted list.
+
         Args:
             list1 (Optional[ListNode]): Head of first sorted linked list
             list2 (Optional[ListNode]): Head of second sorted linked list
+
         Returns:
-            Optional[ListNode]: Head of merged sorted linked list
-        Example:
-            Input: list1 = [1,2,4], list2 = [1,3,4]
-            Output: [1,1,2,3,4,4]
+            Optional[ListNode]: Head of merged sorted linked list.
+
         Solution:
-            Iterative with Dummy Node
+            Iterative approach with a dummy node to merge the two sorted linked lists.
+
         Time Complexity:
-            O(n+m) where n and m are lengths of the input lists
+            O(n+m): n and m are lengths of the input lists, as we traverse both lists once.
+
         Space Complexity:
-            O(1) as only pointers (dummy and current) are used
+            O(1): Only constant extra space is used for the pointers (dummy and current).
         """
 
         dummy = ListNode(-1)

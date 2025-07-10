@@ -10,25 +10,22 @@ from typing import List
 
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-        """
-        Performs flood fill on an image by changing the color of a pixel and all adjacent pixels
-        of the same original color, similar to the "paint bucket tool" in painting applications.
+        """Performs flood fill on an image similar to a paint bucket tool in painting applications.
+        
         Args:
-            image (List[List[int]]): 2D array representing image where each int is a color
-            sr (int): Starting row coordinate
-            sc (int): Starting column coordinate
-            color (int): New color to fill with
+            image (List[List[int]]): 2D array representing image where each int is a color.
+            sr (int): Starting row coordinate.
+            sc (int): Starting column coordinate.
+            color (int): New color to fill with.
+            
         Returns:
-            List[List[int]]: Modified image after flood fill
-        Example:
-            >>> floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2)
-            [[2,2,2],[2,2,0],[2,0,1]]
-        Solution:
-            Iterative DFS using stack
+            List[List[int]]: Modified image after flood fill.
+            
         Time Complexity:
-            O(N) where N is the number of pixels in the image
+            O(N): Where N is the number of pixels in the image.
+            
         Space Complexity:
-            O(N) where N is the number of pixels in the image (due to stack)
+            O(N): Space used for the stack in the worst case.
         """
 
         original_color = image[sr][sc]

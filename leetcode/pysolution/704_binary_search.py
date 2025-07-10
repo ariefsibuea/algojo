@@ -10,25 +10,20 @@ from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        """Given an array of integers nums which is sorted in ascending order, and an integer target,
-        implements binary search algorithm to search target in nums.
+        """Implements binary search to find a target value in a sorted array.
+        
         Args:
-            nums (List[int]): Array of integers sorted in ascending order
-            target (int): Target value to search for
+            nums (List[int]): Array of integers sorted in ascending order.
+            target (int): Target value to search for.
+            
         Returns:
-            int: Index if target exists in nums, otherwise return -1
-        Example:
-            >>> solution = Solution()
-            >>> solution.search([-1,0,3,5,9,12], 9)
-            4
-            >>> solution.search([-1,0,3,5,9,12], 2)
-            -1
-        Solution:
-            Iterative binary search
+            int: Index if target exists in nums, otherwise -1.
+            
         Time Complexity:
-            O(log n) where n is the length of nums array.
+            O(log n): Where n is the length of the nums array.
+            
         Space Complexity:
-            O(1) where uses only constant space for pointers (low, high, mid).
+            O(1): Only constant extra space is used for pointers.
         """
 
         low, high = 0, len(nums) - 1

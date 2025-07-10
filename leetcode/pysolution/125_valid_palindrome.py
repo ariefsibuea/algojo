@@ -8,32 +8,19 @@ URL              : https://leetcode.com/problems/valid-palindrome/description/
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        """
-        Check if a string is a palindrome considering only alphanumeric characters and ignoring case.
-        A string is a palindrome if it reads the same forward and backward after converting all uppercase letters
-        into lowercase letters and removing all non-alphanumeric characters.
+        """Checks if a string is a palindrome considering only alphanumeric characters and ignoring case.
+        
         Args:
             s (str): The input string to check.
+            
         Returns:
             bool: True if the input string is a palindrome, False otherwise.
-        Example:
-            >>> solution = Solution()
-            >>> solution.isPalindrome("A man, a plan, a canal: Panama")
-            True
-            >>> solution.isPalindrome("race a car")
-            False
-            >>> solution.isPalindrome(" ")
-            True
-        Note:
-            - For non-alphanumeric characters (spaces, punctuation), they are ignored in the palindrome check
-            - The comparison is case-insensitive
-            - An empty string is considered a palindrome
-        Solution:
-            Two-pointer approach
+            
         Time Complexity:
-            O(n) where n is the length of the string
+            O(n): Where n is the length of the string, as we potentially examine each character.
+            
         Space Complexity:
-            O(1) only using two pointers
+            O(1): Only constant extra space is used for pointers.
         """
 
         i, j = 0, len(s) - 1

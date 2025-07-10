@@ -18,31 +18,19 @@ class TreeNode:
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        """
-        Given a binary tree, determine if it is height-balanced. A height-balanced binary tree
-        is a binary tree in which the left and right subtrees of every node differ in height by no more than one.
-
+        """Determines if a binary tree is height-balanced (subtrees of every node differ in height by no more than one).
+        
         Args:
-            root (Optional[TreeNode]): Root node of binary tree
-
+            root (Optional[TreeNode]): Root node of binary tree.
+            
         Returns:
-            bool: True if tree is height-balanced, False otherwise
-
-        Examples:
-            Input: root = [3,9,20,null,null,15,7]
-            Output: true
-
-            Input: root = [1,2,2,3,3,null,null,4,4]
-            Output: false
-
-        Solution:
-            DFS (Post-order traversal) with height tracking
-
+            bool: True if tree is height-balanced, False otherwise.
+            
         Time Complexity:
-            O(n) where n is number of nodes in tree
-
+            O(n): Where n is the number of nodes in the tree, as we visit each node once.
+            
         Space Complexity:
-            O(h) where h is height of tree due to recursion stack
+            O(h): Where h is the height of the tree due to the recursion stack.
         """
 
         def dfs(node: Optional[TreeNode]):

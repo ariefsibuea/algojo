@@ -10,30 +10,20 @@ from typing import Any
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        """
-        Determines if two strings are anagrams of each other.
-        An anagram is a word or phrase formed by rearranging the letters of a
-        different word or phrase, typically using all the original letters exactly once.
+        """Determines if two strings are anagrams of each other.
+        
         Args:
             s (str): The first string to compare.
             t (str): The second string to compare.
+            
         Returns:
             bool: True if the strings are anagrams, False otherwise.
-        Example:
-            isAnagram("anagram", "nagaram") -> True
-            isAnagram("rat", "car") -> False
-        Solution:
-            Hash map approach
-        Approach:
-            - Check if the lengths of the two strings are different. If they are, return False.
-            - Use a dictionary to count the occurrences of each character in the first string.
-            - Iterate through the second string and decrement the count of each character in the dictionary.
-            - If a character in the second string is not in the dictionary or its count becomes negative, return False.
-            - Finally, check if the dictionary is empty, which indicates the strings are anagrams.
+            
         Time Complexity:
-            O(n): Loop through s and t
+            O(n): Where n is the length of the strings, as we iterate through each character.
+            
         Space Complexity:
-            O(n): O(26) fixed-size for letters
+            O(1): Fixed-size space for character count (at most 26 lowercase letters).
         """
 
         if len(s) != len(t):
