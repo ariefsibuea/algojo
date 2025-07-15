@@ -8,17 +8,17 @@ URL              : https://leetcode.com/problems/longest-substring-without-repea
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        """Finds the length of the longest substring without repeating characters.
-        
+        """Finds the length of the longest substring without repeating characters using sliding window approach.
+
         Args:
             s (str): Input string to analyze.
-            
+
         Returns:
             int: Length of the longest substring without repeating characters.
-            
+
         Time Complexity:
             O(n): Where n is the length of the input string, as we only traverse the string once.
-            
+
         Space Complexity:
             O(min(n, a)): Where a is the size of the character set.
         """
