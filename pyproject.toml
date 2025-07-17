@@ -1,6 +1,16 @@
 [tool.black]
 line-length = 120
 
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "D"]
+ignore = ["D100"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
 [tool.poetry]
 package-mode = false
 
@@ -14,7 +24,9 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "black[jupyter] (>=25.1.0,<26.0.0)"
+    "black[jupyter] (>=25.1.0,<26.0.0)",
+    "ruff (>=0.12.3,<0.13.0)",
+    "pydocstyle (>=6.3.0,<7.0.0)"
 ]
 
 
