@@ -10,6 +10,22 @@ from typing import List
 
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
+        """Generates all possible permutations of a list of integers using an iterative insertion approach.
+        At each step, the current number is inserted into every possible position of all existing permutations.
+
+        Args:
+            nums (List[int]): The list of integers to permute.
+
+        Returns:
+            List[List[int]]: A list containing all possible permutations of the input list.
+
+        Time Complexity:
+            O(n * n!): Where n is the length of nums, since there are n! permutations and each insertion takes up to O(n) time.
+
+        Space Complexity:
+            O(n * n!): All permutations are stored in memory.
+        """
+
         permutations = [[]]
 
         for num in nums:
