@@ -42,4 +42,4 @@ if __name__ == "__main__":
 
     for _, input in inputs.items():
         result = array_advance_game(input[0])
-        print(f"result = {result}")
+        print(f"input = {input[0]}\noutput = {result}\n")
