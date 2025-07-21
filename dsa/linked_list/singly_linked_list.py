@@ -8,7 +8,7 @@ class LinkedList:
     def __init__(self, head: Node):
         self.head = head
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self.head is None
 
     def insert(self, data: int, position: int):
@@ -26,7 +26,7 @@ class LinkedList:
             self.head = new_node
             return
 
-        if position == 1:
+        if position <= 1:
             new_node.next = self.head
             self.head = new_node
             return
@@ -36,7 +36,7 @@ class LinkedList:
 
         while current_node.next and current_position < position - 1:
             current_position += 1
-            current_node = new_node.next
+            current_node = current_node.next
 
         # NOTE: if the position > last index, then add the node after tail
         new_node.next = current_node.next
@@ -106,14 +106,14 @@ class LinkedList:
         if self.head is None:
             raise ValueError("linked list is empty")
 
-        print(f"head = {self.head.data}")
-        current = self.head
-        position = 1
+        print(f"[head] = {self.head.data}")
+        current = self.head.next
+        position = 2
 
-        while current.next:
+        while current:
+            print(f"[{position}] = {current.data}")
             current = current.next
             position += 1
-            print(f"position {position} = {current.data}")
 
 
 if __name__ == "__main__":
@@ -122,6 +122,16 @@ if __name__ == "__main__":
     print("initial linked list")
     linked_list = LinkedList(node)
     linked_list.print_nodes()
+
+    print("\ninsert node 9 as head")
+    linked_list.insert(9, 1)
+    linked_list.print_nodes()
+    print(f"length of linked list = {linked_list.length()}")
+
+    print("\ninsert node 7 as head")
+    linked_list.insert(7, 1)
+    linked_list.print_nodes()
+    print(f"length of linked list = {linked_list.length()}")
 
     print("\ninsert node 2")
     linked_list.insert(2, 3)
