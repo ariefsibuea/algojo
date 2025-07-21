@@ -99,7 +99,7 @@ class LinkedList:
 
         return count
 
-    def print_nodes(self):
+    def list(self):
         if self.head is None:
             raise ValueError("linked list is empty")
 
@@ -118,24 +118,24 @@ if __name__ == "__main__":
 
     print("initial linked list")
     linked_list = LinkedList(node)
-    linked_list.print_nodes()
+    linked_list.list()
 
     print("\ninsert node 9 as head")
     linked_list.insert(9, 1)
-    linked_list.print_nodes()
+    linked_list.list()
     print(f"length of linked list = {linked_list.length()}")
 
     print("\ninsert node 7 as head")
     linked_list.insert(7, 1)
-    linked_list.print_nodes()
+    linked_list.list()
     print(f"length of linked list = {linked_list.length()}")
 
     print("\ninsert node 2")
     linked_list.insert(2, 3)
-    linked_list.print_nodes()
+    linked_list.list()
     print(f"length of linked list = {linked_list.length()}")
 
     print("\ndelete head")
     linked_list.delete(1)
-    linked_list.print_nodes()
+    linked_list.list()
     print(f"length of linked list = {linked_list.length()}")

@@ -108,7 +108,7 @@ class DoublyLinkedList:
 
         return count
 
-    def print_nodes(self):
+    def list(self):
         if self.head is None:
             raise ValueError("doubly linked list is empty")
 
@@ -127,19 +127,19 @@ if __name__ == "__main__":
     print("initial doubly linked list")
     head = DLLNode(10)
     dll = DoublyLinkedList(head)
-    dll.print_nodes()
+    dll.list()
 
     print("\ninsert 4 as head")
     dll.insert(4, 1)
-    dll.print_nodes()
+    dll.list()
     print(f"length of doubly linked list = {dll.length()}")
 
     print("\ninsert 6 as head")
     dll.insert(6, 1)
-    dll.print_nodes()
+    dll.list()
     print(f"length of doubly linked list = {dll.length()}")
 
     print("\ndelete node in position 2")
     dll.delete(2)
-    dll.print_nodes()
+    dll.list()
     print(f"length of doubly linked list = {dll.length()}")
