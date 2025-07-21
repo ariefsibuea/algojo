@@ -18,7 +18,7 @@ class LinkedList:
             O(n): In the worst case we may need to insert a node at the end of the list.
 
         Spcae Complexity:
-            O(1): For creating one temporary variable.
+            O(1): For creating constant space for temporary variable.
         """
         new_node = Node(data)
 
@@ -49,7 +49,7 @@ class LinkedList:
             O(n): In the worst case we may need to delete a node at the end of the list.
 
         Space Complexity:
-            O(1): For one temporary variable.
+            O(1): For constant space of temporary variable.
         """
         if self.head is None:
             raise ValueError("linked list is empty")
@@ -70,11 +70,8 @@ class LinkedList:
             current_position += 1
             current_node = current_node.next
 
-        if position - 1 > current_position:
-            raise ValueError(f"position {position} is out of range")
-
         if current_node.next is None:
-            print(f"position {position} has been empty")
+            raise ValueError(f"position {position} is out of range")
 
         temp = current_node.next
         current_node.next = current_node.next.next
@@ -87,7 +84,7 @@ class LinkedList:
             O(n): Scanning the list of size n.
 
         Space Complexity:
-            O(1): Creating a temporary variable.
+            O(1): Creating constant space of temporary variable.
         """
         if self.head is None:
             print("linked list is empty")
