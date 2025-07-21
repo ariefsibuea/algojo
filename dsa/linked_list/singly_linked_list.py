@@ -11,7 +11,7 @@ class LinkedList:
     def is_empty(self):
         return self.head is None
 
-    def insert(self, node: Node, position: int):
+    def insert(self, data: int, position: int):
         """Inserts a node at the specific position. Position 1 is the head.
 
         Time Complexity:
@@ -20,13 +20,15 @@ class LinkedList:
         Spcae Complexity:
             O(1): For creating one temporary variable.
         """
+        new_node = Node(data)
+
         if self.head is None:
-            self.head = node
+            self.head = new_node
             return
 
         if position == 1:
-            node.next = self.head
-            self.head = node
+            new_node.next = self.head
+            self.head = new_node
             return
 
         current_position = 1
@@ -34,11 +36,11 @@ class LinkedList:
 
         while current_node.next and current_position < position - 1:
             current_position += 1
-            current_node = node.next
+            current_node = new_node.next
 
         # NOTE: if the position > last index, then add the node after tail
-        node.next = current_node.next
-        current_node.next = node
+        new_node.next = current_node.next
+        current_node.next = new_node
 
     def delete(self, position: int):
         """Remove the node at the specific position.
@@ -122,7 +124,7 @@ if __name__ == "__main__":
     linked_list.print_nodes()
 
     print("\ninsert node 2")
-    linked_list.insert(Node(2), 3)
+    linked_list.insert(2, 3)
     linked_list.print_nodes()
     print(f"length of linked list = {linked_list.length()}")
 
