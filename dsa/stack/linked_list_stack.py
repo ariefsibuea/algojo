@@ -1,21 +1,26 @@
-from typing import Generic, TypeVar
+from typing import Generic, List, TypeVar
 
 T = TypeVar("T")
 
 
-class ArrayStack(Generic[T]):
-    def __init__(self, capacity: int = 10):
-        self.top = -1
-        self.capacity = capacity
-        self.array = [None] * capacity
+class Node(Generic[T]):
+    def __init__(self, data: T):
+        self.data = data
+        self.next = None
+
+
+class LinkedListStack:
+    def __init__(self):
+        self.top = None
+        self._size = 0
 
     def is_empty(self) -> bool:
         """Check whether the stack is empty."""
-        return self.top == -1
+        return self.top is None
 
-    def is_full(self) -> bool:
-        """Check whether the stack is full."""
-        return self.top == self.capacity - 1
+    def __len__(self) -> int:
+        """Return the number of elements in the stack."""
+        return self._size
 
     def push(self, data: T) -> None:
         """Push an element into the stack.
@@ -23,17 +28,13 @@ class ArrayStack(Generic[T]):
         Args:
             data: The element to push.
 
-        Raises:
-            OverflowError: If the stack is full.
-
         Time Complexity:
-            O(1): Directly set the element to specific slot by tracked index.
+            O(1): Constant time to set the new node as head or top of the stack.
         """
-        if self.is_full():
-            raise OverflowError("stack overflow")
-
-        self.top += 1
-        self.array[self.top] = data
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+        self._size += 1
 
     def pop(self) -> T:
         """Remove and return the top element.
@@ -45,14 +46,17 @@ class ArrayStack(Generic[T]):
             IndexError: If the stack is empty.
 
         Time Complexity:
-            O(1): Directly return the top element retrived using tracked index.
+            O(1): Constant time to retrieve data of the top element and move the top to the next element.
         """
         if self.is_empty():
             raise IndexError("stack is empty")
 
-        element = self.array[self.top]
-        self.array[self.top] = None
-        self.top -= 1
+        element = self.top.data
+        temp = self.top
+
+        self.top = self.top.next
+        self._size -= 1
+        temp.next = None
         return element
 
     def peek(self) -> T:
@@ -65,12 +69,12 @@ class ArrayStack(Generic[T]):
             IndexError: If the stack is empty.
 
         Time Complexity:
-            O(1): Directly return the top element retrived using tracked index.
+            O(1): Constant time to retrieve data of the top element.
         """
         if self.is_empty():
             raise IndexError("stack is empty")
 
-        return self.array[self.top]
+        return self.top.data
 
     def clear(self):
         """Remove all elements from the stack.
@@ -78,16 +82,30 @@ class ArrayStack(Generic[T]):
         Time Complexity:
             O(k): Where k is the current size of the stack.
         """
-        self.array = [None] * (self.top + 1)
-        self.top = -1
+        node = self.top
+        while node:
+            temp = node
+            node = node.next
+            temp.next = None
 
-    def size(self):
-        """Return the number of elements in the stack."""
-        return self.top + 1
+        self.top = None
+
+    def __str__(self) -> str:
+        """Return a string representation of the stack."""
+        if self.top is None:
+            return "Stack : []"
+
+        elements: List[str] = []
+        current = self.top
+        while current:
+            elements.append(str(current.data))
+            current = current.next
+
+        return f"Stack: [{' -> '.join(elements)}]"
 
 
 if __name__ == "__main__":
-    stack = ArrayStack[int]()
+    stack = LinkedListStack()
 
     try:
         print("Push element 1 into stack", end="\n\n")
@@ -99,6 +117,9 @@ if __name__ == "__main__":
         print("Get top element of stack")
         value = stack.peek()
         print(f"Top element of stack: {value}", end="\n\n")
+
+        str_stack = stack.__str__()
+        print(str_stack, end="\n\n")
 
         print("Pop element from stack")
         value = stack.pop()
