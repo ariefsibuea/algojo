@@ -5,7 +5,7 @@ class ProductOfArrayExceptSelf:
     def __init__(self):
         pass
 
-    def product_except_self(self, nums: List[int]) -> List[int]:
+    def solve_by_two_pass(self, nums: List[int]) -> List[int]:
         """Returns a new list where each element is the product of all other elements in the input list.
 
         Calculates the product of all elements in the input list except for the element at each index, without using
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     solution = ProductOfArrayExceptSelf()
 
     for case, input in inputs.items():
-        result = solution.product_except_self(input[0])
+        result = solution.solve_by_two_pass(input[0])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")

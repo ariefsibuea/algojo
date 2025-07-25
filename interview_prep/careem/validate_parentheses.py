@@ -2,7 +2,7 @@ class ValidateParentheses:
     def __init__(self):
         pass
 
-    def is_valid_parentheses(self, parentheses: str) -> bool:
+    def solve_by_stack(self, parentheses: str) -> bool:
         """Checks if the input string of parentheses is valid (all opening brackets are properly closed and nested).
 
         Use a stack data structure to track opening brackets. When we encounter a closing bracket, we check if it
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     solution = ValidateParentheses()
 
     for case, input in inputs.items():
-        result = solution.is_valid_parentheses(input[0])
+        result = solution.solve_by_stack(input[0])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")

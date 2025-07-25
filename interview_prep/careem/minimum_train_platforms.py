@@ -5,7 +5,7 @@ class MinimumTrainPlatforms:
     def __init__(self):
         pass
 
-    def find_minimum_platform(self, arrivals: List[str], departures: List[str]) -> int:
+    def solve_by_interval_sorting(self, arrivals: List[str], departures: List[str]) -> int:
         """Returns the minimum number of train platforms required so that no train has to wait for a platform.
 
         Args:
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     solution = MinimumTrainPlatforms()
 
     for case, input in inputs.items():
-        result = solution.find_minimum_platform(input[0], input[1])
+        result = solution.solve_by_interval_sorting(input[0], input[1])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")

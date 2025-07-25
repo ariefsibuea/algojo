@@ -2,7 +2,7 @@ class CharacterCounter:
     def __init__(self):
         self.cache = {}
 
-    def linear_scan(self, text: str, char: str) -> int:
+    def solve_by_linear_scan(self, text: str, char: str) -> int:
         """Returns number of occurrence of specified character in a given string.
 
         Traverse the entire string character by character, incrementing a counter each time the 'char' was found.
@@ -37,7 +37,7 @@ class CharacterCounter:
 
         return counter
 
-    def caching_layer(self, text: str, char: str) -> int:
+    def solve_by_caching_layer(self, text: str, char: str) -> int:
         """Returns number of occurrence of specified character in a given string.
 
         Initialize a frequenct map, traverse the entire string character by character, store the character as the key in
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     solution = CharacterCounter()
 
     for case, input in inputs.items():
-        result = solution.caching_layer(input[0], input[1])
+        result = solution.solve_by_caching_layer(input[0], input[1])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")
