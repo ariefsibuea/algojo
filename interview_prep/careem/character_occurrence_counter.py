@@ -26,7 +26,8 @@ class CharacterCounter:
         """
         if not text or not char:
             raise ValueError("text and char should be exist")
-        elif len(char) != 1:
+
+        if len(char) != 1:
             raise ValueError("char length must be 1")
 
         counter = 0
@@ -61,7 +62,8 @@ class CharacterCounter:
         """
         if not text or not char:
             raise ValueError("text and char should be exist")
-        elif len(char) != 1:
+
+        if len(char) != 1:
             raise ValueError("char length must be 1")
 
         if text not in self.cache:
