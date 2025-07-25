@@ -56,6 +56,12 @@ class MinimumTrainPlatforms:
                 platform_needed -= 1
                 j += 1
 
+        # NOTE: Process remaining arrivals in case the departure finish first.
+        while i < j:
+            platform_needed += 1
+            max_platforms = max(max_platforms, platform_needed)
+            i += 1
+
         return max_platforms
 
     def time_to_minutes(self, time_str: str) -> int:
