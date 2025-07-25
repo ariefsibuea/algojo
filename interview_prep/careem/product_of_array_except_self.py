@@ -50,7 +50,11 @@ class ProductOfArrayExceptSelf:
 
 
 if __name__ == "__main__":
-    inputs = {"case_1": [[1, 2, 3, 4]], "case_2": [[2, 3, 0, 4]], "case_3": [[0, 0, 1]]}
+    inputs = {
+        "case_1": [[1, 2, 3, 4]],
+        "case_2": [[2, 3, 0, 4]],
+        "case_3": [[0, 0, 1]],
+    }
 
     outputs = {
         "case_1": [24, 12, 8, 6],
