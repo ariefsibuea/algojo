@@ -5,6 +5,40 @@ class ProductOfArrayExceptSelf:
     def __init__(self):
         pass
 
+    def solve_by_brute_force(self, nums: List[int]) -> List[int]:
+        """Returns a new list where each element is the product of all other elements in the input list.
+
+        Args:
+            nums (List[int]): A list of integers with length greater than 1.
+
+        Returns:
+            List[int]: A list where each element is the product of all elements in nums except for the element at the
+            same index.
+
+        Raises:
+            ValueError: If nums is None or its length is less than or equal to 1.
+
+        Time Complexity:
+            O(n^2): We have a nested loop where for each of the n elements, we iterate through all n elements again.
+
+        Space Complexity:
+            O(1): We only need 1 extra space for variable to hold result of product.
+        """
+        n = len(nums)
+        if not nums or n <= 1:
+            raise ValueError("length of nums should be greater than 1")
+
+        result = [1] * n
+
+        for i in range(n):
+            product = 1
+            for j in range(n):
+                if j != i:
+                    product *= nums[j]
+            result[i] = product
+
+        return result
+
     def solve_by_two_pass(self, nums: List[int]) -> List[int]:
         """Returns a new list where each element is the product of all other elements in the input list.
 
@@ -30,7 +64,7 @@ class ProductOfArrayExceptSelf:
         """
 
         n = len(nums)
-        if nums is None or n <= 1:
+        if not nums or n <= 1:
             raise ValueError("length of nums should be greater than 1")
 
         # Set 1 as initial output result to handle identity multiplication
@@ -65,7 +99,7 @@ if __name__ == "__main__":
     solution = ProductOfArrayExceptSelf()
 
     for case, input in inputs.items():
-        result = solution.solve_by_two_pass(input[0])
+        result = solution.solve_by_brute_force(input[0])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")
