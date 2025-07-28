@@ -5,6 +5,44 @@ class MinimumTrainPlatforms:
     def __init__(self):
         pass
 
+    def solve_by_brute_force(self, arrivals: List[str], departures: List[str]) -> int:
+        """Returns the minimum number of train platforms required so that no train has to wait for a platform.
+
+        Args:
+            arrivals (List[str]): List of train arrival times in "HH:MM" format.
+            departures (List[str]): List of train departure times in "HH:MM" format.
+
+        Returns:
+            int: The minimum number of platforms required to accommodate all trains without waiting.
+
+        Raises:
+            ValueError: If arrivals or departures are missing, or if their lengths do not match.
+
+        Time Complexity:
+            O(n x d): Where n is the number of trains and d is the average duration of train stay in platform.
+
+        Space Complexity:
+            O(1): We use a fixed-size of array of 1440 elements regardless of input size.
+        """
+        if not arrivals or not departures:
+            raise ValueError("arrivals and departures are required")
+
+        if len(arrivals) != len(departures):
+            raise ValueError("arrivals and departures must have the same length")
+
+        timeline = [0] * 1440
+
+        for i in range(len(arrivals)):
+            arrival_time = self.time_to_minutes(arrivals[i])
+            departure_time = self.time_to_minutes(departures[i])
+
+            for minute in range(arrival_time, departure_time):
+                timeline[minute] += 1
+
+        max_platforms = max(timeline)
+
+        return max_platforms
+
     def solve_by_interval_sorting(self, arrivals: List[str], departures: List[str]) -> int:
         """Returns the minimum number of train platforms required so that no train has to wait for a platform.
 
@@ -82,7 +120,7 @@ if __name__ == "__main__":
     solution = MinimumTrainPlatforms()
 
     for case, input in inputs.items():
-        result = solution.solve_by_interval_sorting(input[0], input[1])
+        result = solution.solve_by_brute_force(input[0], input[1])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")
