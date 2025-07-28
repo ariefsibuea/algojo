@@ -43,6 +43,49 @@ class MinimumTrainPlatforms:
 
         return max_platforms
 
+    def solve_by_event_timeline(self, arrivals: List[str], departures: List[str]) -> int:
+        """Returns the minimum number of train platforms required so that no train has to wait for a platform.
+
+        Args:
+            arrivals (List[str]): List of train arrival times in "HH:MM" format.
+            departures (List[str]): List of train departure times in "HH:MM" format.
+
+        Returns:
+            int: The minimum number of platforms required to accommodate all trains without waiting.
+
+        Raises:
+            ValueError: If arrivals or departures are missing, or if their lengths do not match.
+
+        Time Complexity:
+            O(n log n): Where n is the number of trains and we do sort which has O(n log n).
+
+        Space Complexity:
+            O(2n): We store 2 x n space for arrivals + departures when converting data into minutes.
+        """
+        if not arrivals or not departures:
+            raise ValueError("arrivals and departures are required")
+
+        if len(arrivals) != len(departures):
+            raise ValueError("arrivals and departures must have the same length")
+
+        events = []
+        for time in arrivals:
+            events.append((self.time_to_minutes(time), 1))
+        for time in departures:
+            events.append((self.time_to_minutes(time), -1))
+
+        events.sort(key=lambda x: (x[0], x[1]))
+
+        platform_in_use = 0
+        max_platforms = 0
+
+        for event in events:
+            _, event_type = event
+            platform_in_use += event_type
+            max_platforms = max(max_platforms, platform_in_use)
+
+        return max_platforms
+
     def solve_by_interval_sorting(self, arrivals: List[str], departures: List[str]) -> int:
         """Returns the minimum number of train platforms required so that no train has to wait for a platform.
 
@@ -120,7 +163,7 @@ if __name__ == "__main__":
     solution = MinimumTrainPlatforms()
 
     for case, input in inputs.items():
-        result = solution.solve_by_brute_force(input[0], input[1])
+        result = solution.solve_by_event_timeline(input[0], input[1])
         assert result == outputs[case], f"{case}: expected {outputs[case]}, got {result}"
 
     print("✅ All tests passed!")
