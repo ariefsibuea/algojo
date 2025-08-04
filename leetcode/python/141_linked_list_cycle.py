@@ -18,16 +18,16 @@ class ListNode:
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         """Determines if a linked list contains a cycle using Floyd's Cycle Finding Algorithm.
-        
+
         Args:
             head (Optional[ListNode]): Head of the linked list.
-            
+
         Returns:
             bool: True if the linked list has a cycle, False otherwise.
-            
+
         Time Complexity:
             O(n): Where n is the number of nodes in the linked list.
-            
+
         Space Complexity:
             O(1): Only constant extra space is used for two pointers.
         """

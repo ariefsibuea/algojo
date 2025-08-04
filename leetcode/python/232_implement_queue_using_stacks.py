@@ -12,10 +12,10 @@ class MyQueue:
 
     def __init__(self):
         """Initializes the queue with two empty stacks.
-        
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): Initializes two empty lists.
         """
@@ -24,13 +24,13 @@ class MyQueue:
 
     def push(self, x: int) -> None:
         """Pushes an element to the back of the queue using stacks.
-        
+
         Args:
             x (int): The element to add to the queue.
-            
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): Only adds one element to the stack.
         """
@@ -38,13 +38,13 @@ class MyQueue:
 
     def pop(self) -> int:
         """Removes the element from the front of the queue and returns it.
-        
+
         Returns:
             int: The element at the front of the queue.
-            
+
         Time Complexity:
             O(n): Amortized O(1) per operation, but occasionally O(n) when stack_2 is empty.
-            
+
         Space Complexity:
             O(1): No additional space beyond the stacks themselves.
         """
@@ -55,13 +55,13 @@ class MyQueue:
 
     def peek(self) -> int:
         """Returns the element at the front of the queue without removing it.
-        
+
         Returns:
             int: The element at the front of the queue.
-            
+
         Time Complexity:
             O(n): Amortized O(1) per operation, but occasionally O(n) when stack_2 is empty.
-            
+
         Space Complexity:
             O(1): No additional space beyond the stacks themselves.
         """
@@ -72,13 +72,13 @@ class MyQueue:
 
     def empty(self) -> bool:
         """Checks if the queue is empty.
-        
+
         Returns:
             bool: True if the queue is empty, False otherwise.
-            
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): No additional space used.
         """

@@ -11,16 +11,16 @@ from typing import Any, List
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         """Evaluates the value of an arithmetic expression in Reverse Polish Notation (RPN).
-        
+
         Args:
             tokens (List[str]): An array of strings representing arithmetic expression in RPN.
-            
+
         Returns:
             int: Result of evaluating the expression.
-            
+
         Time Complexity:
             O(n): Where n is the number of tokens, as each token is processed once.
-            
+
         Space Complexity:
             O(n): In the worst case, the stack may store up to n/2 numbers.
         """

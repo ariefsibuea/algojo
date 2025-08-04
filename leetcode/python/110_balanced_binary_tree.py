@@ -19,16 +19,16 @@ class TreeNode:
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         """Determines if a binary tree is height-balanced (subtrees of every node differ in height by no more than one).
-        
+
         Args:
             root (Optional[TreeNode]): Root node of binary tree.
-            
+
         Returns:
             bool: True if tree is height-balanced, False otherwise.
-            
+
         Time Complexity:
             O(n): Where n is the number of nodes in the tree, as we visit each node once.
-            
+
         Space Complexity:
             O(h): Where h is the height of the tree due to the recursion stack.
         """

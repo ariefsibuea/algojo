@@ -18,16 +18,16 @@ class ListNode:
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         """Reverses a singly linked list using an iterative approach.
-        
+
         Args:
             head (Optional[ListNode]): The head node of the singly linked list.
-            
+
         Returns:
             Optional[ListNode]: The new head node of the reversed linked list.
-            
+
         Time Complexity:
             O(n): Where n is the number of nodes in the list, as each node is visited once.
-            
+
         Space Complexity:
             O(1): Only constant extra space is used for pointers.
         """

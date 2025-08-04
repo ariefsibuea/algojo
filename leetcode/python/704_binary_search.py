@@ -11,17 +11,17 @@ from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         """Implements binary search to find a target value in a sorted array.
-        
+
         Args:
             nums (List[int]): Array of integers sorted in ascending order.
             target (int): Target value to search for.
-            
+
         Returns:
             int: Index if target exists in nums, otherwise -1.
-            
+
         Time Complexity:
             O(log n): Where n is the length of the nums array.
-            
+
         Space Complexity:
             O(1): Only constant extra space is used for pointers.
         """

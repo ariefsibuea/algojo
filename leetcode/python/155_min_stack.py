@@ -58,10 +58,10 @@ class MinStack:
 
     def __init__(self):
         """Initializes the stack with an empty list.
-        
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): Initializes an empty list.
         """
@@ -69,13 +69,13 @@ class MinStack:
 
     def push(self, val: int) -> None:
         """Pushes an element onto the stack while tracking the minimum value.
-        
+
         Args:
             val (int): The value to push onto the stack.
-            
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): Only stores one additional tuple.
         """
@@ -87,10 +87,10 @@ class MinStack:
 
     def pop(self) -> None:
         """Removes the top element from the stack.
-        
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): No additional space used.
         """
@@ -98,13 +98,13 @@ class MinStack:
 
     def top(self) -> int:
         """Returns the top element of the stack without removing it.
-        
+
         Returns:
             int: The value at the top of the stack.
-            
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): No additional space used.
         """
@@ -112,13 +112,13 @@ class MinStack:
 
     def getMin(self) -> int:
         """Returns the minimum element in the stack.
-        
+
         Returns:
             int: The minimum value in the stack.
-            
+
         Time Complexity:
             O(1): Constant time operation.
-            
+
         Space Complexity:
             O(1): No additional space used.
         """

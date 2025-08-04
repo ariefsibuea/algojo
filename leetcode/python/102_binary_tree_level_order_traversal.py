@@ -20,16 +20,16 @@ class TreeNode:
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         """Returns the level order traversal of a binary tree's nodes' values.
-        
+
         Args:
             root (Optional[TreeNode]): Root node of binary tree, can be None.
-            
+
         Returns:
             List[List[int]]: List of lists containing node values at each level from top to bottom.
-            
+
         Time Complexity:
             O(n): Where n is the number of nodes in the binary tree.
-            
+
         Space Complexity:
             O(n): Where the queue stores up to n nodes in the worst case.
         """

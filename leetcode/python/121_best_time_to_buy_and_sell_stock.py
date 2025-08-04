@@ -11,16 +11,16 @@ from typing import List
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         """Finds the maximum profit by buying and selling a stock once at optimal days.
-        
+
         Args:
             prices (List[int]): Array of stock prices where prices[i] is the price on day i.
-            
+
         Returns:
             int: Maximum profit that can be achieved or 0 if no profit is possible.
-            
+
         Time Complexity:
             O(n): Where n is the length of prices array, as we traverse the array once.
-            
+
         Space Complexity:
             O(1): Only constant extra space is used for variables.
         """

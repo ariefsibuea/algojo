@@ -11,19 +11,19 @@ from typing import List
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """Merges two sorted arrays nums1 and nums2 into a single sorted array in-place.
-        
+
         Args:
             nums1 (List[int]): The first sorted array with extra space at the end.
             m (int): The number of actual elements in nums1.
             nums2 (List[int]): The second sorted array.
             n (int): The number of elements in nums2.
-            
+
         Returns:
             None: Modifies nums1 in-place to contain all elements from both arrays in sorted order.
-            
+
         Time Complexity:
             O(m + n): Each element in nums1 and nums2 is processed once.
-            
+
         Space Complexity:
             O(1): No extra data structure is used.
         """

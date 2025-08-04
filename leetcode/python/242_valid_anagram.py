@@ -11,17 +11,17 @@ from typing import Any
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         """Determines if two strings are anagrams of each other.
-        
+
         Args:
             s (str): The first string to compare.
             t (str): The second string to compare.
-            
+
         Returns:
             bool: True if the strings are anagrams, False otherwise.
-            
+
         Time Complexity:
             O(n): Where n is the length of the strings, as we iterate through each character.
-            
+
         Space Complexity:
             O(1): Fixed-size space for character count (at most 26 lowercase letters).
         """

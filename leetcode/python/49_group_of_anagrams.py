@@ -12,16 +12,16 @@ from typing import List
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         """Groups strings that are anagrams of each other from a given list.
-        
+
         Args:
             strs (List[str]): A list of strings to be grouped.
-            
+
         Returns:
             List[List[str]]: A list of lists where each inner list contains strings that are anagrams of each other.
-            
+
         Time Complexity:
             O(N * K): Where N is the length of input array and K is the maximum length of a string in the input.
-            
+
         Space Complexity:
             O(N * K): Space used to store frequency tuples and grouped anagrams.
         """

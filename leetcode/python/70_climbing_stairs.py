@@ -11,16 +11,16 @@ from typing import Any
 class Solution:
     def climbStairs(self, n: int) -> int:
         """Calculates the number of distinct ways to climb n stairs, taking either 1 or 2 steps at a time.
-        
+
         Args:
             n (int): Number of stairs to climb, where 1 <= n <= 45.
-            
+
         Returns:
             int: Number of distinct ways to climb the stairs.
-            
+
         Time Complexity:
             O(n): We iterate through the sequence n times.
-            
+
         Space Complexity:
             O(1): Only constant extra space is used regardless of input size.
         """

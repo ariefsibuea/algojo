@@ -11,17 +11,17 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """Finds two numbers in the given list that add up to the target and returns their indices.
-        
+
         Args:
             nums (List[int]): List of integers to search through.
             target (int): Target sum to find.
-            
+
         Returns:
             List[int]: Indices of the two numbers that add up to target.
-            
+
         Time Complexity:
             O(n): Each element is visited once in a single pass through the list.
-            
+
         Space Complexity:
             O(n): In the worst case, all elements are stored in the hash table.
         """

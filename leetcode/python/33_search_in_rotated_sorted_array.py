@@ -11,17 +11,17 @@ from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         """Searches for a target value in a rotated sorted array and returns its index.
-        
+
         Args:
             nums (List[int]): The rotated sorted array of integers.
             target (int): The target value to search for.
-            
+
         Returns:
             int: The index of target if it exists in nums, otherwise -1.
-            
+
         Time Complexity:
             O(log n): Where n is the length of the array, as each iteration halves the search space.
-            
+
         Space Complexity:
             O(1): Only constant extra space is used for pointers.
         """

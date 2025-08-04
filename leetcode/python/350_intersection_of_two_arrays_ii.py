@@ -11,17 +11,17 @@ from typing import List
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         """Finds the intersection of two arrays, including duplicate elements.
-        
+
         Args:
             nums1 (List[int]): The first list of integers.
             nums2 (List[int]): The second list of integers.
-            
+
         Returns:
             List[int]: A list containing the intersection of nums1 and nums2, with duplicates.
-            
+
         Time Complexity:
             O(n + m): Where n and m are the lengths of nums1 and nums2 respectively.
-            
+
         Space Complexity:
             O(min(n, m)): Space used for the hash map and result list.
         """
