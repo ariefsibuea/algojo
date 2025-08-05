@@ -28,12 +28,13 @@ authors = [
     {name = "Arief Putra",email = "sibuearief@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<4.0"
 dependencies = [
     "black[jupyter] (>=25.1.0,<26.0.0)",
     "ruff (>=0.12.3,<0.13.0)",
     "pydocstyle (>=6.3.0,<7.0.0)",
-    "isort (>=6.0.1,<7.0.0)"
+    "isort (>=6.0.1,<7.0.0)",
+    "docformatter (>=1.7.7,<2.0.0)"
 ]
 
 

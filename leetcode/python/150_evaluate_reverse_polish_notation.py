@@ -3,6 +3,22 @@ LeetCode Problem : Evaluate Reverse Polish Notation
 Topic            : Array, Math, Stack
 Level            : Medium
 URL              : https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
+Description      : You are given an array of strings tokens that represents an arithmetic expression in a Reverse
+        Polish Notation. Evaluate the expression. Return an integer that represents the value of the expression.
+Examples         :
+        Example 1:
+        Input: tokens = ["2","1","+","3","*"]
+        Output: 9
+        Explanation: ((2 + 1) * 3) = 9
+
+        Example 2:
+        Input: tokens = ["4","13","5","/","+"]
+        Output: 6
+        Explanation: (4 + (13 / 5)) = 6
+
+        Example 3:
+        Input: tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+        Output: 22
 """
 
 from typing import Any, List
