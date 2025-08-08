@@ -34,7 +34,7 @@ func lengthOfLongestSubstring(s string) int {
 	start := 0
 
 	for i, c := range s {
-		if _, ok := charMap[c]; ok {
+		if _, ok := charMap[c]; ok && charMap[c] >= start {
 			start = charMap[c] + 1
 		}
 
@@ -68,6 +68,10 @@ func RunTestLongestSubstringWithoutRepeatingCharacters() {
 		"case-3": {
 			s:      "pwwkew",
 			expect: 3,
+		},
+		"case-4": {
+			s:      "abba",
+			expect: 2,
 		},
 	}
 
