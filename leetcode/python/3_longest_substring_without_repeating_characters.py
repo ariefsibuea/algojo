@@ -3,8 +3,7 @@ LeetCode Problem : Longest Substring Without Repeating Characters
 Topic            : Hash Table, String, Sliding Window
 Level            : Medium
 URL              : https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
-Description      : Given a string s, find the length of the longest substring without duplicate characters. Notice that
-    the answer must be a substring, not a subsequence.
+Description      : Given a string s, find the length of the longest substring without duplicate characters.
 Examples         :
     Example 1:
     Input: s = "abcabcbb"

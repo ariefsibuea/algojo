@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-/**
+/*
 LeetCode Problem : Two Sum
 Topic            : Array, Hash Table
 Level            : Easy
@@ -26,7 +26,7 @@ Examples         :
     Example 3:
     Input: nums = [3,3], target = 6
     Output: [0,1]
-**/
+*/
 
 func twoSum(nums []int, target int) []int {
 	numExists := make(map[int]int)
@@ -44,24 +44,24 @@ func twoSum(nums []int, target int) []int {
 
 func RunTestTwoSum() {
 	testCases := map[string]struct {
-		nums     []int
-		target   int
-		expected []int
+		nums   []int
+		target int
+		expect []int
 	}{
 		"case-1": {
-			nums:     []int{2, 7, 11, 15},
-			target:   9,
-			expected: []int{0, 1},
+			nums:   []int{2, 7, 11, 15},
+			target: 9,
+			expect: []int{0, 1},
 		},
 		"case-2": {
-			nums:     []int{3, 2, 4},
-			target:   6,
-			expected: []int{1, 2},
+			nums:   []int{3, 2, 4},
+			target: 6,
+			expect: []int{1, 2},
 		},
 		"case-3": {
-			nums:     []int{3, 3},
-			target:   6,
-			expected: []int{0, 1},
+			nums:   []int{3, 3},
+			target: 6,
+			expect: []int{0, 1},
 		},
 	}
 
@@ -70,8 +70,8 @@ func RunTestTwoSum() {
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
 		result = twoSum(testCase.nums, testCase.target)
-		if !EqualSlices(result, testCase.expected) {
-			fmt.Printf("=== FAILED: expected = %v - got = %v\n", testCase.expected, result)
+		if !EqualSlices(result, testCase.expect) {
+			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
 			os.Exit(1)
 		}
 		fmt.Printf("=== PASSED\n")
