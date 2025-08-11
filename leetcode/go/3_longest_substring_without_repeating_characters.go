@@ -39,13 +39,13 @@ func lengthOfLongestSubstring(s string) int {
 		}
 
 		charMap[c] = i
-		maxLength = max(maxLength, (i-start)+1)
+		maxLength = maxInt(maxLength, (i-start)+1)
 	}
 
 	return maxLength
 }
 
-func max(n, t int) int {
+func maxInt(n, t int) int {
 	if n > t {
 		return n
 	}

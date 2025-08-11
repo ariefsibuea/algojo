@@ -45,4 +45,5 @@ func (r SolutionRunner) List() {
 func (r *SolutionRunner) registerSolution() {
 	r.tests["TwoSum"] = RunTestTwoSum
 	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
+	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
 }
