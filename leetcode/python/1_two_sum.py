@@ -2,7 +2,7 @@
 LeetCode Problem : Two Sum
 Topic            : Array, Hash Table
 Level            : Easy
-URL              : https://leetcode.com/problems/two-sum/description
+URL              : https://leetcode.com/problems/two-sum
 Description      : Given an array of integers nums and an integer target, return indices of the two numbers such that
     they add up to target. You may assume that each input would have exactly one solution, and you may not use the same
     element twice. You can return the answer in any order.
@@ -47,7 +47,7 @@ class Solution:
             if complement in nums_map:
                 return [nums_map[complement], i]
             nums_map[num] = i
-        return nums_map
+        return []
 
 
 def run_tests():

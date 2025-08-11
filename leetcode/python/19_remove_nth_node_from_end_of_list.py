@@ -2,7 +2,7 @@
 LeetCode Problem : Remove Nth Node From End of List
 Topic            : Linked List, Two Pointers
 Level            : Medium
-URL              : https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+URL              : https://leetcode.com/problems/remove-nth-node-from-end-of-list
 Description      : Given the head of a linked list, remove the nth node from the end of the list and return its head.
 Examples         :
         Example 1:

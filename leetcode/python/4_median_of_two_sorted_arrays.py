@@ -21,7 +21,7 @@ from typing import List
 
 
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float | None:
         """Finds the median of two sorted arrays using a binary search approach to partition the arrays efficiently.
 
         Args:
