@@ -2,7 +2,7 @@
 LeetCode Problem : Intersection of Two Arrays II
 Topic            : Array, Hash Table, Two Pointers, Binary Search, Sorting
 Level            : Easy
-URL              : https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+URL              : https://leetcode.com/problems/intersection-of-two-arrays-ii/
 Description      : Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in
         the result must appear as many times as it shows in both arrays and you may return the result in any order.
 Examples         :

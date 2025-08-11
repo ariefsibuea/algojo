@@ -2,7 +2,7 @@
 LeetCode Problem : Implement Queue using Stacks
 Topic            : Stack, Design, Queue
 Level            : Easy
-URL              : https://leetcode.com/problems/implement-queue-using-stacks/description
+URL              : https://leetcode.com/problems/implement-queue-using-stacks
 Description      : Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should
         support all the functions of a normal queue (push, peek, pop, and empty). Implement the MyQueue class with
         methods:

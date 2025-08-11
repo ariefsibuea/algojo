@@ -2,7 +2,7 @@
 LeetCode Problem : Linked List Cycle
 Topic            : Hash Table, Linked List, Two Pointers
 Level            : Easy
-URL              : https://leetcode.com/problems/linked-list-cycle/description/
+URL              : https://leetcode.com/problems/linked-list-cycle/
 Description      : Given head, the head of a linked list, determine if the linked list has a cycle in it. There is a
         cycle in a linked list if there is some node in the list that can be reached again by continuously following the
         next pointer. Return true if there is a cycle in the linked list. Otherwise, return false.

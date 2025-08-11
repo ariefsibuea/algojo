@@ -2,7 +2,7 @@
 LeetCode Problem : Invert Binary Tree
 Topic            : Tree, Depth-First Search, Breadth-First Search, Binary Tree
 Level            : Easy
-URL              : https://leetcode.com/problems/invert-binary-tree/description/
+URL              : https://leetcode.com/problems/invert-binary-tree/
 Description      : Given the root of a binary tree, invert the tree, and return its root.
 Examples         :
         Example 1:

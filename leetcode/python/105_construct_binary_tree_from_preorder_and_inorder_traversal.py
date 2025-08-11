@@ -2,7 +2,7 @@
 LeetCode Problem : Construct Binary Tree from Preorder and Inorder Traversal
 Topic            : Tree, Array, Hash Table, Divide and Conquer, Binary Tree
 Level            : Medium
-URL              : https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+URL              : https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
 Description      : Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary
         tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.
 Examples         :

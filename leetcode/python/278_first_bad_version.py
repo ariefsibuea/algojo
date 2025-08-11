@@ -2,7 +2,7 @@
 LeetCode Problem : First Bad Version
 Topic            : Binary Search, Interactive
 Level            : Easy
-URL              : https://leetcode.com/problems/first-bad-version/description
+URL              : https://leetcode.com/problems/first-bad-version
 Description      : You are a product manager and currently leading a team to develop a new product. Unfortunately, the
         latest version of your product fails the quality check. Since each version is developed based on the previous
         version, all the versions after a bad version are also bad. Given n versions [1, 2, ..., n], you want to find

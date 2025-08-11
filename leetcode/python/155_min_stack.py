@@ -2,7 +2,7 @@
 LeetCode Problem : Min Stack
 Topic            : Stack, Design
 Level            : Medium
-URL              : https://leetcode.com/problems/min-stack/description/
+URL              : https://leetcode.com/problems/min-stack/
 Description      : Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
         Implement the MinStack class with methods:
         - MinStack() initializes the stack object

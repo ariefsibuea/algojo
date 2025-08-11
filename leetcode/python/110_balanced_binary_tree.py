@@ -2,7 +2,7 @@
 LeetCode Problem : Balanced Binary Tree
 Topic            : Tree, Depth-First Search, Binary Tree
 Level            : Easy
-URL              : https://leetcode.com/problems/balanced-binary-tree/description/
+URL              : https://leetcode.com/problems/balanced-binary-tree/
 Description      : Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary
         tree is defined as a binary tree in which the left and right subtrees of every node differ in height by no more
         than 1.

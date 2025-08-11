@@ -2,7 +2,7 @@
 LeetCode Problem : Reverse Linked List
 Topic            : Linked List, Recursion
 Level            : Easy
-URL              : https://leetcode.com/problems/reverse-linked-list/description/
+URL              : https://leetcode.com/problems/reverse-linked-list/
 Description      : Given the head of a singly linked list, reverse the list, and return the reversed list.
 Examples         :
         Example 1:

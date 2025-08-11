@@ -2,7 +2,7 @@
 LeetCode Problem : Flood Fill
 Topic            : Array, Depth-First Search, Breadth-First Search, Matrix
 Level            : Easy
-URL              : https://leetcode.com/problems/flood-fill/description/
+URL              : https://leetcode.com/problems/flood-fill/
 Description      : An image is represented by an m x n integer grid image where image[i][j] represents the pixel value
         of the image. You are also given three integers sr, sc, and color. You should perform a flood fill on the
         image starting from the pixel image[sr][sc]. To perform a flood fill, consider the starting pixel, plus any
