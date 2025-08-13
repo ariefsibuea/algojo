@@ -47,4 +47,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
 	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
 	r.tests["MaxArea"] = RunTestMaxArea
+	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
 }
