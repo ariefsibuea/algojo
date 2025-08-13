@@ -49,4 +49,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["MaxArea"] = RunTestMaxArea
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
 	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
+	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 }
