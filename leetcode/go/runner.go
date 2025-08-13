@@ -50,4 +50,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
 	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
+	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 }
