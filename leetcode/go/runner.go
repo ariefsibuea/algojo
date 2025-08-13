@@ -48,4 +48,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
 	r.tests["MaxArea"] = RunTestMaxArea
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
+	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
 }
