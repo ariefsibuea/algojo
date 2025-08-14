@@ -53,4 +53,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
 	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
+	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 }
