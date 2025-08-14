@@ -51,4 +51,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
+	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
 }
