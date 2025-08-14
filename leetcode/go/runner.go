@@ -52,4 +52,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
+	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
 }
