@@ -55,4 +55,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 	r.tests["InvertBinaryTree"] = RunTestInvertTree
+	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 }
