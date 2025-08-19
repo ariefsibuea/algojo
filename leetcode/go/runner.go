@@ -58,4 +58,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["BinarySearch"] = RunTestBinarySearch
 	r.tests["FloodFill"] = RunTestFloodFill
+	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 }
