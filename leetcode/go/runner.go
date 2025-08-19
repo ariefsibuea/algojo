@@ -59,4 +59,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["BinarySearch"] = RunTestBinarySearch
 	r.tests["FloodFill"] = RunTestFloodFill
 	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
+	r.tests["BalancedBinaryTree"] = RunTestBinarySearch
 }
