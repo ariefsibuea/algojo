@@ -20,7 +20,7 @@ Examples         :
         Output: [0]
 """
 
-from typing import Any, Optional
+from typing import Optional
 
 
 # Default definition for singly-linked list.
