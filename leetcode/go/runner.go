@@ -57,4 +57,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["InvertBinaryTree"] = RunTestInvertTree
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["BinarySearch"] = RunTestBinarySearch
+	r.tests["FloodFill"] = RunTestFloodFill
 }
