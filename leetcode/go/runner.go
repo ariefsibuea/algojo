@@ -61,4 +61,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 	r.tests["BalancedBinaryTree"] = RunTestBinarySearch
 	r.tests["LinkedListCycle"] = RunTestHasCycle
+	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
 }
