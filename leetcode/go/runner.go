@@ -63,4 +63,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["LinkedListCycle"] = RunTestHasCycle
 	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
 	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
+	r.tests["RansomNote"] = RunTestCanConstructRansomNote
 }
