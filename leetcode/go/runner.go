@@ -64,4 +64,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
 	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
 	r.tests["RansomNote"] = RunTestCanConstructRansomNote
+	r.tests["ClimbingStairs"] = RunTestClimbStairs
 }
