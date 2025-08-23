@@ -8,7 +8,10 @@ import (
 
 func main() {
 	var solution = flag.String("solution", "", "Name of the solution to run (e.g., TwoSum)")
+	flag.StringVar(solution, "s", *solution, "Alias for -solution")
+
 	var list = flag.Bool("list", false, "List all available solutions")
+	flag.BoolVar(list, "l", *list, "Alias for -list")
 
 	flag.Parse()
 
@@ -20,9 +23,9 @@ func main() {
 	}
 
 	if *solution == "" {
-		fmt.Println("Please specify a solution to run with --solution flag")
-		fmt.Println("Example: go run . --solution TwoSum")
-		fmt.Println("Use --list to see available solutions")
+		fmt.Println("Please specify a solution to run with -solution flag")
+		fmt.Println("Example: go run . -solution TwoSum")
+		fmt.Println("Use -list to see available solutions")
 		os.Exit(1)
 	}
 

@@ -43,26 +43,26 @@ func (r SolutionRunner) List() {
 }
 
 func (r *SolutionRunner) registerSolution() {
-	r.tests["TwoSum"] = RunTestTwoSum
-	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
-	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
-	r.tests["MaxArea"] = RunTestMaxArea
-	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
-	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
-	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
-	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
-	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
-	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
-	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
-	r.tests["InvertBinaryTree"] = RunTestInvertTree
-	r.tests["ValidAnagram"] = RunTestIsValidAnagram
-	r.tests["BinarySearch"] = RunTestBinarySearch
-	r.tests["FloodFill"] = RunTestFloodFill
-	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 	r.tests["BalancedBinaryTree"] = RunTestBinarySearch
-	r.tests["LinkedListCycle"] = RunTestHasCycle
-	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
-	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
-	r.tests["RansomNote"] = RunTestCanConstructRansomNote
+	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
+	r.tests["BinarySearch"] = RunTestBinarySearch
 	r.tests["ClimbingStairs"] = RunTestClimbStairs
+	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
+	r.tests["FloodFill"] = RunTestFloodFill
+	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
+	r.tests["InvertBinaryTree"] = RunTestInvertTree
+	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
+	r.tests["LinkedListCycle"] = RunTestHasCycle
+	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
+	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
+	r.tests["MaxArea"] = RunTestMaxArea
+	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
+	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
+	r.tests["RansomNote"] = RunTestCanConstructRansomNote
+	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
+	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
+	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
+	r.tests["TwoSum"] = RunTestTwoSum
+	r.tests["ValidAnagram"] = RunTestIsValidAnagram
+	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 }
