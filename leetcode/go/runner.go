@@ -46,7 +46,10 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["BalancedBinaryTree"] = RunTestBinarySearch
 	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
 	r.tests["BinarySearch"] = RunTestBinarySearch
+	r.tests["BtreeInorderTraversal"] = RunTestBtreeInorderTraversal
+	r.tests["ClimbingStairs"] = RunTestClimbStairs
 	r.tests["ContainsDuplicate"] = RunTestContainsDuplicate
+	r.tests["DesignTwitter"] = RunTestDesignTwitter
 	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
 	r.tests["FloodFill"] = RunTestFloodFill
 	r.tests["GroupAnagrams"] = RunTestGroupAnagrams
@@ -64,10 +67,8 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
 	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
+	r.tests["TopKFrequentElements"] = RunTestTopKFrequentElements
 	r.tests["TwoSum"] = RunTestTwoSum
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
-	r.tests["TopKFrequentElements"] = RunTestTopKFrequentElements
-	r.tests["DesignTwitter"] = RunTestDesignTwitter
-	r.tests["BtreeInorderTraversal"] = RunTestBtreeInorderTraversal
 }
