@@ -71,4 +71,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["TwoSum"] = RunTestTwoSum
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
+	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
 }

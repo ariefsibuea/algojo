@@ -65,11 +65,11 @@ func RunTestBtreeInorderTraversal() {
 		expect []int
 	}{
 		"case-1": {
-			root:   btreeCase1(),
+			root:   p94BtreeCase1(),
 			expect: []int{1, 3, 2},
 		},
 		"case-2": {
-			root:   btreeCase2(),
+			root:   p94BtreeCase2(),
 			expect: []int{4, 2, 6, 5, 7, 1, 3, 9, 8},
 		},
 	}
@@ -88,14 +88,14 @@ func RunTestBtreeInorderTraversal() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func btreeCase1() *P94TreeNode {
+func p94BtreeCase1() *P94TreeNode {
 	root := &P94TreeNode{Val: 1}
 	root.Right = &P94TreeNode{Val: 2}
 	root.Right.Left = &P94TreeNode{Val: 3}
 	return root
 }
 
-func btreeCase2() *P94TreeNode {
+func p94BtreeCase2() *P94TreeNode {
 	root := &P94TreeNode{Val: 1}
 	root.Left = &P94TreeNode{Val: 2}
 	root.Left.Left = &P94TreeNode{Val: 4}
