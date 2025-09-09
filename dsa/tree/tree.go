@@ -14,5 +14,7 @@ func main() {
 	// RunInOrderNonRecursive()
 
 	// RunPostOrder()
-	RunPostOrderNonRecursive()
+	// RunPostOrderNonRecursive()
+
+	RunLevelOrder()
 }
