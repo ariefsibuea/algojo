@@ -38,7 +38,3 @@ func TowersOfHanoi(n int, from, to, aux string) {
 	// move n-1 disks from 'aux' to 'to' using 'from' as auxiliary
 	TowersOfHanoi(n-1, aux, to, from)
 }
-
-func main() {
-	TowersOfHanoi(3, "A", "B", "C")
-}
