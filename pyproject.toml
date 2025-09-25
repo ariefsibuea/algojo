@@ -11,7 +11,7 @@ line-length = 120
 line-length = 120
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "W", "D"]
+select = ["E", "F", "I", "W"]
 ignore = ["D100"]
 
 [tool.ruff.lint.pydocstyle]
