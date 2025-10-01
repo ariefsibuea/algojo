@@ -49,6 +49,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["BtreeInorderTraversal"] = RunTestBtreeInorderTraversal
 	r.tests["ClimbingStairs"] = RunTestClimbStairs
 	r.tests["ContainsDuplicate"] = RunTestContainsDuplicate
+	r.tests["CourseSchedule"] = RunTestCourseSchedule
 	r.tests["DesignTwitter"] = RunTestDesignTwitter
 	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
 	r.tests["FloodFill"] = RunTestFloodFill
@@ -69,8 +70,8 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
 	r.tests["TopKFrequentElements"] = RunTestTopKFrequentElements
 	r.tests["TwoSum"] = RunTestTwoSum
+	r.tests["TwoSumII"] = RunTestTwoSumII
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
-	r.tests["CourseSchedule"] = RunTestCourseSchedule
 }
