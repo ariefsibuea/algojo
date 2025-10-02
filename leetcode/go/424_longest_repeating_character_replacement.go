@@ -18,6 +18,7 @@ package main
  * 					Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
  * 					The substring "BBBB" has the longest repeating letters, which is 4.
  * 					There may exists other ways to achieve this answer too.
+ * Reference		: https://www.hellointerview.com/learn/code/sliding-window/longest-repeating-character-replacement
  */
 
 func characterReplacement(s string, k int) int {
