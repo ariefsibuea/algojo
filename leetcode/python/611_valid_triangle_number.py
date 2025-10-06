@@ -20,7 +20,7 @@ from typing import List
 
 class Solution:
     def triangleNumber(self, nums: List[int]) -> int:
-        nums.sort() # sort asecending
+        nums.sort()  # sort asecending
 
         nums_len = len(nums)
         count = 0
@@ -45,12 +45,8 @@ class Solution:
 
 def run_tests():
     inputs = {
-        "case_1": [
-            [2,2,3,4]
-        ],
-        "case_2": [
-            [4,2,3,4]
-        ],
+        "case_1": [[2, 2, 3, 4]],
+        "case_2": [[4, 2, 3, 4]],
     }
     outputs = {
         "case_1": 3,

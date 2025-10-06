@@ -65,6 +65,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 	r.tests["MinimumWindowSubstring"] = RunTestMinWindowSubstring
+	r.tests["MoveZeroes"] = RunTestMoveZeroes
 	r.tests["RansomNote"] = RunTestCanConstructRansomNote
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
