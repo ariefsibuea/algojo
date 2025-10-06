@@ -43,6 +43,7 @@ func (r SolutionRunner) List() {
 }
 
 func (r *SolutionRunner) registerSolution() {
+	r.tests["3Sum"] = RunTestThreeSum
 	r.tests["BalancedBinaryTree"] = RunTestBinarySearch
 	r.tests["BestTimeToBuyAndSellStock"] = RunTestMaxProfit
 	r.tests["BinarySearch"] = RunTestBinarySearch
@@ -74,5 +75,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
-	r.tests["3Sum"] = RunTestThreeSum
+	r.tests["ValidTriangleNumber"] = RunTestValidTriangleNumber
 }

@@ -1,8 +1,10 @@
 """
 LeetCode Problem : <Title>
-Topic            : <Algorithm Category>
+Topics           : <Algorithm Categories>
 Level            : <Easy | Medium | Hard>
 URL              : <URL>
+Description      : <Description>
+Examples         : <Examples>
 """
 
 from typing import Any

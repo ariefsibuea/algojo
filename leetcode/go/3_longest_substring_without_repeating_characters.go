@@ -9,7 +9,7 @@ import (
  * LeetCode Problem : Longest Substring Without Repeating Characters
  * Topics           : Hash Table, String, Sliding Window
  * Level            : Medium
- * URL              : https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+ * URL              : https://leetcode.com/problems/longest-substring-without-repeating-characters
  * Description      : Given a string s, find the length of the longest substring without duplicate characters.
  * Examples         :
  * 					Example 1:
@@ -39,17 +39,10 @@ func lengthOfLongestSubstring(s string) int {
 		}
 
 		charMap[c] = i
-		maxLength = maxInt(maxLength, (i-start)+1)
+		maxLength = max(maxLength, (i-start)+1)
 	}
 
 	return maxLength
-}
-
-func maxInt(n, t int) int {
-	if n > t {
-		return n
-	}
-	return t
 }
 
 func RunTestLongestSubstringWithoutRepeatingCharacters() {

@@ -60,7 +60,13 @@ def run_tests():
         "case_4": ["au"],
         "case_5": ["dvdf"],
     }
-    outputs = {"case_1": 3, "case_2": 1, "case_3": 3, "case_4": 2, "case_5": 3}
+    outputs = {
+        "case_1": 3,
+        "case_2": 1,
+        "case_3": 3,
+        "case_4": 2,
+        "case_5": 3,
+    }
 
     solution = Solution()
 
