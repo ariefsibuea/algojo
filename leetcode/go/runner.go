@@ -71,6 +71,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
 	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
 	r.tests["TopKFrequentElements"] = RunTestTopKFrequentElements
+	r.tests["TrappingRainWater"] = RunTestTrappingRainWater
 	r.tests["TwoSum"] = RunTestTwoSum
 	r.tests["TwoSumII"] = RunTestTwoSumII
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
