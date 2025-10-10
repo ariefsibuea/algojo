@@ -1,11 +1,24 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 /**
  * LeetCode Problem : Fruit Into Baskets
- * Topics           : Array, Hash Table, Sliding Window, Weekly Contest 102
+ * Topics           : Array, Hash Table, Sliding Window
  * Level            : Medium
  * URL              : https://leetcode.com/problems/fruit-into-baskets
- * Description      :
+ * Description      : You are given an integer array fruits where fruits[i] is the type of fruit the i-th tree
+ * 					produces. You want to collect as much fruit as possible. However, the owner has some strict rules
+ * 					that you must follow:
+ *                    - You only have two baskets, and each basket can only hold a single type of fruit.
+ *                    - Starting from any tree of your choice, you must pick exactly one fruit from every tree
+ * 						(including the start tree) while moving to the right.
+ *                    - The picked fruits must fit in one of your baskets.
+ *                    - Once you reach a tree with fruit that cannot fit in your baskets, you must stop.
+ *                  Given the integer array fruits, return the maximum number of fruits you can pick.
  * Examples         :
  * 					Example 1:
  * 					Input: fruits = [1,2,1]
@@ -50,4 +63,37 @@ func totalFruit(fruits []int) int {
 	}
 
 	return maxNFruit
+}
+
+func RunTestTotalFruit() {
+	testCases := map[string]struct {
+		fruits []int
+		expect int
+	}{
+		"case-1": {
+			fruits: []int{1, 2, 1},
+			expect: 3,
+		},
+		"case-2": {
+			fruits: []int{0, 1, 2, 2},
+			expect: 3,
+		},
+		"case-3": {
+			fruits: []int{1, 2, 3, 2, 2},
+			expect: 4,
+		},
+	}
+
+	for name, testCase := range testCases {
+		fmt.Printf("RUN %s\n", name)
+		result := totalFruit(testCase.fruits)
+		if !EqualNumbers(result, testCase.expect) {
+			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
+			os.Exit(1)
+		}
+		fmt.Printf("=== PASSED\n")
+
+	}
+
+	fmt.Printf("\n✅ All tests passed!\n")
 }

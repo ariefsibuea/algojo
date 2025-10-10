@@ -23,24 +23,24 @@ from typing import List
 class Solution:
     def trap(self, height: List[int]) -> int:
         left, right = 0, len(height) - 1
-        maxLeft, maxRight = height[left], height[right]
+        max_left, max_right = height[left], height[right]
 
-        trappedCount = 0
+        trapped_count = 0
         while left < right:
-            if maxLeft < maxRight:
+            if max_left < max_right:
                 left += 1
-                if maxLeft < height[left]:
-                    maxLeft = height[left]
+                if max_left < height[left]:
+                    max_left = height[left]
                 else:
-                    trappedCount += maxLeft - height[left]
+                    trapped_count += max_left - height[left]
             else:
                 right -= 1
-                if maxRight < height[right]:
-                    maxRight = height[right]
+                if max_right < height[right]:
+                    max_right = height[right]
                 else:
-                    trappedCount += maxRight - height[right]
+                    trapped_count += max_right - height[right]
 
-        return trappedCount
+        return trapped_count
 
 
 def run_tests():

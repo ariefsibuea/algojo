@@ -29,13 +29,13 @@ from typing import List
 class Solution:
     def twoSumII(self, numbers: List[int], target: int) -> List[int]:
         left, right = 0, len(numbers) - 1
-        sumResult = 0
+        sum_result = 0
 
         while left < right:
-            sumResult = numbers[left] + numbers[right]
-            if sumResult == target:
+            sum_result = numbers[left] + numbers[right]
+            if sum_result == target:
                 return [left + 1, right + 1]
-            elif sumResult > target:
+            elif sum_result > target:
                 right -= 1
             else:
                 left += 1

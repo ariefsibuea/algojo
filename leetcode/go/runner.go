@@ -54,6 +54,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["DesignTwitter"] = RunTestDesignTwitter
 	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
 	r.tests["FloodFill"] = RunTestFloodFill
+	r.tests["FruitIntoBasket"] = RunTestTotalFruit
 	r.tests["GroupAnagrams"] = RunTestGroupAnagrams
 	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
 	r.tests["InvertBinaryTree"] = RunTestInvertTree
@@ -76,6 +77,6 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["TwoSumII"] = RunTestTwoSumII
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
-	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
 	r.tests["ValidTriangleNumber"] = RunTestValidTriangleNumber
+	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
 }
