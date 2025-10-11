@@ -60,6 +60,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["InvertBinaryTree"] = RunTestInvertTree
 	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
 	r.tests["LinkedListCycle"] = RunTestHasCycle
+	r.tests["LongestRepeatingCharacterReplacement"] = RunTestCharacterReplacement
 	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
 	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 	r.tests["MaxArea"] = RunTestMaxArea

@@ -1,11 +1,19 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 /**
  * LeetCode Problem : Longest Repeating Character Replacement
  * Topics           : Hash Table, String, Sliding Window
  * Level            : Medium
  * URL              : https://leetcode.com/problems/longest-repeating-character-replacement
- * Description      :
+ * Description      : You are given a string s and an integer k. You can choose any character of the string and change
+ * 					it to any other uppercase English character. You can perform this operation at most k times.
+ * 					Return the length of the longest substring containing the same letter you can get after performing
+ * 					the above operations.
  * Examples         :
  * 					Example 1:
  * 					Input: s = "ABAB", k = 2
@@ -46,4 +54,36 @@ func characterReplacement(s string, k int) int {
 	}
 
 	return maxLength
+}
+
+func RunTestCharacterReplacement() {
+	testCases := map[string]struct {
+		s      string
+		k      int
+		expect int
+	}{
+		"case-1": {
+			s:      "ABAB",
+			k:      2,
+			expect: 4,
+		},
+		"case-2": {
+			s:      "AABABBA",
+			k:      1,
+			expect: 4,
+		},
+	}
+
+	for name, testCase := range testCases {
+		fmt.Printf("RUN %s\n", name)
+		result := characterReplacement(testCase.s, testCase.k)
+		if !EqualNumbers(result, testCase.expect) {
+			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
+			os.Exit(1)
+		}
+		fmt.Printf("=== PASSED\n")
+
+	}
+
+	fmt.Printf("\n✅ All tests passed!\n")
 }
