@@ -1,0 +1,48 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+type TestFunc func()
+
+type SolutionRunner struct {
+	tests map[string]TestFunc
+}
+
+func NewSolutionRunner() SolutionRunner {
+	runner := SolutionRunner{
+		tests: make(map[string]TestFunc),
+	}
+
+	runner.registerSolution()
+
+	return runner
+}
+
+func (r SolutionRunner) Run(solutionName string) error {
+	testFunc, exists := r.tests[solutionName]
+	if !exists {
+		return fmt.Errorf("solution '%s' does not exist", solutionName)
+	}
+
+	fmt.Printf("Running solution: %s\n", solutionName)
+	fmt.Println(strings.Repeat("=", 50))
+	testFunc()
+	fmt.Println()
+
+	return nil
+}
+
+func (r SolutionRunner) List() {
+	fmt.Println("Available solutions:")
+	for name := range r.tests {
+		fmt.Printf("  - %s\n", name)
+	}
+}
+
+func (r *SolutionRunner) registerSolution() {
+	r.tests["MinimumCacheCapacity"] = RunTestMinCacheCapacity
+	r.tests["MinimumSum10"] = RunTestMinimumSum10
+}

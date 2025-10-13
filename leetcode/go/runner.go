@@ -58,6 +58,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["GroupAnagrams"] = RunTestGroupAnagrams
 	r.tests["ImplementQueueUsingStacks"] = RunTestImplementQueueUsingStacks
 	r.tests["InvertBinaryTree"] = RunTestInvertTree
+	r.tests["IsPalindrome"] = RunTestIsPalindrome
 	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
 	r.tests["LinkedListCycle"] = RunTestHasCycle
 	r.tests["LongestRepeatingCharacterReplacement"] = RunTestCharacterReplacement
