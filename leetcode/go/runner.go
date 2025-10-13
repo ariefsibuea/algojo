@@ -82,4 +82,5 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 	r.tests["ValidTriangleNumber"] = RunTestValidTriangleNumber
 	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
+	r.tests["MergeIntervals"] = RunTestMergeIntervals
 }
