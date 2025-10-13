@@ -65,6 +65,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
 	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 	r.tests["MaxArea"] = RunTestMaxArea
+	r.tests["MaximumSubarray"] = RunTestMaxSubArray
 	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 	r.tests["MinimumWindowSubstring"] = RunTestMinWindowSubstring
