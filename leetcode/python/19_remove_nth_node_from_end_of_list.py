@@ -5,17 +5,17 @@ Level            : Medium
 URL              : https://leetcode.com/problems/remove-nth-node-from-end-of-list
 Description      : Given the head of a linked list, remove the nth node from the end of the list and return its head.
 Examples         :
-        Example 1:
-        Input: head = [1,2,3,4,5], n = 2
-        Output: [1,2,3,5]
+                    Example 1:
+                    Input: head = [1,2,3,4,5], n = 2
+                    Output: [1,2,3,5]
 
-        Example 2:
-        Input: head = [1], n = 1
-        Output: []
+                    Example 2:
+                    Input: head = [1], n = 1
+                    Output: []
 
-        Example 3:
-        Input: head = [1,2], n = 1
-        Output: [1]
+                    Example 3:
+                    Input: head = [1,2], n = 1
+                    Output: [1]
 """
 
 from typing import Optional
@@ -24,8 +24,8 @@ from typing import Optional
 # Default definition of singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+        self.val: int = val
+        self.next: "ListNode" = next
 
 
 class Solution:
@@ -49,19 +49,23 @@ class Solution:
             O(1): only constant extra space is used
         """
 
-        dummy = ListNode(0, head)
-        slow = fast = dummy
+        preHead = ListNode(0, head)
+        slow = fast = preHead
 
-        # constraint 1 <= n <= linked list size
-        for _ in range(n):
+        i: int = 0
+        while i < n:
             fast = fast.next
+            i += 1
+
+        if i < n - 1:
+            return preHead.next
 
         while fast.next:
             fast = fast.next
             slow = slow.next
 
         slow.next = slow.next.next
-        return dummy.next
+        return preHead.next
 
 
 def run_tests():

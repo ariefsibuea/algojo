@@ -35,28 +35,27 @@ func threeSum(nums []int) [][]int {
 	len := len(nums)
 	result := make([][]int, 0)
 
-	for i := 0; i < len-2; i++ {
-		n := nums[i]
-		if i > 0 && n == nums[i-1] {
+	for i := 0; i < len-2 && nums[i] <= 0; i++ {
+		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
 
-		left := i + 1
-		right := len - 1
+		j := i + 1
+		k := len - 1
 
-		for left < right {
-			sumResult := n + nums[left] + nums[right]
-			if sumResult < 0 {
-				left += 1
-			} else if sumResult > 0 {
-				right -= 1
-			} else {
-				result = append(result, []int{n, nums[left], nums[right]})
+		for j < k {
+			switch sum := nums[i] + nums[j] + nums[k]; {
+			case sum > 0:
+				k -= 1
+			case sum < 0:
+				j += 1
+			default:
+				result = append(result, []int{nums[i], nums[j], nums[k]})
 
-				for left < right && nums[left] == nums[left+1] {
-					left += 1
+				for j < k && nums[j] == nums[j+1] {
+					j += 1
 				}
-				left += 1
+				j += 1
 			}
 		}
 	}

@@ -5,26 +5,27 @@ import (
 	"os"
 )
 
-/*
-LeetCode Problem : Valid Palindrome
-Topic            : Two Pointers, String
-Level            : Easy
-URL              : https://leetcode.com/problems/valid-palindrome/
-Description      : A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and
-        removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include
-        letters and numbers. Given a string s, return true if it is a palindrome, or false otherwise.
-Examples         :
-        Example 1:
-        Input: s = "A man, a plan, a canal: Panama"
-        Output: true
-        Explanation: "amanaplanacanalpanama" is a palindrome.
-
-        Example 2:
-        Input: s = "race a car"
-        Output: false
-        Explanation: "raceacar" is not a palindrome.
-
-*/
+/**
+ * LeetCode 		: Valid Palindrome
+ * Topic            : Two Pointers, String
+ * Level            : Easy
+ * URL              : https://leetcode.com/problems/valid-palindrome/
+ * Description      : A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and
+ * 					removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric
+ * 					characters include letters and numbers. Given a string s, return true if it is a palindrome, or
+ * 					false otherwise.
+ * Examples         :
+ * 					Example 1:
+ * 					Input: s = "A man, a plan, a canal: Panama"
+ * 					Output: true
+ * 					Explanation: "amanaplanacanalpanama" is a palindrome.
+ *
+ * 					Example 2:
+ * 					Input: s = "race a car"
+ * 					Output: false
+ * 					Explanation: "raceacar" is not a palindrome.
+ *
+ */
 
 func isValidPalindrome(s string) bool {
 	start := 0
@@ -52,13 +53,13 @@ func isValidPalindrome(s string) bool {
 func isAlphanumericASCII(c byte) bool {
 	switch {
 	// numbers
-	case 48 <= c && c <= 57:
+	case '0' <= c && c <= '9':
 		return true
 	// uppercase alphabet
-	case 65 <= c && c <= 90:
+	case 'A' <= c && c <= 'Z':
 		return true
 	// lowercase alphabet
-	case 97 <= c && c <= 122:
+	case 'a' <= c && c <= 'z':
 		return true
 	default:
 		return false
@@ -66,10 +67,10 @@ func isAlphanumericASCII(c byte) bool {
 }
 
 func toLowerCaseASCII(c byte) byte {
-	if (48 <= c && c <= 57) || (97 <= c && c <= 122) {
-		return c
+	if 'A' <= c && c <= 'Z' {
+		return c + ('a' - 'A')
 	}
-	return c + 32
+	return c
 }
 
 func RunTestIsValidPalindrome() {

@@ -5,25 +5,26 @@ import (
 	"os"
 )
 
-/*
-LeetCode Problem : Remove Nth Node From End of List
-Topic            : Linked List, Two Pointers
-Level            : Medium
-URL              : https://leetcode.com/problems/remove-nth-node-from-end-of-list
-Description      : Given the head of a linked list, remove the nth node from the end of the list and return its head.
-Examples         :
-        Example 1:
-        Input: head = [1,2,3,4,5], n = 2
-        Output: [1,2,3,5]
-
-        Example 2:
-        Input: head = [1], n = 1
-        Output: []
-
-        Example 3:
-        Input: head = [1,2], n = 1
-        Output: [1]
-*/
+/**
+ * LeetCode Problem : Remove Nth Node From End of List
+ * Topic            : Linked List, Two Pointers
+ * Level            : Medium
+ * URL              : https://leetcode.com/problems/remove-nth-node-from-end-of-list
+ * Description      : Given the head of a linked list, remove the nth node from the end of the list and return its
+ * 					head.
+ * Examples         :
+ * 					Example 1:
+ * 					Input: head = [1,2,3,4,5], n = 2
+ * 					Output: [1,2,3,5]
+ *
+ * 					Example 2:
+ * 					Input: head = [1], n = 1
+ * 					Output: []
+ *
+ * 					Example 3:
+ * 					Input: head = [1,2], n = 1
+ * 					Output: [1]
+ */
 
 type ListNode struct {
 	Val  int
@@ -31,16 +32,21 @@ type ListNode struct {
 }
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	dummy := &ListNode{
+	preHead := &ListNode{
 		Val:  0,
 		Next: head,
 	}
 
-	fast := dummy
-	slow := dummy
+	fast := preHead
+	slow := preHead
 
-	for i := 0; i < n && fast.Next != nil; i++ {
+	i := 0
+	for i < n && fast.Next != nil {
 		fast = fast.Next
+		i += 1
+	}
+	if i < n-1 {
+		return preHead.Next
 	}
 
 	for fast.Next != nil {
@@ -49,7 +55,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 
 	slow.Next = slow.Next.Next
-	return dummy.Next
+	return preHead.Next
 }
 
 func RunTestRemoveNthFromEnd() {
