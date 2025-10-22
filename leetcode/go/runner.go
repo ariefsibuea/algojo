@@ -61,18 +61,21 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["IsPalindrome"] = RunTestIsPalindrome
 	r.tests["IsValidParentheses"] = RunTestIsValidParentheses
 	r.tests["LinkedListCycle"] = RunTestHasCycle
+	r.tests["LongestIncreasingSubsequence"] = RunTestLongestIncreasingSubsequence
 	r.tests["LongestRepeatingCharacterReplacement"] = RunTestCharacterReplacement
 	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
 	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 	r.tests["MaxArea"] = RunTestMaxArea
 	r.tests["MaximumSubarray"] = RunTestMaxSubArray
 	r.tests["MedianOfTwoSortedArrays"] = RunTestFindMedianSortedArrays
+	r.tests["MergeIntervals"] = RunTestMergeIntervals
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 	r.tests["MinimumWindowSubstring"] = RunTestMinWindowSubstring
 	r.tests["MoveZeroes"] = RunTestMoveZeroes
 	r.tests["RansomNote"] = RunTestCanConstructRansomNote
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
+	r.tests["ReverseWordsInAString"] = RunTestReverseWordsInAString
 	r.tests["SearchInRotatedSortedArray"] = RunTestSearchInRotatedSortedArray
 	r.tests["TopKFrequentElements"] = RunTestTopKFrequentElements
 	r.tests["TrappingRainWater"] = RunTestTrappingRainWater
@@ -82,6 +85,4 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 	r.tests["ValidTriangleNumber"] = RunTestValidTriangleNumber
 	r.tests["ValidateBinarySearchTree"] = RunTestIsValidBST
-	r.tests["MergeIntervals"] = RunTestMergeIntervals
-	r.tests["LongestIncreasingSubsequence"] = RunTestLongestIncreasingSubsequence
 }
