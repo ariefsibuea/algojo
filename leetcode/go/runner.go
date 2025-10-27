@@ -82,6 +82,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["TrappingRainWater"] = RunTestTrappingRainWater
 	r.tests["TwoSum"] = RunTestTwoSum
 	r.tests["TwoSumII"] = RunTestTwoSumII
+	r.tests["TwoSumLessThanK"] = RunTestTwoSumLessThanK
 	r.tests["ValidAnagram"] = RunTestIsValidAnagram
 	r.tests["ValidPalindrome"] = RunTestIsValidPalindrome
 	r.tests["ValidTriangleNumber"] = RunTestValidTriangleNumber
