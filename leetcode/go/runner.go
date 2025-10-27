@@ -53,6 +53,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["CourseSchedule"] = RunTestCourseSchedule
 	r.tests["DesignTwitter"] = RunTestDesignTwitter
 	r.tests["FirstBadVersion"] = RunTestFirstBadVersion
+	r.tests["FirstUniqueCharacterInAString"] = RunTestFirstUniqChar
 	r.tests["FloodFill"] = RunTestFloodFill
 	r.tests["FruitIntoBasket"] = RunTestTotalFruit
 	r.tests["GroupAnagrams"] = RunTestGroupAnagrams
