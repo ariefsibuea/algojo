@@ -64,6 +64,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["LinkedListCycle"] = RunTestHasCycle
 	r.tests["LongestIncreasingSubsequence"] = RunTestLongestIncreasingSubsequence
 	r.tests["LongestRepeatingCharacterReplacement"] = RunTestCharacterReplacement
+	r.tests["LongestSubstringWithAtMostKDistinctCharacters"] = RunTestLengthOfLongestSubstringKDistinct
 	r.tests["LongestSubstringWithoutRepeatingCharacters"] = RunTestLongestSubstringWithoutRepeatingCharacters
 	r.tests["LowestCommonAncestor"] = RunTestLowestCommonAncestor
 	r.tests["LowestCommonAncestorIII"] = RunTestLowestCommonAncestorIII
@@ -74,6 +75,7 @@ func (r *SolutionRunner) registerSolution() {
 	r.tests["MergeTwoSortedLists"] = RunTestMergeTwoSortedLists
 	r.tests["MinimumWindowSubstring"] = RunTestMinWindowSubstring
 	r.tests["MoveZeroes"] = RunTestMoveZeroes
+	r.tests["NumberOfZeroFilledSubarrays"] = RunTestZeroFilledSubarray
 	r.tests["RansomNote"] = RunTestCanConstructRansomNote
 	r.tests["RemoveDuplicatesFromSortedArray"] = RunTestRemoveDuplicatesFromSortedArray
 	r.tests["RemoveNthNodeFromEndOfList"] = RunTestRemoveNthFromEnd
