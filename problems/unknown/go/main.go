@@ -42,6 +42,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
 		"ValidAtmPin": RunTestValidAtmPin,
 		"NumericHash": RunTestNumericHash,
+		"MaxMinSums":  RunTestMaxMinSums,
 	}
 	r.RegisterSolutions(solutions)
 }
