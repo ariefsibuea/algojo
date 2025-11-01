@@ -39,6 +39,10 @@ const (
 	ContainsNonDigit        = 3
 	ContainsDuplicateDigit  = 4
 	ContainsSequentialDigit = 5
+
+	AscSeqMode  = 1
+	DescSeqMode = -1
+	NoSeqMode   = 0
 )
 
 func validatePin(atmpin string) int {
@@ -47,7 +51,7 @@ func validatePin(atmpin string) int {
 	}
 
 	digitHasExist := map[rune]bool{}
-	seqAscCount, seqDescCount := 0, 0
+	sequentialCount, sequentialMode := 0, NoSeqMode
 
 	for i, c := range atmpin {
 		if c < '0' || c > '9' {
@@ -60,18 +64,27 @@ func validatePin(atmpin string) int {
 		digitHasExist[c] = true
 
 		if i > 0 {
-			if c == rune(atmpin[i-1]+1) {
-				seqAscCount += 1
-			} else if c == rune(atmpin[i-1]-1) {
-				seqDescCount += 1
-			} else {
-				seqAscCount = 0
-				seqDescCount = 0
+			switch c {
+			case rune(atmpin[i-1] + 1):
+				if sequentialMode != AscSeqMode {
+					sequentialMode = AscSeqMode
+					sequentialCount = 0
+				}
+				sequentialCount += 1
+			case rune(atmpin[i-1] - 1):
+				if sequentialMode != DescSeqMode {
+					sequentialMode = DescSeqMode
+					sequentialCount = 0
+				}
+				sequentialCount += 1
+			default:
+				sequentialMode = NoSeqMode
+				sequentialCount = 0
 			}
 		}
 	}
 
-	if seqAscCount == len(atmpin)-1 || seqDescCount == len(atmpin)-1 {
+	if sequentialMode != NoSeqMode && sequentialCount == len(atmpin)-1 {
 		return ContainsSequentialDigit
 	}
 
