@@ -40,7 +40,8 @@ func main() {
 
 func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
-		"ValidateAtmPin": RunTestValidatePin,
+		"ValidAtmPin": RunTestValidAtmPin,
+		"NumericHash": RunTestNumericHash,
 	}
 	r.RegisterSolutions(solutions)
 }

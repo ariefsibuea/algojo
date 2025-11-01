@@ -8,7 +8,7 @@ import (
 )
 
 /**
- * Problem 			: Validate ATM PIN
+ * Problem 			: Valid ATM PIN
  * Description      :
  * 					Implement a function to validate an ATM PIN with the following rules:
  * 						- Must be 4 or 6 digits long
@@ -94,7 +94,7 @@ func validatePin(atmpin string) int {
 	return Valid6DigitPin
 }
 
-func RunTestValidatePin() {
+func RunTestValidAtmPin() {
 	testCases := map[string]struct {
 		atmpin string
 		expect int
