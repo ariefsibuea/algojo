@@ -85,6 +85,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"TwoSumLessThanK":                               RunTestTwoSumLessThanK,
 		"ValidAnagram":                                  RunTestIsValidAnagram,
 		"ValidPalindrome":                               RunTestIsValidPalindrome,
+		"ValidPalindromeII":                             RunTestValidPalindromeII,
 		"ValidTriangleNumber":                           RunTestValidTriangleNumber,
 		"ValidWordAbbreviation":                         RunTestValidWordAbbreviation,
 		"ValidateBinarySearchTree":                      RunTestIsValidBST,
