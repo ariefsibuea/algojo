@@ -78,6 +78,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"RemoveNthNodeFromEndOfList":                    RunTestRemoveNthFromEnd,
 		"ReverseWordsInAString":                         RunTestReverseWordsInAString,
 		"SearchInRotatedSortedArray":                    RunTestSearchInRotatedSortedArray,
+		"StrobogrammaticNumber":                         RunTestStrobogrammaticNumber,
 		"TopKFrequentElements":                          RunTestTopKFrequentElements,
 		"TrappingRainWater":                             RunTestTrappingRainWater,
 		"TwoSum":                                        RunTestTwoSum,
