@@ -80,6 +80,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"ReverseWordsInAString":                         RunTestReverseWordsInAString,
 		"SearchInRotatedSortedArray":                    RunTestSearchInRotatedSortedArray,
 		"StrobogrammaticNumber":                         RunTestStrobogrammaticNumber,
+		"SquaresOfASortedArray":                         RunTestSquaresOfASortedArray,
 		"TopKFrequentElements":                          RunTestTopKFrequentElements,
 		"TrappingRainWater":                             RunTestTrappingRainWater,
 		"TwoSum":                                        RunTestTwoSum,
