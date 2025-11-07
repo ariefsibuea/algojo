@@ -55,6 +55,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"FloodFill":                                     RunTestFloodFill,
 		"FruitIntoBasket":                               RunTestTotalFruit,
 		"GroupAnagrams":                                 RunTestGroupAnagrams,
+		"HappyNumber":                                   RunTestHappyNumber,
 		"ImplementQueueUsingStacks":                     RunTestImplementQueueUsingStacks,
 		"InvertBinaryTree":                              RunTestInvertTree,
 		"IsPalindrome":                                  RunTestIsPalindrome,
