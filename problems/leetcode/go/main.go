@@ -72,6 +72,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MedianOfTwoSortedArrays":                       RunTestFindMedianSortedArrays,
 		"MergeIntervals":                                RunTestMergeIntervals,
 		"MergeTwoSortedLists":                           RunTestMergeTwoSortedLists,
+		"MiddleOfTheLinkedList":                         RunTestMiddleOfTheLinkedList,
 		"MinimumWindowSubstring":                        RunTestMinWindowSubstring,
 		"MoveZeroes":                                    RunTestMoveZeroes,
 		"NumberOfZeroFilledSubarrays":                   RunTestZeroFilledSubarray,
