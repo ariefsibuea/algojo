@@ -9,7 +9,7 @@ import (
 
 /**
  * LeetCode Problem : Two Sum
- * Topic            : Array, Hash Table
+ * Topics           : Array, Hash Table
  * Level            : Easy
  * URL              : https://leetcode.com/problems/two-sum
  * Description      : Given an array of integers nums and an integer target, return indices of the two numbers such

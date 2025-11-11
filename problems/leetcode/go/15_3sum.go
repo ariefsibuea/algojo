@@ -13,7 +13,13 @@ import (
  * Topic            : Array, Two Pointers, Sorting
  * Level            : Medium
  * URL              : https://leetcode.com/problems/3sum
- * Description      :
+ * Description      : You are given an integer array nums. Your task is to find all unique triplets in the array where
+ * 					three numbers add up to zero.Specifically, you need to return all triplets [nums[i], nums[j],
+ * 					nums[k]] that satisfy these conditions:
+ * 						- The three indices must be different: i != j, i != k, and j != k
+ * 						- The sum equals zero: nums[i] + nums[j] + nums[k] == 0
+ * 						- The solution set must not contain duplicate triplets (even if the same values appear
+ * 							multiple times in the array)
  * Examples         :
  * 					Example 1:
  * 					Input: nums = [-1,0,1,2,-1,-4]

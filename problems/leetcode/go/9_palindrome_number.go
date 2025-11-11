@@ -12,8 +12,21 @@ import (
  * Topics           : Math
  * Level            : Easy
  * URL              : https://leetcode.com/problems/palindrome-number
- * Description      : <Description>
- * Examples         : <Examples>
+ * Description      : Given an integer x, you need to determine whether it is a palindrome. A palindrome integer reads
+ * 					the same backward as forward. Return true if x is a palindrome, and false otherwise.
+ * Examples         :
+ * 					Example 1:
+ * 					Input: 121
+ * 					Output: true
+ *
+ * 					Example 2:
+ * 					Input: -121
+ * 					Output: false
+ * 					Explanation: From left to right it reads -121, but from right to left it becomes 121-.
+ *
+ * 					Example 3:
+ * 					Input: 10
+ * 					Output: false
  */
 
 func isPalindrome(x int) bool {

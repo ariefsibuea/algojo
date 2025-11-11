@@ -8,6 +8,33 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+/*
+ * LeetCode Problem : Group Anagrams
+ * Topics           : Array, Hash Table, String, Sorting
+ * Level            : Medium
+ * URL              : https://leetcode.com/problems/group-anagrams
+ * Description      : You are given an array of strings strs. Your task is to group all the anagrams together and
+ * 					return them as a list of lists. Anagrams are words that contain the same characters but in
+ * 					different orders (for example, "eat" and "tea" are anagrams).
+ * Examples         :
+ * 					Example 1:
+ * 					Input: strs = ["eat","tea","tan","ate","nat","bat"]
+ * 					Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+ * 					Explanation:
+ * 						- There is no string in strs that can be rearranged to form "bat".
+ * 						- The strings "nat" and "tan" are anagrams as they can be rearranged to form each other.
+ * 						- The strings "ate", "eat", and "tea" are anagrams as they can be rearranged to form each
+ * 							other.
+ *
+ * 					Example 2:
+ * 					Input: strs = [""]
+ * 					Output: [[""]]
+ *
+ * 					Example 3:
+ * 					Input: strs = ["a"]
+ * 					Output: [["a"]]
+ */
+
 func groupAnagrams(strs []string) [][]string {
 	groups := make(map[string][]string)
 	for _, str := range strs {
