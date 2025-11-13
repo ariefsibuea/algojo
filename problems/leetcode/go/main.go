@@ -73,6 +73,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MaxArea":                                       RunTestMaxArea,
 		"MaximumSubarray":                               RunTestMaxSubArray,
 		"MedianOfTwoSortedArrays":                       RunTestFindMedianSortedArrays,
+		"MeetingRooms":                                  RunTestMeetingRooms,
 		"MergeIntervals":                                RunTestMergeIntervals,
 		"MergeTwoSortedLists":                           RunTestMergeTwoSortedLists,
 		"MiddleOfTheLinkedList":                         RunTestMiddleOfTheLinkedList,
