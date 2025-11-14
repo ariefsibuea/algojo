@@ -24,12 +24,7 @@ import (
  * 					Output: false
  */
 
-type NodeP234 struct {
-	Val  int
-	Next *NodeP234
-}
-
-func isPalindromeLinkedList(head *NodeP234) bool {
+func isPalindromeLinkedList(head *ListNode) bool {
 	if head == nil {
 		return false
 	}
@@ -45,7 +40,7 @@ func isPalindromeLinkedList(head *NodeP234) bool {
 		slow = slow.Next
 	}
 
-	var prev, temp *NodeP234
+	var prev, temp *ListNode
 	var current = slow.Next
 
 	for current != nil {
@@ -68,7 +63,7 @@ func isPalindromeLinkedList(head *NodeP234) bool {
 
 func RunTestPalindromeLinkedList() {
 	testCases := map[string]struct {
-		head   *NodeP234
+		head   *ListNode
 		expect bool
 	}{
 		"case-1": {
@@ -94,16 +89,16 @@ func RunTestPalindromeLinkedList() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func mockHeadP234Case1() *NodeP234 {
-	node4 := &NodeP234{Val: 1}
-	node3 := &NodeP234{Val: 2, Next: node4}
-	node2 := &NodeP234{Val: 2, Next: node3}
-	head := &NodeP234{Val: 1, Next: node2}
+func mockHeadP234Case1() *ListNode {
+	node4 := &ListNode{Val: 1}
+	node3 := &ListNode{Val: 2, Next: node4}
+	node2 := &ListNode{Val: 2, Next: node3}
+	head := &ListNode{Val: 1, Next: node2}
 	return head
 }
 
-func mockHeadP234Case2() *NodeP234 {
-	node2 := &NodeP234{Val: 2}
-	head := &NodeP234{Val: 1, Next: node2}
+func mockHeadP234Case2() *ListNode {
+	node2 := &ListNode{Val: 2}
+	head := &ListNode{Val: 1, Next: node2}
 	return head
 }

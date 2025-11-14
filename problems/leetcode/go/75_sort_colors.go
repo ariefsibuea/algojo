@@ -1,5 +1,12 @@
 package main
 
+import (
+	"fmt"
+	"os"
+
+	"github.com/ariefsibuea/algojo/libs/go/cmp"
+)
+
 /**
  * LeetCode Problem : Sort Colors
  * Topic            : Array, Two Pointers, Sorting
@@ -19,7 +26,7 @@ package main
  * 					Output: [0,1,2]
  */
 
-func sortColors(nums []int) {
+func sortColors_DutchNationalFlag(nums []int) {
 	left, right := 0, len(nums)-1
 	index := 0
 
@@ -38,7 +45,7 @@ func sortColors(nums []int) {
 	}
 }
 
-func sortColorsSolutionI(nums []int) {
+func sortColors_TwoPassPartitioning(nums []int) {
 	index := 0
 
 	// sort the red
@@ -56,4 +63,32 @@ func sortColorsSolutionI(nums []int) {
 			index += 1
 		}
 	}
+}
+
+func RunTestSortColors() {
+	testCases := map[string]struct {
+		nums   []int
+		expect []int
+	}{
+		"case-1": {
+			nums:   []int{2, 0, 2, 1, 1, 0},
+			expect: []int{0, 0, 1, 1, 2, 2},
+		},
+		"case-2": {
+			nums:   []int{2, 0, 1},
+			expect: []int{0, 1, 2},
+		},
+	}
+
+	for name, testCase := range testCases {
+		fmt.Printf("RUN %s\n", name)
+		sortColors_DutchNationalFlag(testCase.nums)
+		if !cmp.EqualSlices(testCase.nums, testCase.expect) {
+			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, testCase.nums)
+			os.Exit(1)
+		}
+		fmt.Printf("=== PASSED\n")
+	}
+
+	fmt.Printf("\n✅ All tests passed!\n")
 }

@@ -15,17 +15,11 @@ import (
  * URL              : https://leetcode.com/problems/validate-binary-search-tree
  */
 
-type P98TreeNode struct {
-	Val   int
-	Left  *P98TreeNode
-	Right *P98TreeNode
-}
-
-func isValidBST(root *P98TreeNode) bool {
+func isValidBST(root *TreeNode) bool {
 	return dfsP98(root, math.MinInt, math.MaxInt)
 }
 
-func dfsP98(node *P98TreeNode, min, max int) bool {
+func dfsP98(node *TreeNode, min, max int) bool {
 	if node == nil {
 		return true
 	}
@@ -40,15 +34,15 @@ func dfsP98(node *P98TreeNode, min, max int) bool {
 
 func RunTestIsValidBST() {
 	testCases := map[string]struct {
-		root   *P98TreeNode
+		root   *TreeNode
 		expect bool
 	}{
 		"case-1": {
-			root:   p98BSTCase1(),
+			root:   mockInputP98Case1(),
 			expect: true,
 		},
 		"case-2": {
-			root:   p98BSTCase2(),
+			root:   mockInputP98Case2(),
 			expect: false,
 		},
 	}
@@ -67,18 +61,18 @@ func RunTestIsValidBST() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func p98BSTCase1() *P98TreeNode {
-	root := &P98TreeNode{Val: 2}
-	root.Left = &P98TreeNode{Val: 1}
-	root.Right = &P98TreeNode{Val: 3}
+func mockInputP98Case1() *TreeNode {
+	root := &TreeNode{Val: 2}
+	root.Left = &TreeNode{Val: 1}
+	root.Right = &TreeNode{Val: 3}
 	return root
 }
 
-func p98BSTCase2() *P98TreeNode {
-	root := &P98TreeNode{Val: 5}
-	root.Left = &P98TreeNode{Val: 1}
-	root.Right = &P98TreeNode{Val: 4}
-	root.Right.Left = &P98TreeNode{Val: 3}
-	root.Right.Right = &P98TreeNode{Val: 6}
+func mockInputP98Case2() *TreeNode {
+	root := &TreeNode{Val: 5}
+	root.Left = &TreeNode{Val: 1}
+	root.Right = &TreeNode{Val: 4}
+	root.Right.Left = &TreeNode{Val: 3}
+	root.Right.Right = &TreeNode{Val: 6}
 	return root
 }

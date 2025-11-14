@@ -33,13 +33,7 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
-type P235TreeNode struct {
-	Val   int
-	Left  *P235TreeNode
-	Right *P235TreeNode
-}
-
-func lowestCommonAncestor(root, p, q *P235TreeNode) *P235TreeNode {
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	current := root
 
 	for current != nil {
@@ -56,46 +50,46 @@ func lowestCommonAncestor(root, p, q *P235TreeNode) *P235TreeNode {
 }
 
 func RunTestLowestCommonAncestor() {
-	treeCase := &P235TreeNode{
+	treeCase := &TreeNode{
 		Val: 6,
-		Left: &P235TreeNode{
+		Left: &TreeNode{
 			Val: 2,
-			Left: &P235TreeNode{
+			Left: &TreeNode{
 				Val: 0,
 			},
-			Right: &P235TreeNode{
+			Right: &TreeNode{
 				Val:   4,
-				Left:  &P235TreeNode{Val: 3},
-				Right: &P235TreeNode{Val: 5},
+				Left:  &TreeNode{Val: 3},
+				Right: &TreeNode{Val: 5},
 			},
 		},
-		Right: &P235TreeNode{
+		Right: &TreeNode{
 			Val: 8,
-			Left: &P235TreeNode{
+			Left: &TreeNode{
 				Val: 7,
 			},
-			Right: &P235TreeNode{
+			Right: &TreeNode{
 				Val: 9,
 			},
 		},
 	}
 
 	testCases := map[string]struct {
-		root   *P235TreeNode
-		p      *P235TreeNode
-		q      *P235TreeNode
+		root   *TreeNode
+		p      *TreeNode
+		q      *TreeNode
 		expect int
 	}{
 		"case-1": {
 			root:   treeCase,
-			p:      &P235TreeNode{Val: 2},
-			q:      &P235TreeNode{Val: 8},
+			p:      &TreeNode{Val: 2},
+			q:      &TreeNode{Val: 8},
 			expect: 6,
 		},
 		"case-2": {
 			root:   treeCase,
-			p:      &P235TreeNode{Val: 2},
-			q:      &P235TreeNode{Val: 4},
+			p:      &TreeNode{Val: 2},
+			q:      &TreeNode{Val: 4},
 			expect: 2,
 		},
 	}

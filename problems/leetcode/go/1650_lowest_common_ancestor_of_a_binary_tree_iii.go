@@ -26,14 +26,14 @@ import (
  * 					the LCA definition.
  */
 
-type NodeP1650 struct {
+type Node struct {
 	val    int
-	left   *NodeP1650
-	right  *NodeP1650
-	parent *NodeP1650
+	left   *Node
+	right  *Node
+	parent *Node
 }
 
-func lowestCommonAncestorIII(p, q *NodeP1650) *NodeP1650 {
+func lowestCommonAncestorIII(p, q *Node) *Node {
 	ptr1, ptr2 := p, q
 
 	for ptr1 != ptr2 {
@@ -57,8 +57,8 @@ func RunTestLowestCommonAncestorIII() {
 	constructTreeP1650()
 
 	testCases := map[string]struct {
-		p      *NodeP1650
-		q      *NodeP1650
+		p      *Node
+		q      *Node
 		expect int
 	}{
 		"case-1": {
@@ -87,15 +87,15 @@ func RunTestLowestCommonAncestorIII() {
 }
 
 var (
-	root  = &NodeP1650{val: 3}
-	node2 = &NodeP1650{val: 5}
-	node3 = &NodeP1650{val: 1}
-	node4 = &NodeP1650{val: 6}
-	node5 = &NodeP1650{val: 2}
-	node6 = &NodeP1650{val: 0}
-	node7 = &NodeP1650{val: 8}
-	node8 = &NodeP1650{val: 7}
-	node9 = &NodeP1650{val: 4}
+	root  = &Node{val: 3}
+	node2 = &Node{val: 5}
+	node3 = &Node{val: 1}
+	node4 = &Node{val: 6}
+	node5 = &Node{val: 2}
+	node6 = &Node{val: 0}
+	node7 = &Node{val: 8}
+	node8 = &Node{val: 7}
+	node9 = &Node{val: 4}
 )
 
 func constructTreeP1650() {
@@ -122,15 +122,15 @@ func constructTreeP1650() {
 	node9.parent = node5
 }
 
-func case1P1650() []*NodeP1650 {
-	return []*NodeP1650{
+func case1P1650() []*Node {
+	return []*Node{
 		node2,
 		node3,
 	}
 }
 
-func case2P1650() []*NodeP1650 {
-	return []*NodeP1650{
+func case2P1650() []*Node {
+	return []*Node{
 		node2,
 		node9,
 	}

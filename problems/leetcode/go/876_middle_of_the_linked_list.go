@@ -26,12 +26,7 @@ import (
  * 					Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
  */
 
-type NodeP876 struct {
-	Val  int
-	Next *NodeP876
-}
-
-func middleNode(head *NodeP876) *NodeP876 {
+func middleNode(head *ListNode) *ListNode {
 	if head == nil {
 		return head
 	}
@@ -48,7 +43,7 @@ func middleNode(head *NodeP876) *NodeP876 {
 
 func RunTestMiddleOfTheLinkedList() {
 	testCases := map[string]struct {
-		head   *NodeP876
+		head   *ListNode
 		expect int
 	}{
 		"case-1": {
@@ -74,21 +69,21 @@ func RunTestMiddleOfTheLinkedList() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func mockHeadP876Case1() *NodeP876 {
-	node5 := &NodeP876{Val: 5}
-	node4 := &NodeP876{Val: 4, Next: node5}
-	node3 := &NodeP876{Val: 3, Next: node4}
-	node2 := &NodeP876{Val: 2, Next: node3}
-	head := &NodeP876{Val: 1, Next: node2}
+func mockHeadP876Case1() *ListNode {
+	node5 := &ListNode{Val: 5}
+	node4 := &ListNode{Val: 4, Next: node5}
+	node3 := &ListNode{Val: 3, Next: node4}
+	node2 := &ListNode{Val: 2, Next: node3}
+	head := &ListNode{Val: 1, Next: node2}
 	return head
 }
 
-func mockHeadP876Case2() *NodeP876 {
-	node6 := &NodeP876{Val: 6}
-	node5 := &NodeP876{Val: 5, Next: node6}
-	node4 := &NodeP876{Val: 4, Next: node5}
-	node3 := &NodeP876{Val: 3, Next: node4}
-	node2 := &NodeP876{Val: 2, Next: node3}
-	head := &NodeP876{Val: 1, Next: node2}
+func mockHeadP876Case2() *ListNode {
+	node6 := &ListNode{Val: 6}
+	node5 := &ListNode{Val: 5, Next: node6}
+	node4 := &ListNode{Val: 4, Next: node5}
+	node3 := &ListNode{Val: 3, Next: node4}
+	node2 := &ListNode{Val: 2, Next: node3}
+	head := &ListNode{Val: 1, Next: node2}
 	return head
 }

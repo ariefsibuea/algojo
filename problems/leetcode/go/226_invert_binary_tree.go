@@ -8,32 +8,26 @@ import (
 )
 
 /*
-LeetCode Problem : Invert Binary Tree
-Topic            : Tree, Depth-First Search, Breadth-First Search, Binary Tree
-Level            : Easy
-URL              : https://leetcode.com/problems/invert-binary-tree/
-Description      : Given the root of a binary tree, invert the tree, and return its root.
-Examples         :
-        Example 1:
-        Input: root = [4,2,7,1,3,6,9]
-        Output: [4,7,2,9,6,3,1]
+ * LeetCode Problem : Invert Binary Tree
+ * Topics           : Tree, Depth-First Search, Breadth-First Search, Binary Tree
+ * Level            : Easy
+ * URL              : https://leetcode.com/problems/invert-binary-tree/
+ * Description      : Given the root of a binary tree, invert the tree, and return its root.
+ * Examples         :
+ *        			Example 1:
+ *        			Input: root = [4,2,7,1,3,6,9]
+ *        			Output: [4,7,2,9,6,3,1]
+ *
+ *        			Example 2:
+ *        			Input: root = [2,1,3]
+ *        			Output: [2,3,1]
+ *
+ *        			Example 3:
+ *        			Input: root = []
+ *        			Output: []
+ */
 
-        Example 2:
-        Input: root = [2,1,3]
-        Output: [2,3,1]
-
-        Example 3:
-        Input: root = []
-        Output: []
-*/
-
-type P226TreeNode struct {
-	Val   int
-	Left  *P226TreeNode
-	Right *P226TreeNode
-}
-
-func invertTree(root *P226TreeNode) *P226TreeNode {
+func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
@@ -43,28 +37,28 @@ func invertTree(root *P226TreeNode) *P226TreeNode {
 }
 
 func RunTestInvertTree() {
-	treeCase1 := &P226TreeNode{
+	treeCase1 := &TreeNode{
 		Val: 4,
-		Left: &P226TreeNode{
+		Left: &TreeNode{
 			Val:   2,
-			Left:  &P226TreeNode{Val: 1},
-			Right: &P226TreeNode{Val: 3},
+			Left:  &TreeNode{Val: 1},
+			Right: &TreeNode{Val: 3},
 		},
-		Right: &P226TreeNode{
+		Right: &TreeNode{
 			Val:   7,
-			Left:  &P226TreeNode{Val: 6},
-			Right: &P226TreeNode{Val: 9},
+			Left:  &TreeNode{Val: 6},
+			Right: &TreeNode{Val: 9},
 		},
 	}
 
-	treeCase2 := &P226TreeNode{
+	treeCase2 := &TreeNode{
 		Val:   2,
-		Left:  &P226TreeNode{Val: 1},
-		Right: &P226TreeNode{Val: 3},
+		Left:  &TreeNode{Val: 1},
+		Right: &TreeNode{Val: 3},
 	}
 
 	testCases := map[string]struct {
-		root   *P226TreeNode
+		root   *TreeNode
 		expect []int
 	}{
 		"case-1": {
@@ -85,7 +79,7 @@ func RunTestInvertTree() {
 		fmt.Printf("RUN %s\n", name)
 
 		head := invertTree(testCase.root)
-		result := P266TraverseTree(head)
+		result := TraverseTreeP266(head)
 
 		if !cmp.EqualSlices(result, testCase.expect) {
 			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
@@ -97,14 +91,14 @@ func RunTestInvertTree() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func P266TraverseTree(head *P226TreeNode) []int {
+func TraverseTreeP266(head *TreeNode) []int {
 	result := []int{}
 
 	if head == nil {
 		return result
 	}
 
-	queue := []P226TreeNode{*head}
+	queue := []TreeNode{*head}
 
 	for len(queue) != 0 {
 		levelValues := []int{}

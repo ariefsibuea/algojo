@@ -7,13 +7,31 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
-type P94TreeNode struct {
-	Val   int
-	Left  *P94TreeNode
-	Right *P94TreeNode
-}
+/*
+ * Problem 			: Binary Tree Inorder Traversal
+ * Topics           : Stack, Tree, Depth-First Search, Binary Tree
+ * Level            : Easy
+ * URL              : https://leetcode.com/problems/binary-tree-inorder-traversal
+ * Description      :
+ * Examples         :
+ * 					Example 1:
+ * 					Input: root = [1,null,2,3]
+ * 					Output: [1,3,2]
+ *
+ * 					Example 2:
+ * 					Input: root = [1,2,3,4,5,null,8,null,null,6,7,9]
+ * 					Output: [4,2,6,5,7,1,3,9,8]
+ *
+ * 					Example 3:
+ * 					Input: root = []
+ * 					Output: []
+ *
+ * 					Example 4:
+ * 					Input: root = [1]
+ * 					Output: [1]
+ */
 
-func inorderTraversal(root *P94TreeNode) []int {
+func inorderTraversal(root *TreeNode) []int {
 	// Solution using recursive:
 	// nodeValues := []int{}
 	// return btreeInorderTraverse(root, nodeValues)
@@ -22,7 +40,7 @@ func inorderTraversal(root *P94TreeNode) []int {
 	return btreeInordertraverseIterative(root)
 }
 
-func btreeInorderTraverseRecursive(root *P94TreeNode, nodeValues []int) []int {
+func btreeInorderTraverseRecursive(root *TreeNode, nodeValues []int) []int {
 	if root == nil {
 		return nodeValues
 	}
@@ -34,9 +52,9 @@ func btreeInorderTraverseRecursive(root *P94TreeNode, nodeValues []int) []int {
 	return nodeValues
 }
 
-func btreeInordertraverseIterative(root *P94TreeNode) []int {
+func btreeInordertraverseIterative(root *TreeNode) []int {
 	result := []int{}
-	stack := []*P94TreeNode{}
+	stack := []*TreeNode{}
 	current := root
 
 	for current != nil || len(stack) > 0 {
@@ -63,15 +81,15 @@ func btreeInordertraverseIterative(root *P94TreeNode) []int {
 
 func RunTestBtreeInorderTraversal() {
 	testCases := map[string]struct {
-		root   *P94TreeNode
+		root   *TreeNode
 		expect []int
 	}{
 		"case-1": {
-			root:   p94BtreeCase1(),
+			root:   mockInputP94Case1(),
 			expect: []int{1, 3, 2},
 		},
 		"case-2": {
-			root:   p94BtreeCase2(),
+			root:   mockInputP94Case2(),
 			expect: []int{4, 2, 6, 5, 7, 1, 3, 9, 8},
 		},
 	}
@@ -90,22 +108,22 @@ func RunTestBtreeInorderTraversal() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func p94BtreeCase1() *P94TreeNode {
-	root := &P94TreeNode{Val: 1}
-	root.Right = &P94TreeNode{Val: 2}
-	root.Right.Left = &P94TreeNode{Val: 3}
+func mockInputP94Case1() *TreeNode {
+	root := &TreeNode{Val: 1}
+	root.Right = &TreeNode{Val: 2}
+	root.Right.Left = &TreeNode{Val: 3}
 	return root
 }
 
-func p94BtreeCase2() *P94TreeNode {
-	root := &P94TreeNode{Val: 1}
-	root.Left = &P94TreeNode{Val: 2}
-	root.Left.Left = &P94TreeNode{Val: 4}
-	root.Left.Right = &P94TreeNode{Val: 5}
-	root.Left.Right.Left = &P94TreeNode{Val: 6}
-	root.Left.Right.Right = &P94TreeNode{Val: 7}
-	root.Right = &P94TreeNode{Val: 3}
-	root.Right.Right = &P94TreeNode{Val: 8}
-	root.Right.Right.Left = &P94TreeNode{Val: 9}
+func mockInputP94Case2() *TreeNode {
+	root := &TreeNode{Val: 1}
+	root.Left = &TreeNode{Val: 2}
+	root.Left.Left = &TreeNode{Val: 4}
+	root.Left.Right = &TreeNode{Val: 5}
+	root.Left.Right.Left = &TreeNode{Val: 6}
+	root.Left.Right.Right = &TreeNode{Val: 7}
+	root.Right = &TreeNode{Val: 3}
+	root.Right.Right = &TreeNode{Val: 8}
+	root.Right.Right.Left = &TreeNode{Val: 9}
 	return root
 }

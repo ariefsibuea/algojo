@@ -18,3 +18,14 @@ func nextNode(node *ListNode) *ListNode {
 	}
 	return node.Next
 }
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+type Interval struct {
+	Start int
+	End   int
+}

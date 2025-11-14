@@ -29,13 +29,8 @@ import (
  * 					Output: [0]
  */
 
-type P21ListNode struct {
-	Val  int
-	Next *P21ListNode
-}
-
-func mergeTwoLists(list1 *P21ListNode, list2 *P21ListNode) *P21ListNode {
-	dummy := &P21ListNode{Val: 0}
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	dummy := &ListNode{Val: 0}
 	current := dummy
 
 	for list1 != nil && list2 != nil {
@@ -59,32 +54,32 @@ func mergeTwoLists(list1 *P21ListNode, list2 *P21ListNode) *P21ListNode {
 }
 
 func RunTestMergeTwoSortedLists() {
-	list1Case1 := &P21ListNode{
+	list1Case1 := &ListNode{
 		Val: 1,
-		Next: &P21ListNode{
+		Next: &ListNode{
 			Val: 2,
-			Next: &P21ListNode{
+			Next: &ListNode{
 				Val: 4,
 			},
 		},
 	}
-	list2Case1 := &P21ListNode{
+	list2Case1 := &ListNode{
 		Val: 1,
-		Next: &P21ListNode{
+		Next: &ListNode{
 			Val: 3,
-			Next: &P21ListNode{
+			Next: &ListNode{
 				Val: 4,
 			},
 		},
 	}
 
-	list2Case3 := &P21ListNode{
+	list2Case3 := &ListNode{
 		Val: 0,
 	}
 
 	testCases := map[string]struct {
-		list1  *P21ListNode
-		list2  *P21ListNode
+		list1  *ListNode
+		list2  *ListNode
 		expect []int
 	}{
 		"case-1": {

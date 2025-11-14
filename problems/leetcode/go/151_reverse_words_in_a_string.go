@@ -31,7 +31,7 @@ import (
  * 					reversed string.
  */
 
-func reverseWordsS1(s string) string {
+func reverseWords_TwoPointers(s string) string {
 	result := []rune{}
 	runes := []rune(s)
 
@@ -59,7 +59,7 @@ func reverseWordsS1(s string) string {
 	return string(result)
 }
 
-func reverseWordsS2(s string) string {
+func reverseWords_TwoPointersStringSplit(s string) string {
 	words := strings.Fields(s)
 
 	left, right := 0, len(words)-1
@@ -98,7 +98,7 @@ func RunTestReverseWordsInAString() {
 
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := reverseWordsS2(testCase.s)
+		result := reverseWords_TwoPointersStringSplit(testCase.s)
 		if !cmp.EqualStrings(result, testCase.expect) {
 			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
 			os.Exit(1)

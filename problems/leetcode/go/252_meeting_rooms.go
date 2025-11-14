@@ -13,8 +13,8 @@ import (
  * Topics           : Array, Sorting
  * Level            : Easy
  * URL              : https://neetcode.io/problems/meeting-schedule?list=neetcode150
- * Description      : Given an array of meeting time interval objects consisting of start and end times
- * 					[[start_1,end_1],[start_2,end_2],...] (start_i < end_i), determine if a person could add all
+ * Description      : Given an array of meeting time interval objects consisting of Start and end times
+ * 					[[Start_1,end_1],[Start_2,end_2],...] (Start_i < end_i), determine if a person could add all
  * 					meetings to their schedule without any conflicts.
  * 					Note: (0,8),(8,10) is not considered a conflict at 8
  * Examples         :
@@ -27,26 +27,21 @@ import (
  * 					Output: true
  */
 
-type IntervalP252 struct {
-	start int
-	end   int
-}
-
-func canAttendMeetings(intervals []IntervalP252) bool {
+func canAttendMeetings(intervals []Interval) bool {
 	if len(intervals) == 0 {
 		return true
 	}
 
 	sort.Slice(intervals, func(i, j int) bool {
-		return intervals[i].start < intervals[j].start
+		return intervals[i].Start < intervals[j].Start
 	})
 
 	var previous = intervals[0]
-	var current IntervalP252
+	var current Interval
 
 	for i := 1; i < len(intervals); i++ {
 		current = intervals[i]
-		if previous.end > current.start {
+		if previous.End > current.Start {
 			return false
 		}
 		previous = current
@@ -57,54 +52,54 @@ func canAttendMeetings(intervals []IntervalP252) bool {
 
 func RunTestMeetingRooms() {
 	testCases := map[string]struct {
-		intervals []IntervalP252
+		intervals []Interval
 		expect    bool
 	}{
 		"case-1": {
-			intervals: []IntervalP252{
-				{start: 0, end: 30},
-				{start: 5, end: 10},
-				{start: 15, end: 20},
+			intervals: []Interval{
+				{Start: 0, End: 30},
+				{Start: 5, End: 10},
+				{Start: 15, End: 20},
 			},
 			expect: false,
 		},
 		"case-2": {
-			intervals: []IntervalP252{
-				{start: 5, end: 8},
-				{start: 9, end: 15},
+			intervals: []Interval{
+				{Start: 5, End: 8},
+				{Start: 9, End: 15},
 			},
 			expect: true,
 		},
 		"case-3": {
-			intervals: []IntervalP252{
-				{start: 5, end: 8},
-				{start: 8, end: 15},
+			intervals: []Interval{
+				{Start: 5, End: 8},
+				{Start: 8, End: 15},
 			},
 			expect: true,
 		},
 		"case-4": {
-			intervals: []IntervalP252{
-				{start: 5, end: 8},
-				{start: 7, end: 15},
+			intervals: []Interval{
+				{Start: 5, End: 8},
+				{Start: 7, End: 15},
 			},
 			expect: false,
 		},
 		"case-5": {
-			intervals: []IntervalP252{
-				{start: 0, end: 15},
-				{start: 15, end: 30},
-				{start: 30, end: 45},
-				{start: 45, end: 60},
-				{start: 60, end: 75},
-				{start: 75, end: 90},
-				{start: 85, end: 100},
+			intervals: []Interval{
+				{Start: 0, End: 15},
+				{Start: 15, End: 30},
+				{Start: 30, End: 45},
+				{Start: 45, End: 60},
+				{Start: 60, End: 75},
+				{Start: 75, End: 90},
+				{Start: 85, End: 100},
 			},
 			expect: false,
 		},
 		"case-6": {
-			intervals: []IntervalP252{
-				{start: 0, end: 15},
-				{start: 0, end: 1},
+			intervals: []Interval{
+				{Start: 0, End: 15},
+				{Start: 0, End: 1},
 			},
 			expect: false,
 		},
