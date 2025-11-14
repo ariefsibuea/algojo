@@ -40,7 +40,8 @@ func main() {
 
 func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
-		"3Sum": RunTestThreeSum,
+		"3Sum":          RunTestThreeSum,
+		"AddTwoNumbers": RunTestAddTwoNumbers,
 		"AppendCharactersToStringToMakeSubsequence":     RunTestAppendCharactersToString,
 		"BalancedBinaryTree":                            RunTestBinarySearch,
 		"BestTimeToBuyAndSellStock":                     RunTestMaxProfit,

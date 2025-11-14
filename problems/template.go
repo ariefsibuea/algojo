@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-/**
+/*
  * Problem 			: <Title>
  * Topics           : <Algorithm Categories>
  * Level            : <Easy | Medium | Hard>

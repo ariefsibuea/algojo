@@ -28,11 +28,6 @@ import (
  * 					Output: [1]
  */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	preHead := &ListNode{
 		Val:  0,
