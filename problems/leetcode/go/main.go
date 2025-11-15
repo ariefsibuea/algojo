@@ -85,6 +85,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"RansomNote":                                    RunTestCanConstructRansomNote,
 		"RemoveDuplicatesFromSortedArray":               RunTestRemoveDuplicatesFromSortedArray,
 		"RemoveNthNodeFromEndOfList":                    RunTestRemoveNthFromEnd,
+		"ReorderList":                                   RunTestReorderList,
 		"ReverseString":                                 RunTestReverseString,
 		"ReverseWordsInAString":                         RunTestReverseWordsInAString,
 		"SearchInRotatedSortedArray":                    RunTestSearchInRotatedSortedArray,
