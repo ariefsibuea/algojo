@@ -47,6 +47,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"BestTimeToBuyAndSellStock":                     RunTestMaxProfit,
 		"BinarySearch":                                  RunTestBinarySearch,
 		"BtreeInorderTraversal":                         RunTestBtreeInorderTraversal,
+		"BinaryTreeLevelOrderTraversal":                 RunTestBinaryTreeLevelOrderTraversal,
 		"CircularArrayLoop":                             RunTestCircularArrayLoop,
 		"ClimbingStairs":                                RunTestClimbStairs,
 		"ContainsDuplicate":                             RunTestContainsDuplicate,
