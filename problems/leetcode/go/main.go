@@ -82,6 +82,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MiddleOfTheLinkedList":                         RunTestMiddleOfTheLinkedList,
 		"MinimumWindowSubstring":                        RunTestMinWindowSubstring,
 		"MoveZeroes":                                    RunTestMoveZeroes,
+		"NumberOfIsland":                                RunTestNumberOfIsland,
 		"NumberOfZeroFilledSubarrays":                   RunTestZeroFilledSubarray,
 		"PalindromeLinkedList":                          RunTestPalindromeLinkedList,
 		"RansomNote":                                    RunTestCanConstructRansomNote,
