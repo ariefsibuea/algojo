@@ -40,9 +40,10 @@ func main() {
 
 func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
-		"ValidAtmPin": RunTestValidAtmPin,
-		"NumericHash": RunTestNumericHash,
-		"MaxMinSums":  RunTestMaxMinSums,
+		"MaxMinSums":                         RunTestMaxMinSums,
+		"NumericHash":                        RunTestNumericHash,
+		"StrictlyIncreasingPortfolioWindows": RunTestStrictlyIncreasingPortfolioWindows,
+		"ValidAtmPin":                        RunTestValidAtmPin,
 	}
 	r.RegisterSolutions(solutions)
 }

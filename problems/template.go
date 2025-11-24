@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
 /*
@@ -21,10 +23,10 @@ func RunTestXxx() {
 		fmt.Println(testCase)
 		// result := twoSum(testCase.nums, testCase.target)
 		// if !EqualSlices(result, testCase.expect) {
-		// 	fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
+		//  format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
 		// 	os.Exit(1)
 		// }
-		fmt.Printf("=== PASSED\n")
+		format.PrintSuccess("test case '%s' passed", name)
 	}
 
 	fmt.Printf("\n✅ All tests passed!\n")
