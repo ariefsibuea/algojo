@@ -20,8 +20,11 @@ func RunTestXxx() {
 
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
+
 		fmt.Println(testCase)
 		// result := twoSum(testCase.nums, testCase.target)
+		// format.PrintInput(map[string]interface{}{"input-1": testCase.Input1})
+
 		// if !EqualSlices(result, testCase.expect) {
 		//  format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
 		// 	os.Exit(1)

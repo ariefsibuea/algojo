@@ -41,8 +41,12 @@ func main() {
 func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
 		"MaxMinSums":                         RunTestMaxMinSums,
+		"MaximumTradesInATimeWindow":         RunTestMaximumTradesInATimeWindow,
 		"NumericHash":                        RunTestNumericHash,
+		"RankStringParsing":                  RunTestRankStringParsing,
 		"StrictlyIncreasingPortfolioWindows": RunTestStrictlyIncreasingPortfolioWindows,
+		"TransactionPairSum":                 RunTestTransactionPairSum,
+		"TransactionSubarraySumEqualsTarget": RunTestTransactionSubarraySumEqualsTarget,
 		"ValidAtmPin":                        RunTestValidAtmPin,
 	}
 	r.RegisterSolutions(solutions)
