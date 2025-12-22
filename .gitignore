@@ -11,3 +11,6 @@
 .DS_Store
 .ruff_cache
 .ropeproject
+
+# Executable
+*.out

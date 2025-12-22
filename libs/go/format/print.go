@@ -8,7 +8,7 @@ import (
 func PrintInput(inputs map[string]interface{}) {
 	strInputs := []string{}
 	for k, v := range inputs {
-		strInputs = append(strInputs, fmt.Sprintf("%s = %#v", k, v))
+		strInputs = append(strInputs, fmt.Sprintf("%s = %+v", k, v))
 	}
 	strInput := strings.Join(strInputs, ", ")
 

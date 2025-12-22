@@ -29,3 +29,10 @@ type Interval struct {
 	Start int
 	End   int
 }
+
+type DLLNode struct {
+	Key  int
+	Val  int
+	Prev *DLLNode
+	Next *DLLNode
+}

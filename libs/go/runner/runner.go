@@ -24,7 +24,7 @@ func (r SolutionRunner) Run(solutionName string) error {
 	}
 
 	fmt.Printf("Running solution: %s\n", solutionName)
-	fmt.Println(strings.Repeat("=", 50))
+	fmt.Println(strings.Repeat("=", 75))
 	testFunc()
 	fmt.Println()
 

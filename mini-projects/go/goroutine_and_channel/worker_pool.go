@@ -12,9 +12,10 @@ type Job struct {
 }
 
 type Result struct {
-	JobID int
-	Value string
-	Error error
+	JobID    int
+	WorkerID int
+	Value    string
+	Error    error
 }
 
 func workerPool(numWorkers int, jobs <-chan Job, results chan<- Result) {
