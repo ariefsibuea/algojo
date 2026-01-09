@@ -41,6 +41,7 @@ func main() {
 func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
 		"BalancedBrackets":     RunTestBalancedBrackets,
+		"FrequencyQueries":     RunTestFrequencyQueries,
 		"MinimumCacheCapacity": RunTestMinCacheCapacity,
 		"MinimumSum10":         RunTestMinimumSum10,
 		"MinimumSwaps2":        RunTestMinimumSwaps2,
