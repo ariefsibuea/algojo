@@ -45,6 +45,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MinimumCacheCapacity": RunTestMinCacheCapacity,
 		"MinimumSum10":         RunTestMinimumSum10,
 		"MinimumSwaps2":        RunTestMinimumSwaps2,
+		"NewYearChaos":         RunTestNewYearChaos,
 	}
 	r.RegisterSolutions(solutions)
 }
