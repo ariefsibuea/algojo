@@ -43,6 +43,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"BalancedBrackets":     RunTestBalancedBrackets,
 		"MinimumCacheCapacity": RunTestMinCacheCapacity,
 		"MinimumSum10":         RunTestMinimumSum10,
+		"MinimumSwaps2":        RunTestMinimumSwaps2,
 	}
 	r.RegisterSolutions(solutions)
 }
