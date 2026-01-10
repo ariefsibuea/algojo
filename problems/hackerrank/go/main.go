@@ -47,6 +47,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MinimumSwaps2":        RunTestMinimumSwaps2,
 		"NewYearChaos":         RunTestNewYearChaos,
 		"RansomNote":           RunTestRansomNote,
+		"SherlockAndAnagrams":  RunTestSherlockAndAnagrams,
 		"TwoStrings":           RunTestTwoStrings,
 	}
 	r.RegisterSolutions(solutions)
