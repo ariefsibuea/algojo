@@ -57,6 +57,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"CouponCodeValidator":                           RunTestCouponCodeValidator,
 		"CourseSchedule":                                RunTestCourseSchedule,
 		"DesignTwitter":                                 RunTestDesignTwitter,
+		"FindPivotIndex":                                RunTestFindPivotIndex,
 		"FindTheDuplicateNumber":                        RunTestFindTheDuplicateNumber,
 		"FirstBadVersion":                               RunTestFirstBadVersion,
 		"FirstUniqueCharacterInAString":                 RunTestFirstUniqChar,
