@@ -90,6 +90,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"NumberOfSmoothDescentPeriodsOfAStock":          RunTestNumberOfSmoothDescentPeriodsOfAStock,
 		"NumberOfZeroFilledSubarrays":                   RunTestZeroFilledSubarray,
 		"PalindromeLinkedList":                          RunTestPalindromeLinkedList,
+		"ProductOfArrayExceptSelf":                      RunTestProductOfArrayExceptSelf,
 		"RangeSumQuery2DImmutable":                      RunTestRangeSumQuery2DImmutable,
 		"RansomNote":                                    RunTestCanConstructRansomNote,
 		"RemoveDuplicatesFromSortedArray":               RunTestRemoveDuplicatesFromSortedArray,
