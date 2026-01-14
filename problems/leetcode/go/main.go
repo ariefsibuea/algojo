@@ -104,6 +104,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"SortColors":                                    RunTestSortColors,
 		"SquaresOfASortedArray":                         RunTestSquaresOfASortedArray,
 		"StrobogrammaticNumber":                         RunTestStrobogrammaticNumber,
+		"SubarraySumEqualsK":                            RunTestSubarraySumEqualsK,
 		"TopKFrequentElements":                          RunTestTopKFrequentElements,
 		"TrappingRainWater":                             RunTestTrappingRainWater,
 		"TwoSum":                                        RunTestTwoSum,
