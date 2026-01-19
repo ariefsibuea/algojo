@@ -53,7 +53,7 @@ func hasPathSum(root *TreeNode, targetSum int) bool {
 	return hasPathSum(root.Left, newTargetSum) || hasPathSum(root.Right, newTargetSum)
 }
 
-func RunTesthasPathSum() {
+func RunTestPathSum() {
 	// TODO: complete the test function
 	testCases := map[string]struct{}{}
 
