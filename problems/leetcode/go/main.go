@@ -99,6 +99,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"ReverseOnlyLetters":                            RunTestReverseOnlyLetters,
 		"ReverseString":                                 RunTestReverseString,
 		"ReverseWordsInAString":                         RunTestReverseWordsInAString,
+		"RotateArray":                                   RunTestRotateArray,
 		"SearchInRotatedSortedArray":                    RunTestSearchInRotatedSortedArray,
 		"SingleNumber":                                  RunTestSingleNumber,
 		"SortColors":                                    RunTestSortColors,
