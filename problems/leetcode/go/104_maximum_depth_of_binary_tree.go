@@ -11,7 +11,7 @@ import (
  * Topics           : Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * Level            : Easy
  * URL              : https://leetcode.com/problems/maximum-depth-of-binary-tree
- * Description      : Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the 
+ * Description      : Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the
  * 					  number of nodes along the longest path from the root node down to the farthest leaf node.
  * Examples         :
  * 					  Example 1:

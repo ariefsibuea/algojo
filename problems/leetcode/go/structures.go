@@ -36,3 +36,8 @@ type DLLNode struct {
 	Prev *DLLNode
 	Next *DLLNode
 }
+
+type GraphNode struct {
+	Val       int
+	Neighbors []*GraphNode
+}
