@@ -78,6 +78,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"LowestCommonAncestor":                          RunTestLowestCommonAncestor,
 		"LowestCommonAncestorIII":                       RunTestLowestCommonAncestorIII,
 		"MaxArea":                                       RunTestMaxArea,
+		"MaxAreaOfIsland":                               RunTestMaxAreaOfIsland,
 		"MaximumDepthOfBinaryTree":                      RunTestMaximumDepthOfBinaryTree,
 		"MaximumSubarray":                               RunTestMaxSubArray,
 		"MedianOfTwoSortedArrays":                       RunTestFindMedianSortedArrays,

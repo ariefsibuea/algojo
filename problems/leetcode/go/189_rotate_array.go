@@ -15,12 +15,10 @@ import (
  * URL              : https://leetcode.com/problems/rotate-array
  * Description      : Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
  * 					  The rotation should be performed in-place with O(1) extra space.
- *
- * 					  Constraints:
+ * Constraints		:
  * 					  - 1 <= nums.length <= 10^5
  * 					  - -2^31 <= nums[i] <= 2^31 - 1
  * 					  - 0 <= k <= 10^5
- *
  * Examples         :
  * 					  Example 1:
  * 					  Input: nums = [1,2,3,4,5,6,7], k = 3
