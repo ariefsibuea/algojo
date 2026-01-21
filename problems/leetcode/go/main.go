@@ -108,6 +108,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"RotateArray":                                   RunTestRotateArray,
 		"SearchInRotatedSortedArray":                    RunTestSearchInRotatedSortedArray,
 		"SingleNumber":                                  RunTestSingleNumber,
+		"SlidingWindowMaximum":                          RunTestSlidingWindowMaximum,
 		"SortColors":                                    RunTestSortColors,
 		"SquaresOfASortedArray":                         RunTestSquaresOfASortedArray,
 		"StrobogrammaticNumber":                         RunTestStrobogrammaticNumber,
