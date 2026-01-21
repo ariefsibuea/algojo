@@ -91,6 +91,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"NumberOfIsland":                                RunTestNumberOfIsland,
 		"NumberOfSmoothDescentPeriodsOfAStock":          RunTestNumberOfSmoothDescentPeriodsOfAStock,
 		"NumberOfZeroFilledSubarrays":                   RunTestZeroFilledSubarray,
+		"PacificAtlanticWaterFlow":                      RunTestPacificAtlanticWaterFlow,
 		"PalindromeLinkedList":                          RunTestPalindromeLinkedList,
 		"PathSum":                                       RunTestPathSum,
 		"PathSumII":                                     RunTestPathSumII,
