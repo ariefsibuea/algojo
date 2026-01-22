@@ -97,6 +97,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"PalindromeLinkedList":                          RunTestPalindromeLinkedList,
 		"PathSum":                                       RunTestPathSum,
 		"PathSumII":                                     RunTestPathSumII,
+		"PermutationInString":                           RunTestPermutationInString,
 		"ProductOfArrayExceptSelf":                      RunTestProductOfArrayExceptSelf,
 		"RangeSumQuery2DImmutable":                      RunTestRangeSumQuery2DImmutable,
 		"RansomNote":                                    RunTestCanConstructRansomNote,
