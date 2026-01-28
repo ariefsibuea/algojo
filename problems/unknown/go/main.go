@@ -40,6 +40,7 @@ func main() {
 
 func registerSolutions(r *runner.SolutionRunner) {
 	solutions := map[string]runner.TestFunc{
+		"LinkedListCycleIII":                 RunTestLinkedListCycleIII,
 		"MaxMinSums":                         RunTestMaxMinSums,
 		"MaximumTradesInATimeWindow":         RunTestMaximumTradesInATimeWindow,
 		"NumericHash":                        RunTestNumericHash,
