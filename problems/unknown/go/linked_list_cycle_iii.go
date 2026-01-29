@@ -51,23 +51,23 @@ func RunTestLinkedListCycleIII() {
 		expect int
 	}{
 		"no-cycle": {
-			head:   inputTestLinkedListCycleIII_noCycle(),
+			head:   inputTestLinkedListCycleIIICaseNoCycle(),
 			expect: 0,
 		},
 		"cycle-at-end": {
-			head:   inputTestLinkedListCycleIII_cycleAtEnd(),
+			head:   inputTestLinkedListCycleIIICaseCycleAtEnd(),
 			expect: 3,
 		},
 		"full-cycle": {
-			head:   inputTestLinkedListCycleIII_fullCycle(),
+			head:   inputTestLinkedListCycleIIICaseFullCycle(),
 			expect: 2,
 		},
 		"single-node-cycle": {
-			head:   inputTestLinkedListCycleIII_singleNodeCycle(),
+			head:   inputTestLinkedListCycleIIICaseSingleNodeCycle(),
 			expect: 1,
 		},
 		"single-node-no-cycle": {
-			head:   inputTestLinkedListCycleIII_singleNodeNoCycle(),
+			head:   inputTestLinkedListCycleIIICaseSingleNodeNoCycle(),
 			expect: 0,
 		},
 	}
@@ -88,11 +88,11 @@ func RunTestLinkedListCycleIII() {
 	fmt.Printf("\n✅ All tests passed!\n")
 }
 
-func inputTestLinkedListCycleIII_noCycle() *ListNode {
+func inputTestLinkedListCycleIIICaseNoCycle() *ListNode {
 	return &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3}}}
 }
 
-func inputTestLinkedListCycleIII_cycleAtEnd() *ListNode {
+func inputTestLinkedListCycleIIICaseCycleAtEnd() *ListNode {
 	node1 := &ListNode{Val: 1}
 	node2 := &ListNode{Val: 2}
 	node3 := &ListNode{Val: 3}
@@ -104,7 +104,7 @@ func inputTestLinkedListCycleIII_cycleAtEnd() *ListNode {
 	return node1
 }
 
-func inputTestLinkedListCycleIII_fullCycle() *ListNode {
+func inputTestLinkedListCycleIIICaseFullCycle() *ListNode {
 	node1 := &ListNode{Val: 1}
 	node2 := &ListNode{Val: 2}
 	node1.Next = node2
@@ -112,12 +112,12 @@ func inputTestLinkedListCycleIII_fullCycle() *ListNode {
 	return node1
 }
 
-func inputTestLinkedListCycleIII_singleNodeCycle() *ListNode {
+func inputTestLinkedListCycleIIICaseSingleNodeCycle() *ListNode {
 	node1 := &ListNode{Val: 1}
 	node1.Next = node1 // Cycle: 1 -> 1 (length 1)
 	return node1
 }
 
-func inputTestLinkedListCycleIII_singleNodeNoCycle() *ListNode {
+func inputTestLinkedListCycleIIICaseSingleNodeNoCycle() *ListNode {
 	return &ListNode{Val: 1}
 }
