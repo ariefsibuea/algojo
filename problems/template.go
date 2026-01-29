@@ -17,7 +17,14 @@ import (
  */
 
 func RunTestXxx() {
-	testCases := map[string]struct{}{}
+	testCases := map[string]struct{}{
+		"case-1": {
+			// test case 1
+		},
+		"case-2": {
+			// test case 2
+		},
+	}
 
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
