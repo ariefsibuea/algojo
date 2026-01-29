@@ -83,6 +83,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MaximumAverageSubarrayI":                       RunTestMaximumAverageSubarrayI,
 		"MaximumDepthOfBinaryTree":                      RunTestMaximumDepthOfBinaryTree,
 		"MaximumSubarray":                               RunTestMaxSubArray,
+		"MaximumTwinSumOfALinkedList":                   RunTestMaximumTwinSumOfALinkedList,
 		"MedianOfTwoSortedArrays":                       RunTestFindMedianSortedArrays,
 		"MeetingRooms":                                  RunTestMeetingRooms,
 		"MergeIntervals":                                RunTestMergeIntervals,
