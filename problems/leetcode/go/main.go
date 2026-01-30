@@ -114,6 +114,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"SingleNumber":                                  RunTestSingleNumber,
 		"SlidingWindowMaximum":                          RunTestSlidingWindowMaximum,
 		"SortColors":                                    RunTestSortColors,
+		"SplitACircularLinkedList":                      RunTestSplitACircularLinkedList,
 		"SquaresOfASortedArray":                         RunTestSquaresOfASortedArray,
 		"StrobogrammaticNumber":                         RunTestStrobogrammaticNumber,
 		"SubarraySumEqualsK":                            RunTestSubarraySumEqualsK,
