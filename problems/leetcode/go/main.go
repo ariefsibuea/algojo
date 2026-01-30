@@ -106,6 +106,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"RemoveDuplicatesFromSortedArray":               RunTestRemoveDuplicatesFromSortedArray,
 		"RemoveNthNodeFromEndOfList":                    RunTestRemoveNthFromEnd,
 		"ReorderList":                                   RunTestReorderList,
+		"RepeatedDNASequence":                           RunTestRepeatedDNASequences,
 		"ReverseOnlyLetters":                            RunTestReverseOnlyLetters,
 		"ReverseString":                                 RunTestReverseString,
 		"ReverseWordsInAString":                         RunTestReverseWordsInAString,

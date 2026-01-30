@@ -12,7 +12,7 @@ import (
  * Problem          : Split A Circular Linked List
  * Topics           : Linked List
  * Level            : Medium
- * URL              : https://www.naukri.com/code360/problem-details/split-a-circular-linked-list_1071003
+ * URL              : https://leetcode.com/problems/split-a-circular-linked-list
  * Description      : You are given a circular linked list with an even number of nodes (N). The task is to split this
  *                    list into two equal-sized circular linked lists: one containing the first N/2 nodes and the other
  *                    containing the last N/2 nodes.
