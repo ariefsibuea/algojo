@@ -62,6 +62,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"FirstBadVersion":                               RunTestFirstBadVersion,
 		"FirstUniqueCharacterInAString":                 RunTestFirstUniqChar,
 		"FloodFill":                                     RunTestFloodFill,
+		"FrequencyOfTheMostFrequentElement":             RunTestFrequencyOfTheMostFrequentElement,
 		"FruitIntoBasket":                               RunTestTotalFruit,
 		"GroupAnagrams":                                 RunTestGroupAnagrams,
 		"HappyNumber":                                   RunTestHappyNumber,
