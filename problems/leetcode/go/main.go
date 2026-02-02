@@ -91,6 +91,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MergeTwoSortedLists":                           RunTestMergeTwoSortedLists,
 		"MiddleOfTheLinkedList":                         RunTestMiddleOfTheLinkedList,
 		"MinimumSizeSubarraySum":                        RunTestMinimumSizeSubarraySum,
+		"MinimumWindowSubsequence":                      RunTestMinimumWindowSubsequence,
 		"MinimumWindowSubstring":                        RunTestMinWindowSubstring,
 		"MoveZeroes":                                    RunTestMoveZeroes,
 		"NumberOfIsland":                                RunTestNumberOfIsland,
