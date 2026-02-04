@@ -5,7 +5,7 @@ FILE        ?= challenge.go
 TEMPLATE     = problems/template.go
 PROBLEM     ?= SampleProblem
 
-.PHONY: coding-challenge cc-exec-leetcode-go cc-exec-unknown-go
+.PHONY: coding-challenge cc-exec-leetcode-go cc-exec-etc-go
 
 # Usage: make coding-challenge PLATFORM=leetcode PROG_LANG=go FILE=506_subarray_sum_equals_k.go
 coding-challenge:
@@ -22,7 +22,7 @@ cc-exec-leetcode-go:
 	@echo "⏳ Executing: $(PROBLEM)\n"
 	@go run problems/leetcode/go/*.go --solution $(PROBLEM)
 
-# Usage: make cc-exec-unknown-go PROBLEM=SampleProblem
-cc-exec-unknown-go:
+# Usage: make cc-exec-etc-go PROBLEM=SampleProblem
+cc-exec-etc-go:
 	@echo "⏳ Executing: $(PROBLEM)\n"
-	@go run problems/unknown/go/*.go --solution $(PROBLEM)
+	@go run problems/etc/go/*.go --solution $(PROBLEM)
