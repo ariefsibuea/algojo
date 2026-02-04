@@ -54,6 +54,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"ContainsDuplicate":                             RunTestContainsDuplicate,
 		"CountCoveredBuildings":                         RunTestCountCoveredBuildings,
 		"CountMentionsPerUser":                          RunTestCountMentionsPerUser,
+		"CountSubarraysWithScoreLessThanK":              RunTestCountSubarraysWithScoreLessThanK,
 		"CouponCodeValidator":                           RunTestCouponCodeValidator,
 		"CourseSchedule":                                RunTestCourseSchedule,
 		"DesignTwitter":                                 RunTestDesignTwitter,
