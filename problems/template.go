@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /*
@@ -17,6 +18,8 @@ import (
  */
 
 func RunTestXxx() {
+	runner.InitMetrics("ProblemTitle")
+
 	testCases := map[string]struct{}{
 		"case-1": {
 			// test case 1
@@ -25,6 +28,8 @@ func RunTestXxx() {
 			// test case 2
 		},
 	}
+
+	var passedCount uint16 = 0
 
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
@@ -35,10 +40,13 @@ func RunTestXxx() {
 
 		// if !EqualSlices(result, testCase.expect) {
 		//  format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-		// 	os.Exit(1)
+		// 	continue
 		// }
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

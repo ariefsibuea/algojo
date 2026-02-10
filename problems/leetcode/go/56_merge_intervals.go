@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"sort"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /**
@@ -68,6 +68,8 @@ func mergeIntervals(intervals [][]int) [][]int {
 }
 
 func RunTestMergeIntervals() {
+	runner.InitMetrics("MergeIntervals")
+
 	testCases := map[string]struct {
 		intervals [][]int
 		expect    [][]int
@@ -174,6 +176,8 @@ func RunTestMergeIntervals() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
 
@@ -181,15 +185,18 @@ func RunTestMergeIntervals() {
 		intervalsCopy := make([][]int, len(testCase.intervals))
 		copy(intervalsCopy, testCase.intervals)
 
-		result := mergeIntervals(intervalsCopy)
+		result := runner.ExecCountMetrics(mergeIntervals, testCase.intervals).([][]int)
 		format.PrintInput(map[string]interface{}{"intervals": testCase.intervals})
 
 		if !cmp.EqualSlices(result, testCase.expect) {
 			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
