@@ -161,7 +161,7 @@ func RunTestMeetingRoomsII() {
 		format.PrintInput(map[string]interface{}{"intervals": testCase.intervals})
 
 		if !cmp.EqualNumbers(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
 			continue
 		}
 
