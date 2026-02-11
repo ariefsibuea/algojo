@@ -88,6 +88,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"MaximumTwinSumOfALinkedList":                   RunTestMaximumTwinSumOfALinkedList,
 		"MedianOfTwoSortedArrays":                       RunTestFindMedianSortedArrays,
 		"MeetingRooms":                                  RunTestMeetingRooms,
+		"MeetingRoomsII":                                RunTestMeetingRoomsII,
 		"MergeIntervals":                                RunTestMergeIntervals,
 		"MergeTwoSortedLists":                           RunTestMergeTwoSortedLists,
 		"MiddleOfTheLinkedList":                         RunTestMiddleOfTheLinkedList,
