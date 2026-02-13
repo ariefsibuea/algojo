@@ -69,6 +69,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"HappyNumber":                                   RunTestHappyNumber,
 		"ImplementQueueUsingStacks":                     RunTestImplementQueueUsingStacks,
 		"InsertInterval":                                RunTestInsertInterval,
+		"IntervalListIntersection":                      RunTestIntervalListIntersections,
 		"InvertBinaryTree":                              RunTestInvertTree,
 		"IsPalindrome":                                  RunTestIsPalindrome,
 		"IsValidParentheses":                            RunTestIsValidParentheses,
