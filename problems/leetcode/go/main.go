@@ -125,6 +125,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"StrobogrammaticNumber":                         RunTestStrobogrammaticNumber,
 		"SubarraySumEqualsK":                            RunTestSubarraySumEqualsK,
 		"SubarraysWithKDifferentIntegers":               RunTestSubarraysWithKDifferentIntegers,
+		"TaskScheduler":                                 RunTestTaskScheduler,
 		"TopKFrequentElements":                          RunTestTopKFrequentElements,
 		"TrappingRainWater":                             RunTestTrappingRainWater,
 		"TwoSum":                                        RunTestTwoSum,
