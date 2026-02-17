@@ -1,6 +1,7 @@
 package main
 
 import (
+	"container/heap"
 	"fmt"
 	"sort"
 
@@ -44,7 +45,72 @@ import (
  * 					  to idling twice between repetitions of these tasks.
  */
 
-func leastInterval(tasks []byte, n int) int {
+type PriorityCPUTasks []int
+
+func (p PriorityCPUTasks) Len() int           { return len(p) }
+func (p PriorityCPUTasks) Less(i, j int) bool { return p[i] > p[j] }
+func (p PriorityCPUTasks) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+
+func (p *PriorityCPUTasks) Push(x interface{}) {
+	*p = append(*p, x.(int))
+}
+
+func (p *PriorityCPUTasks) Pop() interface{} {
+	old := *p
+	n := len(old)
+	x := old[n-1]
+	old[n-1] = 0
+	*p = old[0 : n-1]
+	return x
+}
+
+func leastInterval_PriorityQueue(tasks []byte, n int) int {
+	taskFreq := make([]int, 26)
+	for _, task := range tasks {
+		taskFreq[task-'A']++
+	}
+
+	priorityTasks := new(PriorityCPUTasks)
+	heap.Init(priorityTasks)
+
+	for i := 0; i < 26; i++ {
+		if taskFreq[i] > 0 {
+			heap.Push(priorityTasks, taskFreq[i])
+		}
+	}
+
+	var numInterval = 0
+
+	for priorityTasks.Len() > 0 {
+		remainingTasks := make([]int, 0, priorityTasks.Len())
+		cycle := 0
+		taskCount := 0
+
+		for cycle < n+1 && priorityTasks.Len() > 0 {
+			task := heap.Pop(priorityTasks).(int)
+			remainingTasks = append(remainingTasks, task-1)
+
+			taskCount++
+			cycle++
+		}
+
+		for _, task := range remainingTasks {
+			if task > 0 {
+				heap.Push(priorityTasks, task)
+			}
+		}
+
+		if priorityTasks.Len() > 0 {
+			numInterval += n + 1
+		} else {
+			numInterval += taskCount
+		}
+	}
+
+	return numInterval
+}
+
+func leastInterval_FillTheSlotAndSort(tasks []byte, n int) int {
 	taskFreq := make([]int, 26)
 	for _, task := range tasks {
 		taskFreq[task-'A']++
@@ -130,7 +196,7 @@ func RunTestTaskScheduler() {
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
 
-		result := runner.ExecCountMetrics(leastInterval, testCase.tasks, testCase.n).(int)
+		result := runner.ExecCountMetrics(leastInterval_PriorityQueue, testCase.tasks, testCase.n).(int)
 		format.PrintInput(map[string]interface{}{"tasks": string(testCase.tasks), "n": testCase.n})
 
 		if !cmp.EqualNumbers(result, testCase.expect) {
