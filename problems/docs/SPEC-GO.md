@@ -60,6 +60,24 @@ import (
 )
 ```
 
+#### Import Grouping
+
+Imports must be organized in the following order with blank lines separating groups:
+
+1. Standard library packages (e.g., `fmt`, `os`)
+2. Project packages (e.g., `github.com/ariefsibuea/algojo/libs/go/...`)
+3. Side-effect imports (e.g., `_ "path/to/package"`)
+
+```go
+import (
+    "fmt"
+    "os"
+
+    "github.com/ariefsibuea/algojo/libs/go/cmp"
+    "github.com/ariefsibuea/algojo/libs/go/format"
+)
+```
+
 ### 3. Doc Comment
 
 Every solution file must include a doc comment block at the top:
@@ -201,12 +219,12 @@ func subarraySum(nums []int, k int) int {
 }
 ```
 
-For multiple algorithm implementations, suffix with the approach name:
+For multiple algorithm implementations, append the approach name in camelCase:
 
 ```go
-func findDuplicate_TortoiseHare(nums []int) int { ... }
-func findDuplicate_MarkVisited(nums []int) int { ... }
-func findDuplicate_HashMap(nums []int) int { ... }
+func findDuplicateTortoiseHare(nums []int) int { ... }
+func findDuplicateMarkVisited(nums []int) int { ... }
+func findDuplicateHashMap(nums []int) int { ... }
 ```
 
 ### 7. Test Function
@@ -232,14 +250,14 @@ func RunTestSubarraySumEqualsK() {
         },
     }
 
-    for name, testCase := range testCases {
+    for name, tc := range testCases {
         fmt.Printf("RUN %s\n", name)
 
-        result := subarraySum(testCase.nums, testCase.k)
-        format.PrintInput(map[string]interface{}{"nums": testCase.nums, "k": testCase.k})
+        result := subarraySum(tc.nums, tc.k)
+        format.PrintInput(map[string]interface{}{"nums": tc.nums, "k": tc.k})
 
-        if !cmp.EqualNumbers(result, testCase.expect) {
-            format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+        if !cmp.EqualNumbers(result, tc.expect) {
+            format.PrintFailed("expect = %v - got = %v", tc.expect, result)
             os.Exit(1)
         }
         format.PrintSuccess("test case '%s' passed", name)
@@ -249,16 +267,54 @@ func RunTestSubarraySumEqualsK() {
 }
 ```
 
+#### Test Failure Messages
+
+Test failure messages must include both the expected and actual values for easy debugging:
+
+```go
+// Good:
+format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+
+// Bad: (no context)
+format.PrintFailed("test failed")
+```
+
 ## Naming Conventions
 
-| Element                  | Convention                         | Example                             |
-| ------------------------ | ---------------------------------- | ----------------------------------- |
-| Solution function        | `camelCase`                        | `subarraySum`, `isBalancedBrackets` |
-| Test function            | `RunTest` + `PascalCase`           | `RunTestSubarraySumEqualsK`         |
-| Constants                | `PascalCase` or `UPPER_SNAKE_CASE` | `Valid4DigitPin`, `BalanceBrackets` |
-| Types/Structs            | `PascalCase`                       | `LRUCache`, `ListNode`              |
-| Test case names          | `kebab-case` or `snake_case`       | `"case-1"`, `"valid-4-digit"`       |
-| Multiple implementations | `functionName_ApproachName`        | `findDuplicate_TortoiseHare`        |
+| Element                  | Convention                                          | Example                                    |
+| ------------------------ | --------------------------------------------------- | ------------------------------------------ |
+| Solution function        | `camelCase`                                         | `subarraySum`, `isBalancedBrackets`        |
+| Test function            | `RunTest` + `PascalCase`                            | `RunTestSubarraySumEqualsK`                |
+| Constants                | `PascalCase` (exported) or `camelCase` (unexported) | `Valid4DigitPin`, `maxRetries`             |
+| Types/Structs            | `PascalCase`                                        | `LRUCache`, `ListNode`                     |
+| Method receivers         | 1-2 letter abbreviation                             | `func (l *LRUCache)`, `func (n *ListNode)` |
+| Test case names          | `kebab-case` or `snake_case`                        | `"case-1"`, `"valid-4-digit"`              |
+| Multiple implementations | `functionName` + `ApproachName`                     | `findDuplicateTortoiseHare`                |
+
+### Initialisms
+
+Keep initialisms consistent in casing:
+
+| Context    | Correct             | Incorrect           |
+| ---------- | ------------------- | ------------------- |
+| Exported   | `URL`, `HTTP`, `ID` | `Url`, `Http`, `Id` |
+| Unexported | `url`, `http`, `id` | `uRL`, `hTTP`, `iD` |
+
+Examples:
+
+- `func getURL()` ✓ / `func getUrl()` ✗
+- `type HTTPClient` ✓ / `type HttpClient` ✗
+- `userID` ✓ / `userId` ✗
+
+### Avoid Repetition
+
+Avoid redundant information in names:
+
+| Bad                  | Good           |
+| -------------------- | -------------- |
+| `userCountInt`       | `userCount`    |
+| `userSlice`          | `users`        |
+| `config.GetConfig()` | `config.Get()` |
 
 ## Test Case Structure
 
@@ -318,19 +374,53 @@ r.Run("ProblemName")
 r.List()
 ```
 
+### Package Comments for Libraries
+
+Library packages (e.g., `libs/go/cmp`, `libs/go/format`) must include a package comment immediately above the package clause:
+
+```go
+// Package cmp provides comparison utilities for testing.
+package cmp
+```
+
 ## Coding Style
+
+### Variable Names
+
+Variable names should be proportional to scope size:
+
+- **Small scope (1-7 lines)**: Single-letter or short names are acceptable (e.g., `i` for loop index, `n` for node)
+- **Medium scope (8-15 lines)**: Single-word names (e.g., `count`, `result`, `sum`)
+- **Large scope (15+ lines)**: Descriptive names (e.g., `userCount`, `processedItems`)
+
+### Comment Style
+
+- Complete sentences should be capitalized and end with punctuation
+- Sentence fragments do not require capitalization or punctuation
+- End-of-line comments for struct fields can be simple phrases
+
+```go
+// Good:
+// LRUCache implements a fixed-size cache with least-recently-used eviction.
+type LRUCache struct {
+    capacity int  // maximum number of entries
+    size     int  // current number of entries
+}
+```
 
 ### Variable Declaration
 
 - Use short declaration for local variables: `result := 0`
 - Group related declarations: `result, sum := 0, 0`
-- Use `var` for zero-value initialization: `var passedCount uint16 = 0`
+- Use `var` for zero-value initialization: `var passedCount uint16`
 
 ### Map Initialization
 
 ```go
-// Empty map
-m := map[int]int{}
+// Empty map (preferred for local variables that may be returned)
+var m map[int]int
+
+// Empty map with explicit make
 m := make(map[int]int)
 
 // With initial values
@@ -347,8 +437,10 @@ var bracketPair = map[rune]rune{
 ### Slice Initialization
 
 ```go
-// Empty slice
-s := []int{}
+// Empty slice (preferred for local variables that may be returned)
+var s []int
+
+// Empty slice with explicit make
 s := make([]int, 0)
 
 // With capacity hint
@@ -360,11 +452,11 @@ s := []int{1, 2, 3}
 
 ### Error Handling
 
-Exit on test failure:
+**[DEPRECATED]** Exit on test failure:
 
 ```go
-if !cmp.EqualNumbers(result, testCase.expect) {
-    format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+if !cmp.EqualNumbers(result, tc.expect) {
+    format.PrintFailed("expect = %v - got = %v", tc.expect, result)
     os.Exit(1)
 }
 ```
@@ -372,8 +464,8 @@ if !cmp.EqualNumbers(result, testCase.expect) {
 For non-fatal failures (continue testing):
 
 ```go
-if !cmp.EqualNumbers(result, testCase.expect) {
-    format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+if !cmp.EqualNumbers(result, tc.expect) {
+    format.PrintFailed("expect = %v - got = %v", tc.expect, result)
     continue
 }
 ```
@@ -395,7 +487,7 @@ if !cmp.EqualNumbers(result, testCase.expect) {
 ### Don't
 
 - Don't skip the doc comment block
-- Don't use `fmt.Println` for test output (use `format` package)
+- Don't use `fmt.Println`/`fmt.Printf` for test result output (use `format.PrintSuccess`, `format.PrintFailed` for consistent formatting)
 - Don't hardcode test values without named constants when they represent specific codes
 - Don't forget to add new solutions to `registerSolutions()` in `main.go`
 - Don't use generic variable names in test structs (e.g., use `nums`, `target` instead of `a`, `b`)
@@ -424,7 +516,9 @@ package main
 
 import (
     "fmt"
+    "os"
 
+    "github.com/ariefsibuea/algojo/libs/go/cmp"
     "github.com/ariefsibuea/algojo/libs/go/format"
     "github.com/ariefsibuea/algojo/libs/go/runner"
 )
@@ -445,21 +539,39 @@ import (
  * 					  Output: ...
  */
 
-func RunTestXxx() {
-    runner.InitMetrics("ProblemTitle")
+func solve(input type) output {
+    // Implementation
+}
 
-    testCases := map[string]struct{}{
-        "case-1": {},
-        "case-2": {},
+func RunTestProblemName() {
+    runner.InitMetrics("ProblemName")
+
+    testCases := map[string]struct {
+        input  inputType
+        expect outputType
+    }{
+        "case-1": {
+            input:  value1,
+            expect: expected1,
+        },
+        "case-2": {
+            input:  value2,
+            expect: expected2,
+        },
     }
 
-    var passedCount uint16 = 0
+    var passedCount uint16
 
-    for name, testCase := range testCases {
+    for name, tc := range testCases {
         fmt.Printf("RUN %s\n", name)
-        fmt.Println(testCase)
-        // Implement test logic here
 
+        result := solve(tc.input)
+        format.PrintInput(map[string]interface{}{"input": tc.input})
+
+        if !cmp.EqualNumbers(result, tc.expect) {
+            format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+            os.Exit(1)
+        }
         format.PrintSuccess("test case '%s' passed", name)
         passedCount++
     }
