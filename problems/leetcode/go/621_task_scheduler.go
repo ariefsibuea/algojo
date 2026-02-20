@@ -11,7 +11,7 @@ import (
 )
 
 /*
- * Problem          : 621. Task Scheduler
+ * Problem          : Task Scheduler
  * Topics           : Array, Hash Table, Greedy, Sorting, Priority Queue (Heap), Counting
  * Level            : Medium
  * URL              : https://leetcode.com/problems/task-scheduler/

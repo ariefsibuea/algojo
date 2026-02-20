@@ -66,17 +66,89 @@ Every solution file must include a doc comment block at the top:
 
 ```go
 /*
- * Problem       : <Title>
- * Topics        : <Algorithm Categories>
- * Level         : <Easy | Medium | Hard>
- * URL           : <Problem URL or "-" if none>
- * Description   : <Problem description>
- * Constraints   : <Constraints (optional)>
- * Examples      : <Examples>
+ * Problem          : <Title>
+ * Topics           : <Algorithm Categories>
+ * Level            : <Easy | Medium | Hard>
+ * URL              : <Problem URL or "-" if none>
+ * Description      : <Problem description>
+ * Constraints      : <Constraints (optional)>
+ * Examples         : <Examples>
+ */
+```
+
+#### Formatting Multi-line Content
+
+For multi-line descriptions, constraints, or examples, align continuation lines with the previous line content using tabs:
+
+```go
+/*
+ * Problem          : Task Scheduler
+ * Topics           : Array, Hash Table, Greedy, Sorting, Priority Queue (Heap), Counting
+ * Level            : Medium
+ * URL              : https://leetcode.com/problems/task-scheduler/
+ * Description      : Schedule CPU tasks (labeled A-Z) with a cooldown constraint. Given a list of tasks and a cooldown
+ * 					  period n, find the minimum time needed to execute all tasks. Each time unit can either process one
+ * 					  task or be idle. The same task cannot be executed again until n time units have passed since its
+ * 					  last execution. Tasks can be performed in any order, and idle periods may be necessary to satisfy
+ * 					  the cooldown constraint. Return the total number of time units required.
+ * Constraints      : 1 <= tasks.length <= 10^4
+ * 					  tasks[i] is an uppercase English letter.
+ * 					  0 <= n <= 100
+ * Examples         : Example 1:
+ * 					  Input: tasks = ["A","A","A","B","B","B"], n = 2
+ * 					  Output: 8
+ * 					  Explanation: A possible sequence is: A -> B -> idle -> A -> B -> idle -> A -> B.
+ * 					  After completing task A, you must wait two intervals before doing A again.
+ *
+ * 					  Example 2:
+ * 					  Input: tasks = ["A","C","A","B","D","B"], n = 1
+ * 					  Output: 6
+ * 					  Explanation: A possible sequence is: A -> B -> C -> D -> A -> B.
+ */
+```
+
+#### Formatting Rules
+
+1. **Alignment**: Continuation lines must start with `*` followed by a tab (`\t`) to align with the content start position of the previous line
+2. **Blank lines**: Use ` *` (without trailing content) to separate sections within multi-line content
+3. **Lists**: For constraint lists or bullet points, maintain consistent indentation with tabs
+
+#### Tab Alignment Pattern
+
+```
+ * FieldName       : Content starts here
+ * 				   continuation line aligned with tab
+ * 				   another continuation line
+```
+
+The tab positions the continuation text to align with where content began on the first line (after `: `).
+
+#### Example with All Fields
+
+```go
+/*
+ * Problem          : Valid ATM PIN
+ * Topics           : String, Validation
+ * Level            : Easy
+ * URL              : -
+ * Description      : Implement a function to validate an ATM PIN with the following rules:
+ * 					  - Must be 4 or 6 digits long
+ * 					  - Must contain digits only
+ * 					  - Must not contain repeated digits
+ * 					  - Must not contain ascending or descending sequences
+ * Examples         :
+ * 					  Example 1:
+ * 					  Input: atmpin = "1245"
+ * 					  Output: 0
+ *
+ * 					  Example 2:
+ * 					  Input: atmpin = "1234"
+ * 					  Output: 5
  */
 ```
 
 **Fields:**
+
 - `Problem`: The title of the problem
 - `Topics`: Algorithm/data structure categories (comma-separated)
 - `Level`: Difficulty level - Easy, Medium, or Hard
@@ -167,7 +239,7 @@ func RunTestSubarraySumEqualsK() {
         format.PrintInput(map[string]interface{}{"nums": testCase.nums, "k": testCase.k})
 
         if !cmp.EqualNumbers(result, testCase.expect) {
-            format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
+            format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
             os.Exit(1)
         }
         format.PrintSuccess("test case '%s' passed", name)
@@ -179,14 +251,14 @@ func RunTestSubarraySumEqualsK() {
 
 ## Naming Conventions
 
-| Element | Convention | Example |
-|---------|------------|---------|
-| Solution function | `camelCase` | `subarraySum`, `isBalancedBrackets` |
-| Test function | `RunTest` + `PascalCase` | `RunTestSubarraySumEqualsK` |
-| Constants | `PascalCase` or `UPPER_SNAKE_CASE` | `Valid4DigitPin`, `BalanceBrackets` |
-| Types/Structs | `PascalCase` | `LRUCache`, `ListNode` |
-| Test case names | `kebab-case` or `snake_case` | `"case-1"`, `"valid-4-digit"` |
-| Multiple implementations | `functionName_ApproachName` | `findDuplicate_TortoiseHare` |
+| Element                  | Convention                         | Example                             |
+| ------------------------ | ---------------------------------- | ----------------------------------- |
+| Solution function        | `camelCase`                        | `subarraySum`, `isBalancedBrackets` |
+| Test function            | `RunTest` + `PascalCase`           | `RunTestSubarraySumEqualsK`         |
+| Constants                | `PascalCase` or `UPPER_SNAKE_CASE` | `Valid4DigitPin`, `BalanceBrackets` |
+| Types/Structs            | `PascalCase`                       | `LRUCache`, `ListNode`              |
+| Test case names          | `kebab-case` or `snake_case`       | `"case-1"`, `"valid-4-digit"`       |
+| Multiple implementations | `functionName_ApproachName`        | `findDuplicate_TortoiseHare`        |
 
 ## Test Case Structure
 
@@ -292,7 +364,7 @@ Exit on test failure:
 
 ```go
 if !cmp.EqualNumbers(result, testCase.expect) {
-    format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
+    format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
     os.Exit(1)
 }
 ```
@@ -301,7 +373,7 @@ For non-fatal failures (continue testing):
 
 ```go
 if !cmp.EqualNumbers(result, testCase.expect) {
-    format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
+    format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
     continue
 }
 ```
@@ -358,13 +430,19 @@ import (
 )
 
 /*
- * Problem       : <Title>
- * Topics        : <Algorithm Categories>
- * Level         : <Easy | Medium | Hard>
- * URL           : <URL>
- * Description   : <Description>
- * Constraints   : <Constraints>
- * Examples      : <Examples>
+ * Problem          : <Title>
+ * Topics           : <Algorithm Categories>
+ * Level            : <Easy | Medium | Hard>
+ * URL              : <URL>
+ * Description      : <Description>
+ * 					  <continuation if needed>
+ * Constraints      : <Constraints>
+ * 					  - <constraint 1>
+ * 					  - <constraint 2>
+ * Examples         :
+ * 					  Example 1:
+ * 					  Input: ...
+ * 					  Output: ...
  */
 
 func RunTestXxx() {
