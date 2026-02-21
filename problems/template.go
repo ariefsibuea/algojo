@@ -8,7 +8,7 @@ import (
 )
 
 /*
- * Problem 			: <Title>
+ * Problem          : <Title>
  * Topics           : <Algorithm Categories>
  * Level            : <Easy | Medium | Hard>
  * URL              : <URL>

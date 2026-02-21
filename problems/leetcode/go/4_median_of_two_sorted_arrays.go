@@ -3,28 +3,28 @@ package main
 import (
 	"fmt"
 	"math"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
-/**
- * LeetCode Problem : Median of Two Sorted Arrays
- * Topic            : Array, Binary Search, Divide and Conquer
- * Level            : Hard
- * URL              : https://leetcode.com/problems/median-of-two-sorted-arrays
- * Description      : Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the
- * 					two sorted arrays. The overall run time complexity should be O(log (m+n)).
- * Examples         :
- * 					Example 1:
- * 					Input: nums1 = [1,3], nums2 = [2]
- * 					Output: 2.00000
- * 					Explanation: merged array = [1,2,3] and median is 2.
+/*
+ * Problem			: Median of Two Sorted Arrays
+ * Topics			: Array, Binary Search, Divide and Conquer
+ * Level			: Hard
+ * URL				: https://leetcode.com/problems/median-of-two-sorted-arrays
+ * Description		: Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the
+ * 					  two sorted arrays. The overall run time complexity should be O(log (m+n)).
+ * Examples			: Example 1:
+ * 					  Input: nums1 = [1,3], nums2 = [2]
+ * 					  Output: 2.00000
+ * 					  Explanation: merged array = [1,2,3] and median is 2.
  *
- * 					Example 2:
- * 					Input: nums1 = [1,2], nums2 = [3,4]
- * 					Output: 2.50000
- * 					Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+ * 					  Example 2:
+ * 					  Input: nums1 = [1,2], nums2 = [3,4]
+ * 					  Output: 2.50000
+ * 					  Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
  */
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
@@ -86,6 +86,8 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 }
 
 func RunTestFindMedianSortedArrays() {
+	runner.InitMetrics("MedianOfTwoSortedArrays")
+
 	testCases := map[string]struct {
 		nums1  []int
 		nums2  []int
@@ -103,17 +105,21 @@ func RunTestFindMedianSortedArrays() {
 		},
 	}
 
-	var result float64
-
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result = findMedianSortedArrays(testCase.nums1, testCase.nums2)
-		if !cmp.EqualNumbers(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+
+		result := runner.ExecCountMetrics(findMedianSortedArrays, tc.nums1, tc.nums2).(float64)
+		format.PrintInput(map[string]interface{}{"nums1": tc.nums1, "nums2": tc.nums2})
+
+		if !cmp.EqualNumbers(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

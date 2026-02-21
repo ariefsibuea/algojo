@@ -2,33 +2,33 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /*
- * Problem 			: Add Two Numbers
- * Topics           : Linked List, Math, Recursion
- * Level            : Medium
- * URL              : https://leetcode.com/problems/add-two-numbers
- * Description      : Given two non-empty linked lists representing two non-negative integers. The digits are stored
- * 					in reverse order, and each of their nodes contains a single digit. Add the two numbers and return
- * 					the sum as a linked list. Assume the two numbers do not contain any leading zero, except the
- * 					number 0 itself.
- * Examples         :
- * 					Example 1:
- * 					Input: l1 = [2,4,3], l2 = [5,6,4]
- * 					Output: [7,0,8]
- * 					Explanation: 342 + 465 = 807.
+ * Problem			: Add Two Numbers
+ * Topics			: Linked List, Math, Recursion
+ * Level			: Medium
+ * URL				: https://leetcode.com/problems/add-two-numbers
+ * Description		: Given two non-empty linked lists representing two non-negative integers. The digits are stored
+ * 					  in reverse order, and each of their nodes contains a single digit. Add the two numbers and return
+ * 					  the sum as a linked list. Assume the two numbers do not contain any leading zero, except the
+ * 					  number 0 itself.
+ * Examples			: Example 1:
+ * 					  Input: l1 = [2,4,3], l2 = [5,6,4]
+ * 					  Output: [7,0,8]
+ * 					  Explanation: 342 + 465 = 807.
  *
- * 					Example 2:
- * 					Input: l1 = [0], l2 = [0]
- * 					Output: [0]
+ * 					  Example 2:
+ * 					  Input: l1 = [0], l2 = [0]
+ * 					  Output: [0]
  *
- * 					Example 3:
- * 					Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
- * 					Output: [8,9,9,9,0,0,0,1]
+ * 					  Example 3:
+ * 					  Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+ * 					  Output: [8,9,9,9,0,0,0,1]
  */
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
@@ -56,36 +56,35 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 func RunTestAddTwoNumbers() {
+	runner.InitMetrics("AddTwoNumbers")
+
 	testCases := map[string]struct {
 		l1     *ListNode
 		l2     *ListNode
 		expect []int
 	}{
 		"case-1": {
-			l1:     mockInputP2Case1()[0],
-			l2:     mockInputP2Case1()[1],
+			l1:     buildAddTwoNumbersCase1()[0],
+			l2:     buildAddTwoNumbersCase1()[1],
 			expect: []int{7, 0, 8},
 		},
 		"case-2": {
-			l1:     mockInputP2Case2()[0],
-			l2:     mockInputP2Case2()[1],
+			l1:     buildAddTwoNumbersCase2()[0],
+			l2:     buildAddTwoNumbersCase2()[1],
 			expect: []int{0},
 		},
 		"case-3": {
-			l1:     mockInputP2Case3()[0],
-			l2:     mockInputP2Case3()[1],
-			expect: []int{8, 9, 0, 1},
-		},
-		"case-4": {
-			l1:     mockInputP2Case3()[0],
-			l2:     mockInputP2Case3()[1],
+			l1:     buildAddTwoNumbersCase3()[0],
+			l2:     buildAddTwoNumbersCase3()[1],
 			expect: []int{8, 9, 0, 1},
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := addTwoNumbers(testCase.l1, testCase.l2)
+
+		result := runner.ExecCountMetrics(addTwoNumbers, tc.l1, tc.l2).(*ListNode)
 
 		arrResult := make([]int, 0)
 		for result != nil {
@@ -93,17 +92,20 @@ func RunTestAddTwoNumbers() {
 			result = result.Next
 		}
 
-		if !cmp.EqualSlices(arrResult, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+		format.PrintInput(map[string]interface{}{"l1": tc.l1, "l2": tc.l2})
+		if !cmp.EqualSlices(arrResult, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, arrResult)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
 
-func mockInputP2Case1() []*ListNode {
+func buildAddTwoNumbersCase1() []*ListNode {
 	head1 := &ListNode{
 		Val: 2,
 		Next: &ListNode{
@@ -126,7 +128,7 @@ func mockInputP2Case1() []*ListNode {
 	}
 }
 
-func mockInputP2Case2() []*ListNode {
+func buildAddTwoNumbersCase2() []*ListNode {
 	head1 := &ListNode{Val: 0}
 	head2 := &ListNode{Val: 0}
 
@@ -136,7 +138,7 @@ func mockInputP2Case2() []*ListNode {
 	}
 }
 
-func mockInputP2Case3() []*ListNode {
+func buildAddTwoNumbersCase3() []*ListNode {
 	head1 := &ListNode{
 		Val: 9,
 		Next: &ListNode{
@@ -148,26 +150,6 @@ func mockInputP2Case3() []*ListNode {
 	head2 := &ListNode{
 		Val:  9,
 		Next: &ListNode{Val: 9},
-	}
-
-	return []*ListNode{
-		head1,
-		head2,
-	}
-}
-
-func mockInputP2Case4() []*ListNode {
-	head1 := &ListNode{
-		Val:  9,
-		Next: &ListNode{Val: 9},
-	}
-
-	head2 := &ListNode{
-		Val: 9,
-		Next: &ListNode{
-			Val:  9,
-			Next: &ListNode{Val: 9},
-		},
 	}
 
 	return []*ListNode{

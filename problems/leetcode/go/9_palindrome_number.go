@@ -2,31 +2,31 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
-/**
- * Problem 			: Palindrome Number
- * Topics           : Math
- * Level            : Easy
- * URL              : https://leetcode.com/problems/palindrome-number
- * Description      : Given an integer x, you need to determine whether it is a palindrome. A palindrome integer reads
- * 					the same backward as forward. Return true if x is a palindrome, and false otherwise.
- * Examples         :
- * 					Example 1:
- * 					Input: 121
- * 					Output: true
+/*
+ * Problem			: Palindrome Number
+ * Topics			: Math
+ * Level			: Easy
+ * URL				: https://leetcode.com/problems/palindrome-number
+ * Description		: Given an integer x, you need to determine whether it is a palindrome. A palindrome integer reads
+ * 					  the same backward as forward. Return true if x is a palindrome, and false otherwise.
+ * Examples			: Example 1:
+ * 					  Input: 121
+ * 					  Output: true
  *
- * 					Example 2:
- * 					Input: -121
- * 					Output: false
- * 					Explanation: From left to right it reads -121, but from right to left it becomes 121-.
+ * 					  Example 2:
+ * 					  Input: -121
+ * 					  Output: false
+ * 					  Explanation: From left to right it reads -121, but from right to left it becomes 121-.
  *
- * 					Example 3:
- * 					Input: 10
- * 					Output: false
+ * 					  Example 3:
+ * 					  Input: 10
+ * 					  Output: false
  */
 
 func isPalindrome(x int) bool {
@@ -41,13 +41,14 @@ func isPalindrome(x int) bool {
 		mod := divResult % 10
 		_x = (_x * 10) + mod
 		divResult = divResult / 10
-
 	}
 
 	return _x == x
 }
 
-func RunTestIsPalindrome() {
+func RunTestPalindromeNumber() {
+	runner.InitMetrics("PalindromeNumber")
+
 	testCases := map[string]struct {
 		x      int
 		expect bool
@@ -66,15 +67,21 @@ func RunTestIsPalindrome() {
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := isPalindrome(testCase.x)
-		if !cmp.EqualBooleans(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+
+		result := runner.ExecCountMetrics(isPalindrome, tc.x).(bool)
+		format.PrintInput(map[string]interface{}{"x": tc.x})
+
+		if !cmp.EqualBooleans(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

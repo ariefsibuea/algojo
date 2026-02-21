@@ -2,32 +2,32 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
-/**
- * LeetCode Problem : Longest Substring Without Repeating Characters
- * Topics           : Hash Table, String, Sliding Window
- * Level            : Medium
- * URL              : https://leetcode.com/problems/longest-substring-without-repeating-characters
- * Description      : Given a string s, find the length of the longest substring without duplicate characters.
- * Examples         :
- * 					Example 1:
- * 					Input: s = "abcabcbb"
- * 					Output: 3
- * 					Explanation: The answer is "abc", with the length of 3.
+/*
+ * Problem			: Longest Substring Without Repeating Characters
+ * Topics			: Hash Table, String, Sliding Window
+ * Level			: Medium
+ * URL				: https://leetcode.com/problems/longest-substring-without-repeating-characters
+ * Description		: Given a string s, find the length of the longest substring without duplicate characters.
+ * Examples			: Example 1:
+ * 					  Input: s = "abcabcbb"
+ * 					  Output: 3
+ * 					  Explanation: The answer is "abc", with the length of 3.
  *
- * 					Example 2:
- * 					Input: s = "bbbbb"
- * 					Output: 1
- * 					Explanation: The answer is "b", with the length of 1.
+ * 					  Example 2:
+ * 					  Input: s = "bbbbb"
+ * 					  Output: 1
+ * 					  Explanation: The answer is "b", with the length of 1.
  *
- * 					Example 3:
- * 					Input: s = "pwwkew"
- * 					Output: 3
- * 					Explanation: The answer is "wke", with the length of 3.
+ * 					  Example 3:
+ * 					  Input: s = "pwwkew"
+ * 					  Output: 3
+ * 					  Explanation: The answer is "wke", with the length of 3.
  */
 
 func lengthOfLongestSubstring(s string) int {
@@ -48,6 +48,8 @@ func lengthOfLongestSubstring(s string) int {
 }
 
 func RunTestLongestSubstringWithoutRepeatingCharacters() {
+	runner.InitMetrics("LongestSubstringWithoutRepeatingCharacters")
+
 	testCases := map[string]struct {
 		s      string
 		expect int
@@ -70,17 +72,21 @@ func RunTestLongestSubstringWithoutRepeatingCharacters() {
 		},
 	}
 
-	var result int
-
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result = lengthOfLongestSubstring(testCase.s)
-		if !cmp.EqualNumbers(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+
+		result := runner.ExecCountMetrics(lengthOfLongestSubstring, tc.s).(int)
+		format.PrintInput(map[string]interface{}{"s": tc.s})
+
+		if !cmp.EqualNumbers(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

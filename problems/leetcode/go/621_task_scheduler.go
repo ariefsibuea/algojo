@@ -11,7 +11,7 @@ import (
 )
 
 /*
- * Problem          : Task Scheduler
+ * Problem			: Task Scheduler
  * Topics           : Array, Hash Table, Greedy, Sorting, Priority Queue (Heap), Counting
  * Level            : Medium
  * URL              : https://leetcode.com/problems/task-scheduler/
@@ -29,7 +29,7 @@ import (
  *                    Explanation: A possible sequence is: A -> B -> idle -> A -> B -> idle -> A -> B.
  *                    After completing task A, you must wait two intervals before doing A again.
  *                    The same applies to task B. In the 3rd interval, neither A nor B can be done, so you idle. By the
- * 					  4th interval, you can do A again as 2 intervals have passed.
+ *                    4th interval, you can do A again as 2 intervals have passed.
  *
  *                    Example 2:
  *                    Input: tasks = ["A","C","A","B","D","B"], n = 1
@@ -42,7 +42,7 @@ import (
  *                    Output: 10
  *                    Explanation: A possible sequence is: A -> B -> idle -> idle -> A -> B -> idle -> idle -> A -> B.
  *                    There are only two types of tasks, A and B, which need to be separated by 3 intervals. This leads
- * 					  to idling twice between repetitions of these tasks.
+ *                    to idling twice between repetitions of these tasks.
  */
 
 type PriorityCPUTasks []int
