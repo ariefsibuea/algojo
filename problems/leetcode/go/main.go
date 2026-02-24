@@ -54,6 +54,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"ContainerWithMostWater":                        RunTestContainerWithMostWater,
 		"ContainsDuplicate":                             RunTestContainsDuplicate,
 		"CountCoveredBuildings":                         RunTestCountCoveredBuildings,
+		"CountDaysWithoutMeetings":                      RunTestCountDaysWithoutMeetings,
 		"CountMentionsPerUser":                          RunTestCountMentionsPerUser,
 		"CountSubarraysWithScoreLessThanK":              RunTestCountSubarraysWithScoreLessThanK,
 		"CouponCodeValidator":                           RunTestCouponCodeValidator,
