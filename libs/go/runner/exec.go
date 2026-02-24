@@ -154,7 +154,7 @@ func getMinMaxTime(executions []ExecutionMetrics) (time.Duration, time.Duration)
 	minTime, maxTime := executions[0].ExecutionTime, executions[0].ExecutionTime
 	for _, e := range executions[1:] {
 		minTime = min(minTime, e.ExecutionTime)
-		maxTime = min(maxTime, e.ExecutionTime)
+		maxTime = max(maxTime, e.ExecutionTime)
 	}
 
 	return minTime, maxTime
