@@ -24,12 +24,12 @@ Strict adherence to these conventions is required for the runner to correctly id
 | ------------------------ | ---------------------------------------------------------------- | ------------------------------------------ |
 | **File Name**            | `snake_case` (optional number prefix)                            | `two_sum.go`, `1_two_sum.go`               |
 | **Solution Function**    | `camelCase`                                                      | `subarraySum`, `isBalancedBrackets`        |
-| **Test Function**        | `RunTest` + `PascalCase`                                         | `RunTestSubarraySumEqualsK`                |
+| **Test Function**        | `RunTest` + `PascalCaseProblemName`                              | `RunTestSubarraySumEqualsK`                |
 | **Constants**            | `PascalCase` (exported) or `camelCase` (unexported)              | `Valid4DigitPin`, `maxRetries`             |
 | **Types/Structs**        | `PascalCase`                                                     | `LRUCache`, `ListNode`                     |
 | **Method Receivers**     | 1-2 letter abbreviation                                          | `func (l *LRUCache)`, `func (n *ListNode)` |
-| **Test Case Names**      | `kebab-case`                                                     | `"case-1"`, `"valid-4-digit"`              |
 | **Multi-implementation** | `functionName` + `_` + `PascalCaseApproach`                      | `findDuplicate_TortoiseHare`               |
+| **Test Case Names**      | `kebab-case`                                                     | `"case-1"`, `"valid-4-digit"`              |
 | **Test Input Helper**    | `build` + `PascalCaseProblem` + `PascalCaseTestName` + `[Field]` | `buildSplitListEvenNodesHead`              |
 
 ### Initialisms
@@ -93,36 +93,44 @@ Every file must start with a standardized documentation block. This metadata is 
 
 #### Formatting Rules
 
-1.  **Alignment**: Use tabs (`\t`) to align the content start position (colons).
-2.  **Continuation**: For multi-line fields (Description, Examples), start new lines with ` *` followed by enough tabs to align with the text of the first line.
-3.  **Max Width**: Try to keep lines under 120 characters.
-4.  **Separators**: Use ` *` (without trailing text) to separate logical sections within a field (e.g., between Example 1 and Example 2).
+1.  **Alignment**: Use tabs (`\t`) to align content after the colon.
+2.  **Section Headers**: Use `Description:`, `Constraints:`, and `Examples:` as separate sections.
+3.  **Continuation**: For multi-line fields (Description, Examples), start new lines with ` *\t` to align with the text.
+4.  **Max Width**: Try to keep lines under 120 characters.
+5.  **Separators**: Use ` *` (without trailing text) to separate logical sections within a field (e.g., between Example 1 and Example 2).
 
 #### Example
 
 ```go
 /*
- * Problem          : Task Scheduler
- * Topics           : Array, Hash Table, Greedy, Sorting, Priority Queue (Heap), Counting
- * Level            : Medium
- * URL              : https://leetcode.com/problems/task-scheduler/
- * Description      : Schedule CPU tasks (labeled A-Z) with a cooldown constraint. Given a list of tasks and a cooldown
- *                    period n, find the minimum time needed to execute all tasks. Each time unit can either process one
- *                    task or be idle. The same task cannot be executed again until n time units have passed since its
- *                    last execution.
- * Constraints      : 1 <= tasks.length <= 10^4
- *                    tasks[i] is an uppercase English letter.
- *                    0 <= n <= 100
- * Examples         : Example 1:
- *                    Input: tasks = ["A","A","A","B","B","B"], n = 2
- *                    Output: 8
- *                    Explanation: A possible sequence is: A -> B -> idle -> A -> B -> idle -> A -> B.
- *                    After completing task A, you must wait two intervals before doing A again.
+ * Problem	: Task Scheduler
+ * Topics	: Array, Hash Table, Greedy, Sorting, Priority Queue (Heap), Counting
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/task-scheduler/
  *
- *                    Example 2:
- *                    Input: tasks = ["A","C","A","B","D","B"], n = 1
- *                    Output: 6
- *                    Explanation: A possible sequence is: A -> B -> C -> D -> A -> B.
+ * Description:
+ * 		Schedule CPU tasks (labeled A-Z) with a cooldown constraint. Given a list of tasks and a cooldown period n, find
+ * 		the minimum time needed to execute all tasks. Each time unit can either process one task or be idle. The same
+ * 		task cannot be executed again until n time units have passed since its last execution. Tasks can be performed
+ * 		in any order, and idle periods may be necessary to satisfy the cooldown constraint. Return the total number of
+ * 		time units required.
+ *
+ * Constraints:
+ * 		- 1 <= tasks.length <= 10^4
+ * 		- tasks[i] is an uppercase English letter
+ * 		- 0 <= n <= 100
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: tasks = ["A","A","A","B","B","B"], n = 2
+ * 		Output: 8
+ * 		Explanation: A possible sequence is: A -> B -> idle -> A -> B -> idle -> A -> B.
+ * 		After completing task A, you must wait two intervals before doing A again.
+ *
+ * 		Example 2:
+ * 		Input: tasks = ["A","C","A","B","D","B"], n = 1
+ * 		Output: 6
+ * 		Explanation: A possible sequence is: A -> B -> C -> D -> A -> B.
  */
 ```
 
@@ -197,16 +205,15 @@ func RunTestTaskScheduler() {
     var passedCount int
     for name, tc := range testCases {
         fmt.Printf("RUN %s\n", name)
+        format.PrintInput(map[string]interface{}{"tasks": string(tc.tasks), "n": tc.n})
 
         // Use runner.ExecCountMetrics to auto-measure memory/time
         result := runner.ExecCountMetrics(leastInterval, tc.tasks, tc.n).(int)
-
-        format.PrintInput(map[string]interface{}{"tasks": string(tc.tasks), "n": tc.n})
-
         if !cmp.EqualNumbers(result, tc.expect) {
             format.PrintFailed("expect = %v - got = %v", tc.expect, result)
             continue
         }
+
         format.PrintSuccess("test case '%s' passed", name)
         passedCount++
     }

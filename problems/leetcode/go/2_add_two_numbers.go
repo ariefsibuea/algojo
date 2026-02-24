@@ -9,26 +9,35 @@ import (
 )
 
 /*
- * Problem			: Add Two Numbers
- * Topics			: Linked List, Math, Recursion
- * Level			: Medium
- * URL				: https://leetcode.com/problems/add-two-numbers
- * Description		: Given two non-empty linked lists representing two non-negative integers. The digits are stored
- * 					  in reverse order, and each of their nodes contains a single digit. Add the two numbers and return
- * 					  the sum as a linked list. Assume the two numbers do not contain any leading zero, except the
- * 					  number 0 itself.
- * Examples			: Example 1:
- * 					  Input: l1 = [2,4,3], l2 = [5,6,4]
- * 					  Output: [7,0,8]
- * 					  Explanation: 342 + 465 = 807.
+ * Problem	: Add Two Numbers
+ * Topics	: Linked List, Math, Recursion
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/add-two-numbers/
  *
- * 					  Example 2:
- * 					  Input: l1 = [0], l2 = [0]
- * 					  Output: [0]
+ * Description:
+ * 		Given two non-empty linked lists representing two non-negative integers. The digits are stored
+ * 		in reverse order, and each of their nodes contains a single digit. Add the two numbers and return
+ * 		the sum as a linked list. Assume the two numbers do not contain any leading zero, except the
+ * 		number 0 itself.
  *
- * 					  Example 3:
- * 					  Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
- * 					  Output: [8,9,9,9,0,0,0,1]
+ * Constraints:
+ * 		- The number of nodes in each linked list is in the range [1, 100].
+ * 		- 0 <= Node.val <= 9
+ * 		- It is guaranteed that the list represents a number that does not have leading zeros.
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: l1 = [2,4,3], l2 = [5,6,4]
+ * 		Output: [7,0,8]
+ * 		Explanation: 342 + 465 = 807.
+ *
+ * 		Example 2:
+ * 		Input: l1 = [0], l2 = [0]
+ * 		Output: [0]
+ *
+ * 		Example 3:
+ * 		Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+ * 		Output: [8,9,9,9,0,0,0,1]
  */
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
@@ -83,6 +92,7 @@ func RunTestAddTwoNumbers() {
 	var passedCount int
 	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
+		format.PrintInput(map[string]interface{}{"l1": tc.l1, "l2": tc.l2})
 
 		result := runner.ExecCountMetrics(addTwoNumbers, tc.l1, tc.l2).(*ListNode)
 
@@ -92,11 +102,11 @@ func RunTestAddTwoNumbers() {
 			result = result.Next
 		}
 
-		format.PrintInput(map[string]interface{}{"l1": tc.l1, "l2": tc.l2})
 		if !cmp.EqualSlices(arrResult, tc.expect) {
 			format.PrintFailed("expect = %v - got = %v", tc.expect, arrResult)
 			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
 		passedCount++
 	}

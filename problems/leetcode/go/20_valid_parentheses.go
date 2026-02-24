@@ -2,37 +2,45 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /*
- * LeetCode Problem : Valid Parentheses
- * Topics           : String, Stack
- * Level            : Easy
- * URL              : https://leetcode.com/problems/valid-parentheses
- * Description      : Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the
- * 					input string is valid. An input string is valid if:
- * 						1) Open brackets must be closed by the same type of brackets,
- * 						2) Open brackets must be closed in the correct order,
- * 						3) Every close bracket has a corresponding open bracket of the same type.
- * Examples         :
- * 					Example 1:
- * 					Input: s = "()"
- * 					Output: true
+ * Problem	: Valid Parentheses
+ * Topics	: String, Stack
+ * Level	: Easy
+ * URL		: https://leetcode.com/problems/valid-parentheses/
  *
- * 					Example 2:
- * 					Input: s = "()[]{}"
- * 					Output: true
+ * Description:
+ * 		Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the
+ * 		input string is valid. An input string is valid if:
+ * 		1) Open brackets must be closed by the same type of brackets,
+ * 		2) Open brackets must be closed in the correct order,
+ * 		3) Every close bracket has a corresponding open bracket of the same type.
  *
- * 					Example 3:
- * 					Input: s = "(]"
- * 					Output: false
+ * Constraints:
+ * 		- 1 <= s.length <= 10^4
+ * 		- s consists of parentheses only '()[]{}'.
  *
- * 					Example 4:
- * 					Input: s = "([])"
- * 					Output: true
+ * Examples:
+ * 		Example 1:
+ * 		Input: s = "()"
+ * 		Output: true
+ *
+ * 		Example 2:
+ * 		Input: s = "()[]{}"
+ * 		Output: true
+ *
+ * 		Example 3:
+ * 		Input: s = "(]"
+ * 		Output: false
+ *
+ * 		Example 4:
+ * 		Input: s = "([])"
+ * 		Output: true
  */
 
 func isValidParentheses(s string) bool {
@@ -57,42 +65,51 @@ func isValidParentheses(s string) bool {
 	return len(stack) == 0
 }
 
-func RunTestIsValidParentheses() {
+func RunTestValidParentheses() {
+	runner.InitMetrics("ValidParentheses")
+
 	testCases := map[string]struct {
 		s      string
 		expect bool
 	}{
-		"case-1": {
+		"example-1-simple": {
 			s:      "()",
 			expect: true,
 		},
-		"case-2": {
+		"example-2-mixed": {
 			s:      "()[]{}",
 			expect: true,
 		},
-		"case-3": {
+		"example-3-invalid": {
 			s:      "(]",
 			expect: false,
 		},
-		"case-4": {
+		"example-4-nested": {
 			s:      "([])",
 			expect: true,
 		},
-		"case-5": {
+		"example-5-cross-nested": {
 			s:      "([)]",
 			expect: false,
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := isValidParentheses(testCase.s)
-		if !cmp.EqualBooleans(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+
+		result := runner.ExecCountMetrics(isValidParentheses, tc.s).(bool)
+
+		format.PrintInput(map[string]interface{}{"s": tc.s})
+
+		if !cmp.EqualBooleans(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

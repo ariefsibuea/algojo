@@ -2,37 +2,45 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strings"
 
-	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /*
- * LeetCode Problem : Group Anagrams
- * Topics           : Array, Hash Table, String, Sorting
- * Level            : Medium
- * URL              : https://leetcode.com/problems/group-anagrams
- * Description      : You are given an array of strings strs. Your task is to group all the anagrams together and
- * 					return them as a list of lists. Anagrams are words that contain the same characters but in
- * 					different orders (for example, "eat" and "tea" are anagrams).
- * Examples         :
- * 					Example 1:
- * 					Input: strs = ["eat","tea","tan","ate","nat","bat"]
- * 					Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
- * 					Explanation:
- * 						- There is no string in strs that can be rearranged to form "bat".
- * 						- The strings "nat" and "tan" are anagrams as they can be rearranged to form each other.
- * 						- The strings "ate", "eat", and "tea" are anagrams as they can be rearranged to form each
- * 							other.
+ * Problem	: Group Anagrams
+ * Topics	: Array, Hash Table, String, Sorting
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/group-anagrams/
  *
- * 					Example 2:
- * 					Input: strs = [""]
- * 					Output: [[""]]
+ * Description:
+ * 		You are given an array of strings strs. Your task is to group all the anagrams together and
+ * 		return them as a list of lists. Anagrams are words that contain the same characters but in
+ * 		different orders (for example, "eat" and "tea" are anagrams).
  *
- * 					Example 3:
- * 					Input: strs = ["a"]
- * 					Output: [["a"]]
+ * Constraints:
+ * 		- 1 <= strs.length <= 10^4
+ * 		- 0 <= strs[i].length <= 100
+ * 		- strs[i] consists of lowercase English letters.
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: strs = ["eat","tea","tan","ate","nat","bat"]
+ * 		Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+ * 		Explanation:
+ * 		- There is no string in strs that can be rearranged to form "bat".
+ * 		- The strings "nat" and "tan" are anagrams as they can be rearranged to form each other.
+ * 		- The strings "ate", "eat", and "tea" are anagrams as they can be rearranged to form each
+ * 		other.
+ *
+ * 		Example 2:
+ * 		Input: strs = [""]
+ * 		Output: [[""]]
+ *
+ * 		Example 3:
+ * 		Input: strs = ["a"]
+ * 		Output: [["a"]]
  */
 
 func groupAnagrams(strs []string) [][]string {
@@ -69,13 +77,13 @@ func generateSignature(str string) string {
 }
 
 func RunTestGroupAnagrams() {
-	// FIX: The test cases still fail because the order of the groups in the result slice result will be randomized
-	// as it is converted from a map to a slice.
+	runner.InitMetrics("GroupAnagrams")
+
 	testCases := map[string]struct {
 		strs   []string
 		expect [][]string
 	}{
-		"case-1": {
+		"example-1-basic": {
 			strs: []string{"eat", "tea", "tan", "ate", "nat", "bat"},
 			expect: [][]string{
 				{"eat", "tea", "ate"},
@@ -83,13 +91,13 @@ func RunTestGroupAnagrams() {
 				{"tan", "nat"},
 			},
 		},
-		"case-2": {
+		"example-2-empty-string": {
 			strs: []string{""},
 			expect: [][]string{
 				{""},
 			},
 		},
-		"case-3": {
+		"example-3-single-char": {
 			strs: []string{"a"},
 			expect: [][]string{
 				{"a"},
@@ -97,18 +105,74 @@ func RunTestGroupAnagrams() {
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
+		format.PrintInput(map[string]interface{}{"strs": tc.strs})
 
-		result := groupAnagrams(testCase.strs)
-		for i, group := range testCase.expect {
-			if !cmp.EqualSlices(group, result[i]) {
-				fmt.Printf("=== FAILED: expect = %v - got = %v\n", group, result[i])
-				os.Exit(1)
-			}
+		result := runner.ExecCountMetrics(groupAnagrams, tc.strs).([][]string)
+		if !compareAnagramGroups(tc.expect, result) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
+}
+
+func compareAnagramGroups(expected, actual [][]string) bool {
+	if len(expected) != len(actual) {
+		return false
+	}
+
+	used := make([]bool, len(actual))
+
+	for _, expGroup := range expected {
+		found := false
+		for i, actGroup := range actual {
+			if used[i] {
+				continue
+			}
+			if sameGroup(expGroup, actGroup) {
+				used[i] = true
+				found = true
+				break
+			}
+		}
+		if !found {
+			return false
+		}
+	}
+
+	return true
+}
+
+func sameGroup(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	countA := make(map[string]int)
+	for _, s := range a {
+		countA[s]++
+	}
+
+	for _, s := range b {
+		countA[s]--
+		if countA[s] < 0 {
+			return false
+		}
+	}
+
+	for _, c := range countA {
+		if c != 0 {
+			return false
+		}
+	}
+
+	return true
 }

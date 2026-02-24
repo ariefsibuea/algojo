@@ -2,31 +2,40 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /*
- * LeetCode Problem : Merge Two Sorted Lists
- * Topics           : Linked List, Recursion
- * Level            : Easy
- * URL              : https://leetcode.com/problems/merge-two-sorted-lists
- * Description      : You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one
- * 					sorted list. The list should be made by splicing together the nodes of the first two lists. Return
- * 					the head of the merged linked list.
- * Examples         :
- * 					Example 1:
- * 					Input: list1 = [1,2,4], list2 = [1,3,4]
- * 					Output: [1,1,2,3,4,4]
+ * Problem	: Merge Two Sorted Lists
+ * Topics	: Linked List, Recursion
+ * Level	: Easy
+ * URL		: https://leetcode.com/problems/merge-two-sorted-lists/
  *
- * 					Example 2:
- * 					Input: list1 = [], list2 = []
- * 					Output: []
+ * Description:
+ * 		You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one
+ * 		sorted list. The list should be made by splicing together the nodes of the first two lists. Return
+ * 		the head of the merged linked list.
  *
- * 					Example 3:
- * 					Input: list1 = [], list2 = [0]
- * 					Output: [0]
+ * Constraints:
+ * 		- The number of nodes in both lists is in the range [0, 50].
+ * 		- -100 <= Node.val <= 100
+ * 		- Both list1 and list2 are sorted in non-decreasing order.
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: list1 = [1,2,4], list2 = [1,3,4]
+ * 		Output: [1,1,2,3,4,4]
+ *
+ * 		Example 2:
+ * 		Input: list1 = [], list2 = []
+ * 		Output: []
+ *
+ * 		Example 3:
+ * 		Input: list1 = [], list2 = [0]
+ * 		Output: [0]
  */
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
@@ -54,6 +63,8 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 }
 
 func RunTestMergeTwoSortedLists() {
+	runner.InitMetrics("MergeTwoSortedLists")
+
 	list1Case1 := &ListNode{
 		Val: 1,
 		Next: &ListNode{
@@ -82,39 +93,45 @@ func RunTestMergeTwoSortedLists() {
 		list2  *ListNode
 		expect []int
 	}{
-		"case-1": {
+		"example-1-basic": {
 			list1:  list1Case1,
 			list2:  list2Case1,
 			expect: []int{1, 1, 2, 3, 4, 4},
 		},
-		"case-2": {
+		"example-2-empty": {
 			list1:  nil,
 			list2:  nil,
 			expect: []int{},
 		},
-		"case-3": {
+		"example-3-one-empty": {
 			list1:  nil,
 			list2:  list2Case3,
 			expect: []int{0},
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
+		format.PrintInput(map[string]interface{}{"list1": tc.list1, "list2": tc.list2})
 
-		head := mergeTwoLists(testCase.list1, testCase.list2)
+		head := runner.ExecCountMetrics(mergeTwoLists, tc.list1, tc.list2).(*ListNode)
 		result := []int{}
+
 		for head != nil {
 			result = append(result, head.Val)
 			head = head.Next
 		}
 
-		if !cmp.EqualSlices(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+		if !cmp.EqualSlices(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

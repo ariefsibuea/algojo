@@ -2,39 +2,47 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"sort"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
-/**
- * LeetCode Problem : 3Sum
- * Topic            : Array, Two Pointers, Sorting
- * Level            : Medium
- * URL              : https://leetcode.com/problems/3sum
- * Description      : You are given an integer array nums. Your task is to find all unique triplets in the array where
- * 					three numbers add up to zero.Specifically, you need to return all triplets [nums[i], nums[j],
- * 					nums[k]] that satisfy these conditions:
- * 						- The three indices must be different: i != j, i != k, and j != k
- * 						- The sum equals zero: nums[i] + nums[j] + nums[k] == 0
- * 						- The solution set must not contain duplicate triplets (even if the same values appear
- * 							multiple times in the array)
- * Examples         :
- * 					Example 1:
- * 					Input: nums = [-1,0,1,2,-1,-4]
- * 					Output: [[-1,-1,2],[-1,0,1]]
- * 					Explanation:
- * 					nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
- * 					nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
- * 					nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
- * 					The distinct triplets are [-1,0,1] and [-1,-1,2].
- * 					Notice that the order of the output and the order of the triplets does not matter.
+/*
+ * Problem	: 3Sum
+ * Topics	: Array, Two Pointers, Sorting
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/3sum/
  *
- * 					Example 2:
- * 					Input: nums = [0,1,1]
- * 					Output: []
- * 					Explanation: The only possible triplet does not sum up to 0.
+ * Description:
+ * 		You are given an integer array nums. Your task is to find all unique triplets in the array where
+ * 		three numbers add up to zero. Specifically, you need to return all triplets [nums[i], nums[j],
+ * 		nums[k]] that satisfy these conditions:
+ * 		- The three indices must be different: i != j, i != k, and j != k
+ * 		- The sum equals zero: nums[i] + nums[j] + nums[k] == 0
+ * 		- The solution set must not contain duplicate triplets (even if the same values appear
+ * 		multiple times in the array)
+ *
+ * Constraints:
+ * 		- 3 <= nums.length <= 3000
+ * 		- -10^5 <= nums[i] <= 10^5
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: nums = [-1,0,1,2,-1,-4]
+ * 		Output: [[-1,-1,2],[-1,0,1]]
+ * 		Explanation:
+ * 		nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+ * 		nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+ * 		nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+ * 		The distinct triplets are [-1,0,1] and [-1,-1,2].
+ * 		Notice that the order of the output and the order of the triplets does not matter.
+ *
+ * 		Example 2:
+ * 		Input: nums = [0,1,1]
+ * 		Output: []
+ * 		Explanation: The only possible triplet does not sum up to 0.
  */
 
 func threeSum(nums []int) [][]int {
@@ -72,32 +80,40 @@ func threeSum(nums []int) [][]int {
 }
 
 func RunTestThreeSum() {
+	runner.InitMetrics("ThreeSum")
+
 	testCases := map[string]struct {
 		nums   []int
 		expect [][]int
 	}{
-		"case-1": {
+		"example-1-basic": {
 			nums: []int{-1, 0, 1, 2, -1, -4},
 			expect: [][]int{
 				{-1, -1, 2},
 				{-1, 0, 1},
 			},
 		},
-		"case-2": {
+		"example-2-no-triplet": {
 			nums:   []int{0, 1, 1},
 			expect: [][]int{},
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := threeSum(testCase.nums)
-		if !cmp.EqualSlices(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+		format.PrintInput(map[string]interface{}{"nums": tc.nums})
+
+		result := runner.ExecCountMetrics(threeSum, tc.nums).([][]int)
+		if !cmp.EqualSlices(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

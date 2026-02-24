@@ -8,13 +8,19 @@ import (
 )
 
 /*
- * Problem          : <Title>
- * Topics           : <Algorithm Categories>
- * Level            : <Easy | Medium | Hard>
- * URL              : <URL>
- * Description      : <Description>
- * Constraints      : <Constraints>
- * Examples         : <Examples>
+ * Problem	: <Title>
+ * Topics	: <Algorithm Categories>
+ * Level	: <Easy | Medium | Hard>
+ * URL		: <URL>
+ *
+ * Description:
+ * 		<Description>
+ *
+ * Constraints:
+ * 		<Constraints>
+ *
+ * Examples:
+ * 		<Examples>
  */
 
 func RunTestXxx() {
@@ -33,11 +39,10 @@ func RunTestXxx() {
 
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
 		fmt.Println(testCase)
-		// result := twoSum(testCase.nums, testCase.target)
 		// format.PrintInput(map[string]interface{}{"input-1": testCase.Input1})
 
+		// result := twoSum(testCase.nums, testCase.target)
 		// if !EqualSlices(result, testCase.expect) {
 		//  format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
 		// 	continue

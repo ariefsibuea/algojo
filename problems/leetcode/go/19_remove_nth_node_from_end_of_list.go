@@ -2,30 +2,40 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
-/**
- * LeetCode Problem : Remove Nth Node From End of List
- * Topic            : Linked List, Two Pointers
- * Level            : Medium
- * URL              : https://leetcode.com/problems/remove-nth-node-from-end-of-list
- * Description      : Given the head of a linked list, remove the nth node from the end of the list and return its
- * 					head.
- * Examples         :
- * 					Example 1:
- * 					Input: head = [1,2,3,4,5], n = 2
- * 					Output: [1,2,3,5]
+/*
+ * Problem	: Remove Nth Node From End of List
+ * Topics	: Linked List, Two Pointers
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
  *
- * 					Example 2:
- * 					Input: head = [1], n = 1
- * 					Output: []
+ * Description:
+ * 		Given the head of a linked list, remove the nth node from the end of the list and return its
+ * 		head.
  *
- * 					Example 3:
- * 					Input: head = [1,2], n = 1
- * 					Output: [1]
+ * Constraints:
+ * 		- The number of nodes in the list is sz.
+ * 		- 1 <= sz <= 30
+ * 		- 0 <= Node.val <= 100
+ * 		- 1 <= n <= sz
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: head = [1,2,3,4,5], n = 2
+ * 		Output: [1,2,3,5]
+ *
+ * 		Example 2:
+ * 		Input: head = [1], n = 1
+ * 		Output: []
+ *
+ * 		Example 3:
+ * 		Input: head = [1,2], n = 1
+ * 		Output: [1]
  */
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
@@ -55,7 +65,9 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	return preHead.Next
 }
 
-func RunTestRemoveNthFromEnd() {
+func RunTestRemoveNthNodeFromEndOfList() {
+	runner.InitMetrics("RemoveNthNodeFromEndOfList")
+
 	linkedList1 := ListNode{
 		Val: 1,
 		Next: &ListNode{
@@ -79,34 +91,40 @@ func RunTestRemoveNthFromEnd() {
 		n      int
 		expect []int
 	}{
-		"case-1": {
+		"example-1-basic": {
 			head:   &linkedList1,
 			n:      2,
 			expect: []int{1, 2, 3, 5},
 		},
-		"case-2": {
+		"example-2-single-node": {
 			head:   &linkedList2,
 			n:      1,
 			expect: []int{},
 		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		head := removeNthFromEnd(testCase.head, testCase.n)
+		format.PrintInput(map[string]interface{}{"head": tc.head, "n": tc.n})
 
+		head := runner.ExecCountMetrics(removeNthFromEnd, tc.head, tc.n).(*ListNode)
 		result := []int{}
+
 		for head != nil {
 			result = append(result, head.Val)
 			head = head.Next
 		}
 
-		if !cmp.EqualSlices(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+		if !cmp.EqualSlices(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

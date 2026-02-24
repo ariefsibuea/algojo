@@ -2,30 +2,39 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
-/**
- * LeetCode Problem : Container With Most Water
- * Topics           : Array, Two Pointers, Greedy
- * Level            : Medium
- * URL              : https://leetcode.com/problems/container-with-most-water
- * Description      : You are given an integer array height of length n. There are n vertical lines drawn such that the
- * 					two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the
- * 					x-axis form a container, such that the container contains the most water. Return the maximum
- * 					amount of water a container can store. Notice that you may not slant the container.
- * Examples         :
- *         			Example 1:
- *         			Input: height = [1,8,6,2,5,4,8,3,7]
- *         			Output: 49
- *         			Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case,
- * 					the max area of water (blue section) the container can contain is 49.
+/*
+ * Problem	: Container With Most Water
+ * Topics	: Array, Two Pointers, Greedy
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/container-with-most-water/
  *
- *         			Example 2:
- *         			Input: height = [1,1]
- *         			Output: 1
+ * Description:
+ * 		You are given an integer array height of length n. There are n vertical lines drawn such that the
+ * 		two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the
+ * 		x-axis form a container, such that the container contains the most water. Return the maximum
+ * 		amount of water a container can store. Notice that you may not slant the container.
+ *
+ * Constraints:
+ * 		- n == height.length
+ * 		- 2 <= n <= 10^5
+ * 		- 0 <= height[i] <= 10^4
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: height = [1,8,6,2,5,4,8,3,7]
+ * 		Output: 49
+ * 		Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case,
+ * 		the max area of water (blue section) the container can contain is 49.
+ *
+ * 		Example 2:
+ * 		Input: height = [1,1]
+ * 		Output: 1
  */
 
 func maxArea(height []int) int {
@@ -46,32 +55,38 @@ func maxArea(height []int) int {
 	return maxAmount
 }
 
-func RunTestMaxArea() {
+func RunTestContainerWithMostWater() {
+	runner.InitMetrics("ContainerWithMostWater")
+
 	testCases := map[string]struct {
 		height []int
 		expect int
 	}{
-		"case-1": {
+		"example-1-basic": {
 			height: []int{1, 8, 6, 2, 5, 4, 8, 3, 7},
 			expect: 49,
 		},
-		"case-2": {
+		"example-2-minimal": {
 			height: []int{1, 1},
 			expect: 1,
 		},
 	}
 
-	var result int
-
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result = maxArea(testCase.height)
-		if !cmp.EqualNumbers(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+		format.PrintInput(map[string]interface{}{"height": tc.height})
+
+		result := runner.ExecCountMetrics(maxArea, tc.height).(int)
+		if !cmp.EqualNumbers(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
