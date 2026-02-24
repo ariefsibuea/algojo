@@ -2,30 +2,35 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 /*
- * Problem 			: Permutation in String
- * Topics           : Hash Table, Two Pointers, String, Sliding Window
- * Level            : Medium
- * URL              : https://leetcode.com/problems/permutation-in-string
- * Description      : Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
- *                    In other words, return true if one of s1's permutations is the substring of s2.
- * Constraints      : 1 <= s1.length, s2.length <= 10^4.
- *                    s1 and s2 consist of lowercase English letters.
- * Examples         :
- * 					  Example 1:
- *                    Input: s1 = "ab", s2 = "eidbaooo"
- *                    Output: true
- *                    Explanation: s2 contains one permutation of s1 ("ba").
+ * Problem		: Permutation in String
+ * Topics		: Hash Table, Two Pointers, String, Sliding Window
+ * Level		: Medium
+ * URL			: https://leetcode.com/problems/permutation-in-string
  *
- *                    Example 2:
- *                    Input: s1 = "ab", s2 = "eidboaoo"
- *                    Output: false
+ * Description:
+ * 		Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+ * 		In other words, return true if one of s1's permutations is the substring of s2.
+ *
+ * Constraints:
+ * 		- 1 <= s1.length, s2.length <= 10^4.
+ * 		- s1 and s2 consist of lowercase English letters.
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: s1 = "ab", s2 = "eidbaooo"
+ * 		Output: true
+ * 		Explanation: s2 contains one permutation of s1 ("ba").
+ *
+ * 		Example 2:
+ * 		Input: s1 = "ab", s2 = "eidboaoo"
+ * 		Output: false
  */
 
 func checkInclusion(s1 string, s2 string) bool {
@@ -58,6 +63,8 @@ func checkInclusion(s1 string, s2 string) bool {
 }
 
 func RunTestPermutationInString() {
+	runner.InitMetrics("PermutationInString")
+
 	testCases := map[string]struct {
 		s1     string
 		s2     string
@@ -120,18 +127,20 @@ func RunTestPermutationInString() {
 		},
 	}
 
+	var passedCount int
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
-		result := checkInclusion(testCase.s1, testCase.s2)
 		format.PrintInput(map[string]interface{}{"s1": testCase.s1, "s2": testCase.s2})
 
+		result := runner.ExecCountMetrics(checkInclusion, testCase.s1, testCase.s2).(bool)
 		if !cmp.EqualBooleans(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
