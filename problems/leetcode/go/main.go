@@ -107,6 +107,7 @@ func registerSolutions(r *runner.SolutionRunner) {
 		"ProductOfArrayExceptSelf":                      RunTestProductOfArrayExceptSelf,
 		"RangeSumQuery2DImmutable":                      RunTestRangeSumQuery2DImmutable,
 		"RansomNote":                                    RunTestCanConstructRansomNote,
+		"RemoveCoveredIntervals":                        RunTestRemoveCoveredIntervals,
 		"RemoveDuplicatesFromSortedArray":               RunTestRemoveDuplicatesFromSortedArray,
 		"RemoveNthNodeFromEndOfList":                    RunTestRemoveNthNodeFromEndOfList,
 		"ReorderList":                                   RunTestReorderList,
