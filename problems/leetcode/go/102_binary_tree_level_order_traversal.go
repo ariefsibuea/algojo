@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("BinaryTreeLevelOrderTraversal", RunTestBinaryTreeLevelOrderTraversal)
+}
+
 /*
  * Problem 			: Binary Tree Level Order Traversal
  * Topics           : Tree, Breadth-First Search, Binary Tree

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("MiddleOfTheLinkedList", RunTestMiddleOfTheLinkedList)
+}
+
 /*
  * Problem 			: Middle of the Linked List
  * Topics           : Linked List, Two Pointers

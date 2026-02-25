@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("CountSubarraysWithScoreLessThanK", RunTestCountSubarraysWithScoreLessThanK)
+}
+
 /*
  * Problem 			: Count Subarrays With Score Less Than K
  * Topics           : Array, Sliding Window

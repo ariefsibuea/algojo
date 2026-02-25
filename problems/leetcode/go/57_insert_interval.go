@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("InsertInterval", RunTestInsertInterval)
+}
+
 /**
  * Problem          : Insert Interval
  * Topics           : Array

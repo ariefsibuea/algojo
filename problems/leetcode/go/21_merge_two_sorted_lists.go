@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("MergeTwoSortedLists", RunTestMergeTwoSortedLists)
+}
+
 /*
  * Problem	: Merge Two Sorted Lists
  * Topics	: Linked List, Recursion

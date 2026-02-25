@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("RotateArray", RunTestRotateArray)
+}
+
 /*
  * Problem 			: Rotate Array
  * Topics           : Array, Math, Two Pointers

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("BtreeInorderTraversal", RunTestBtreeInorderTraversal)
+}
+
 /*
  * Problem 			: Binary Tree Inorder Traversal
  * Topics           : Stack, Tree, Depth-First Search, Binary Tree

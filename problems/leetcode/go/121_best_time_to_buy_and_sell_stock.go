@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("BestTimeToBuyAndSellStock", RunTestMaxProfit)
+}
+
 /*
  * LeetCode Problem : Best Time to Buy and Sell Stock
  * Topics           : Array, Dynamic Programming

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("HappyNumber", RunTestHappyNumber)
+}
+
 /**
  * Problem 			: Happy Number
  * Topics           : Hash Table, Math, Two Pointers

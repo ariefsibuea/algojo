@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("AppendCharactersToStringToMakeSubsequence", RunTestAppendCharactersToString)
+}
+
 /**
  * Problem 			: Append Characters to String to Make Subsequence
  * Topics           : Two Pointers, String, Greedy

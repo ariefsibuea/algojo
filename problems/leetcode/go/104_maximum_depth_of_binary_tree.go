@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MaximumDepthOfBinaryTree", RunTestMaximumDepthOfBinaryTree)
+}
+
 /*
  * Problem 			: Maximum Depth of Binary Tree
  * Topics           : Tree, Depth-First Search, Breadth-First Search, Binary Tree

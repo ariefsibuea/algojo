@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("TwoSum", RunTestTwoSum)
+}
+
 /*
  * Problem	: Two Sum
  * Topics	: Array, Hash Table

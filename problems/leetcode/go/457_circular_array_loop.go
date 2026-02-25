@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("CircularArrayLoop", RunTestCircularArrayLoop)
+}
+
 /*
  * Problem 			: Circular Array Loop
  * Topics           : Array, Hash Table, Two Pointers

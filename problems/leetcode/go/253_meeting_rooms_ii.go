@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("MeetingRoomsII", RunTestMeetingRoomsII)
+}
+
 /*
  * Problem          : Meeting Rooms II
  * Topics           : Greedy, Array, Two Pointers, Prefix Sum, Sorting, Heap (Priority Queue)

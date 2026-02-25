@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("TrappingRainWater", RunTestTrappingRainWater)
+}
+
 /*
  * Problem	: Trapping Rain Water
  * Topics	: Array, Two Pointers, Dynamic Programming, Stack, Monotonic Stack

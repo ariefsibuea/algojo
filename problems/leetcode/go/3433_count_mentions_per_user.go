@@ -11,6 +11,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("CountMentionsPerUser", RunTestCountMentionsPerUser)
+}
+
 /*
  * Problem 			: Count Mentions Per User
  * Topics           : Array, Math, Sorting, Simulation

@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("RemoveCoveredIntervals", RunTestRemoveCoveredIntervals)
+}
+
 /*
  * Problem	: Remove Covered Intervals
  * Topics	: Array, Sorting

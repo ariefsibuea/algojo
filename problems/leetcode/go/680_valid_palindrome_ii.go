@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ValidPalindromeII", RunTestValidPalindromeII)
+}
+
 /**
  * Problem 			: Valid Palindrome II
  * Topics           : Two Pointers, String, Greedy

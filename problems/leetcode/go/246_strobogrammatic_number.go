@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("StrobogrammaticNumber", RunTestStrobogrammaticNumber)
+}
+
 /**
  * Problem 			: Strobogrammatic Numbber
  * Topics           : Hash Table, Two Pointers, String

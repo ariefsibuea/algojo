@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("SlidingWindowMaximum", RunTestSlidingWindowMaximum)
+}
+
 /*
  * Problem 			: Sliding Window Maximum
  * Topics           : Array, Queue, Sliding Window, Heap (Priority Queue), Monotonic Queue, Deque

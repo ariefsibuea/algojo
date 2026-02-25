@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MaxAreaOfIsland", RunTestMaxAreaOfIsland)
+}
+
 /*
  * Problem 			: Max Area of Island
  * Topics           : Array, Depth-First Search, Breadth-First Search, Union Find, Matrix

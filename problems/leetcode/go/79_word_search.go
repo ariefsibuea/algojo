@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("WordSearch", RunTestWordSearch)
+}
+
 /**
  * Problem 			: Word Search
  * Topics           : Array, String, Backtracking, Depth-First Search, Matrix

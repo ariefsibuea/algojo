@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("CountDaysWithoutMeetings", RunTestCountDaysWithoutMeetings)
+}
+
 /*
  * Problem	: Count Days Without Meetings
  * Topics	: Array, Sorting, Interval Merging

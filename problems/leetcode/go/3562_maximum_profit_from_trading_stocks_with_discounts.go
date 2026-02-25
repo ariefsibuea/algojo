@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MaximumProfitFromTradingStocksWithDiscounts", RunTestMaximumProfitFromTradingStocksWithDiscounts)
+}
+
 /*
  * Problem 			: Maximum Profit from Trading Stocks with Discounts
  * Topics           : Array, Dynamic Programming, Tree, Depth-First Search

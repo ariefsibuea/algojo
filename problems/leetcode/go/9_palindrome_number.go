@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("PalindromeNumber", RunTestPalindromeNumber)
+}
+
 /*
  * Problem	: Palindrome Number
  * Topics	: Math

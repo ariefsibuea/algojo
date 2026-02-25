@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("MoveZeroes", RunTestMoveZeroes)
+}
+
 /**
  * LeetCode Problem : Move Zeroes
  * Topic            : Array, Two Pointers

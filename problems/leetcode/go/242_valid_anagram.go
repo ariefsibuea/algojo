@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ValidAnagram", RunTestValidAnagram)
+}
+
 func isValidAnagram(s string, t string) bool {
 	if len(s) != len(t) {
 		return false
@@ -29,7 +33,7 @@ func isValidAnagram(s string, t string) bool {
 	return true
 }
 
-func RunTestIsValidAnagram() {
+func RunTestValidAnagram() {
 	testCases := map[string]struct {
 		s      string
 		t      string

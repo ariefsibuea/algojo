@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("MergeIntervals", RunTestMergeIntervals)
+}
+
 /**
  * Problem          : Merge Intervals
  * Topics           : Array, Sorting

@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("PermutationInString", RunTestPermutationInString)
+}
+
 /*
  * Problem		: Permutation in String
  * Topics		: Hash Table, Two Pointers, String, Sliding Window

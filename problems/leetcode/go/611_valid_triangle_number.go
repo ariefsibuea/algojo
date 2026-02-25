@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ValidTriangleNumber", RunTestValidTriangleNumber)
+}
+
 /**
  * LeetCode Problem : Valid Triangle Number
  * Topic            : Array, Two Pointers, Binary Search, Greedy, Sorting

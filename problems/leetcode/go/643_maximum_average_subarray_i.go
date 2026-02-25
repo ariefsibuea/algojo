@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MaximumAverageSubarrayI", RunTestMaximumAverageSubarrayI)
+}
+
 /*
  * Problem 			: Maximum Average Subarray I
  * Topics           : Array, Sliding Window

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("FindTheDuplicateNumber", RunTestFindTheDuplicateNumber)
+}
+
 /*
  * Problem 			: Find the Duplicate Number
  * Topics           : Array, Two Pointers, Binary Search, Bit Manipulation

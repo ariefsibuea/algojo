@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("NumberOfZeroFilledSubarray", RunTestNumberOfZeroFilledSubarray)
+}
+
 /**
  * Problem 			: Number of Zero Filled Subarrays
  * Topics           : Array, Math
@@ -53,7 +57,7 @@ func zeroFilledSubarray(nums []int) int64 {
 	return totalSubarray
 }
 
-func RunTestZeroFilledSubarray() {
+func RunTestNumberOfZeroFilledSubarray() {
 	testCases := map[string]struct {
 		nums   []int
 		expect int64

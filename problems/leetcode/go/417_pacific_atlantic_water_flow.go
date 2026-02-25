@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("PacificAtlanticWaterFlow", RunTestPacificAtlanticWaterFlow)
+}
+
 /*
  * Problem 			: Pacific Atlantic Water Flow
  * Topics           : Array, Depth-First Search, Breadth-First Search, Matrix

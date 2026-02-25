@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("NumberOfWaysToDivideALongCorridor", RunTestNumberOfWaysToDivideALongCorridor)
+}
+
 /*
  * Problem 			: <Title>
  * Topics           : <Algorithm Categories>

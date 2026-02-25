@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	// register function here
+}
+
 /*
  * Problem	: <Title>
  * Topics	: <Algorithm Categories>

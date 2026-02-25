@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("FindPivotIndex", RunTestFindPivotIndex)
+}
+
 /*
  * Problem 			: Find Pivot Index
  * Topics           : Array, Prefix Sum

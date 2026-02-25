@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("SubarraySumEqualsK", RunTestSubarraySumEqualsK)
+}
+
 /*
  * Problem 			: Subarray Sum Equals K
  * Topics           : Array, Hash Table, Prefix Sum

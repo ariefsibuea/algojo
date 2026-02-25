@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("LRUCache", RunTestLRUCache)
+}
+
 /*
  * Problem 			: LRU Cache
  * Topics           : Hash Table, Linked List, Design, Doubly-Linked List

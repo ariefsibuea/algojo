@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("SubarraysWithKDifferentIntegers", RunTestSubarraysWithKDifferentIntegers)
+}
+
 /*
  * Problem 			: Subarrays with K Different Integers
  * Topics           : Array, Hash Table, Sliding Window

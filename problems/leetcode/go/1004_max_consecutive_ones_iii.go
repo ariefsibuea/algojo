@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MaxConsecutiveOnesIII", RunTestMaxConsecutiveOnesIII)
+}
+
 /*
  * Problem 			: Max Consecutive Ones III
  * Topics           : Array, Binary Search, Sliding Window, Prefix Sum

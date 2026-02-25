@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("MedianOfTwoSortedArrays", RunTestFindMedianSortedArrays)
+}
+
 /*
  * Problem	: Median of Two Sorted Arrays
  * Topics	: Array, Binary Search, Divide and Conquer

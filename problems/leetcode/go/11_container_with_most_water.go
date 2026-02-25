@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("ContainerWithMostWater", RunTestContainerWithMostWater)
+}
+
 /*
  * Problem	: Container With Most Water
  * Topics	: Array, Two Pointers, Greedy

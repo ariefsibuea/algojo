@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("LongestIncreasingSubsequence", RunTestLongestIncreasingSubsequence)
+}
+
 /**
  * Problem 			: Longest Increasing Subsequence
  * Topics           : Array, Binary Search, Dynamic Programming

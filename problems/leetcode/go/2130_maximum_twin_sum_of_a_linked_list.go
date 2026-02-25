@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MaximumTwinSumOfALinkedList", RunTestMaximumTwinSumOfALinkedList)
+}
+
 /*
  * LeetCode Problem : Maximum Twin Sum of a Linked List
  * Topics           : Linked List, Two Pointers, Stack

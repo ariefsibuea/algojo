@@ -30,6 +30,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/math"
 )
 
+func init() {
+	register("BalancedBinaryTree", RunTestIsBalancedBinaryTree)
+}
+
 func isBalancedBinaryTree(root *TreeNode) bool {
 	height := 0
 	return isBalancedHeight(root, &height)

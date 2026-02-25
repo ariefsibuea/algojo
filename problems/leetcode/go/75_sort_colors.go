@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("SortColors", RunTestSortColors)
+}
+
 /**
  * LeetCode Problem : Sort Colors
  * Topic            : Array, Two Pointers, Sorting

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("BinaryTreeRightSideView", RunTestBinaryTreeRightSideView)
+}
+
 /*
  * Problem 			: Binary Tree Right Side View
  * Topics           : Tree, Depth-First Search, Breadth-First Search, Binary Tree

@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("MaximumSubarray", RunTestMaximumSubarray)
+}
+
 /*
  * Problem	: Maximum Subarray
  * Topics	: Array, Divide and Conquer, Dynamic Programming

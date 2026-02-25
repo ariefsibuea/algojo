@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MinimumWindowSubsequence", RunTestMinimumWindowSubsequence)
+}
+
 /*
  * Problem          : Minimum Window Subsequence
  * Topics           : String, Dynamic Programming, Sliding Window

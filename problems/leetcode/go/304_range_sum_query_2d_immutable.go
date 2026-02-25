@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("RangeSumQuery2DImmutable", RunTestRangeSumQuery2DImmutable)
+}
+
 /*
  * Problem 			: Range Sum Query 2D - Immutable
  * Topics           : Array, Matrix, Prefix Sum, Design

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("TopKFrequentElements", RunTestTopKFrequentElements)
+}
+
 func topKFrequent(nums []int, k int) []int {
 	frequent := make(map[int]int, len(nums))
 	for _, num := range nums {

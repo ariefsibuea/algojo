@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ClimbingStairs", RunTestClimbStairs)
+}
+
 /**
  * LeetCode Problem : Climbing Stairs
  * Topics           : Math, Dynamic Programming, Memoization

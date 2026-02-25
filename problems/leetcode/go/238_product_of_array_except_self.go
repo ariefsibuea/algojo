@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("ProductOfArrayExceptSelf", RunTestProductOfArrayExceptSelf)
+}
+
 /*
  * Problem 			: Product of Array Except Self
  * Topics           : Array, Prefix Sum

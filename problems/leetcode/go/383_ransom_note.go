@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("RansomNote", RunTestCanConstructRansomNote)
+}
+
 /**
  * LeetCode Proleb	: Ransom Note
  * Topic			: Hash Table, String, Counting

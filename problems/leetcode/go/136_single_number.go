@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("SingleNumber", RunTestSingleNumber)
+}
+
 /*
  * Problem 			: Single Number
  * Topics           : Array, Bit Manipulation

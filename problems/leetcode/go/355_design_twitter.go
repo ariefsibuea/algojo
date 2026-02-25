@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("DesignTwitter", RunTestDesignTwitter)
+}
+
 type Tweet struct {
 	UserId    int
 	TweetId   int

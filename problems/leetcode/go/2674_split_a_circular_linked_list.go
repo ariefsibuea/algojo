@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("SplitACircularLinkedList", RunTestSplitACircularLinkedList)
+}
+
 /*
  * Problem          : Split A Circular Linked List
  * Topics           : Linked List

@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("RemoveDuplicatesFromSortedArray", RunTestRemoveDuplicatesFromSortedArray)
+}
+
 /*
  * Problem	: Remove Duplicates from Sorted Array
  * Topics	: Array, Two Pointers

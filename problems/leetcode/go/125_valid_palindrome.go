@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ValidPalindrome", RunTestValidPalindrome)
+}
+
 /**
  * LeetCode 		: Valid Palindrome
  * Topic            : Two Pointers, String
@@ -75,7 +79,7 @@ func toLowerCaseASCII(c byte) byte {
 	return c
 }
 
-func RunTestIsValidPalindrome() {
+func RunTestValidPalindrome() {
 	testCases := map[string]struct {
 		s      string
 		expect bool

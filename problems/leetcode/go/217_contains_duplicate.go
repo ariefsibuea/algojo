@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ContainsDuplicate", RunTestContainsDuplicate)
+}
+
 /*
  * Problem 			: Contains Duplicate
  * Topics           : Array, Hash Table, Sorting

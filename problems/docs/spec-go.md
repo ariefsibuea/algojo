@@ -52,12 +52,13 @@ Every solution file must follow this exact order:
 
 1.  **Package Declaration** (`package main`)
 2.  **Imports** (Standard -> Project -> Side-effects)
-3.  **Doc Comment** (Metadata block)
-4.  **Constants** (Optional)
-5.  **Types/Structs** (Optional)
-6.  **Solution Function(s)**
-7.  **Test Function** (`RunTestXxx`)
-8.  **Helper Functions** (Optional)
+3.  **Registration** (`init()` function - registers test function)
+4.  **Doc Comment** (Metadata block)
+5.  **Constants** (Optional)
+6.  **Types/Structs** (Optional)
+7.  **Solution Function(s)**
+8.  **Test Function** (`RunTestXxx`)
+9.  **Helper Functions** (Optional)
 
 ---
 
@@ -85,6 +86,10 @@ import (
     "github.com/ariefsibuea/algojo/libs/go/format"
     "github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+    register("TaskScheduler", RunTestTaskScheduler)
+}
 ```
 
 ### 4.2 Doc Comment
@@ -256,25 +261,20 @@ func buildTwoSumCase1Nums() []int {
 
 ## 5. Solution Registration
 
-After creating your file, you must register it in the `main.go` file of the corresponding directory (e.g., `problems/leetcode/go/main.go`).
+Solutions are automatically registered using `init()` functions in each file. When the package is loaded, all `init()` functions run and register their respective test functions to the global registry.
 
-1.  Open `main.go`.
-2.  Locate the `registerSolutions` function.
-3.  Add your `RunTestXxx` function to the map.
-4.  **Sort alphabetically** by the key string.
+### Adding a New Solution
+
+1.  Create your solution file.
+2.  Add an `init()` function that calls `register()` with your test function.
 
 ```go
-func registerSolutions(r *runner.SolutionRunner) {
-    solutions := map[string]runner.TestFunc{
-        // ... existing solutions ...
-        "MinimumSwaps2":        RunTestMinimumSwaps2,
-        "NewYearChaos":         RunTestNewYearChaos,
-        "TaskScheduler":        RunTestTaskScheduler,  // <--- Your new solution
-        "TwoStrings":           RunTestTwoStrings,
-    }
-    r.RegisterSolutions(solutions)
+func init() {
+	register("TaskScheduler", RunTestTaskScheduler)
 }
 ```
+
+The `register` function is defined in `main.go` and is available to all files in the package.
 
 ---
 
@@ -343,7 +343,7 @@ Use these libraries instead of standard `fmt` or `reflect` for better formatting
 
 - **Do** include a complete Doc Comment with properly aligned examples.
 - **Do** use `runner.ExecCountMetrics` to wrap your solution call in the test loop.
-- **Do** register your solution in `main.go` immediately after creation.
+- **Do** register your solution using `init()` in your solution file.
 - **Do** use `kebab-case` for test case keys (e.g., `"example-1-basic"`).
 - **Do** implement multiple approaches if relevant, naming them `func_ApproachName`.
 
@@ -351,7 +351,6 @@ Use these libraries instead of standard `fmt` or `reflect` for better formatting
 
 - **Don't** use `fmt.Println` for test results; use `format.PrintSuccess/Failed`.
 - **Don't** hardcode test inputs in the loop; use the `testCases` map.
-- **Don't** leave `RunTest` functions unconnected (they must be in `main.go`).
 - **Don't** use `os.Exit(1)` inside the test loop.
 
 ---
@@ -381,5 +380,5 @@ Use `problems/template.go` as your base.
 - [ ] **Doc:** Filled in all metadata fields, matching the alignment style.
 - [ ] **Code:** Implemented solution in `camelCase`.
 - [ ] **Test:** Implemented `RunTestPascalCase` with `continue` on failure.
-- [ ] **Registry:** Added to `registerSolutions` map in `main.go` (Alphabetical order).
+- [ ] **Registry:** Added `init()` function with `register("ProblemName", RunTestXxx)`.
 - [ ] **Verify:** Ran `go run . -s ProblemName` and confirmed it passes.

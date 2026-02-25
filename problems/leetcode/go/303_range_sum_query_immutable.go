@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("RangeSumQueryImmutable", RunTestRangeSumQueryImmutable)
+}
+
 /*
  * Problem 			: Range Sum Query - Immutable
  * Topics           : Array, Design, Prefix Sum

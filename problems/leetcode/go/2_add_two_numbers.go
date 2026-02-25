@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("AddTwoNumbers", RunTestAddTwoNumbers)
+}
+
 /*
  * Problem	: Add Two Numbers
  * Topics	: Linked List, Math, Recursion

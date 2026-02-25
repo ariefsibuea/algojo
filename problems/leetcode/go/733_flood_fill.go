@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("FloodFill", RunTestFloodFill)
+}
+
 /*
 LeetCode Problem : Flood Fill
 Topic            : Array, Depth-First Search, Breadth-First Search, Matrix

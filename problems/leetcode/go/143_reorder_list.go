@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ReorderList", RunTestReorderList)
+}
+
 /*
  * Problem 			: Reorder List
  * Topics           : Linked List, Two Pointers, Stack, Recursion

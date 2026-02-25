@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("GroupAnagrams", RunTestGroupAnagrams)
+}
+
 /*
  * Problem	: Group Anagrams
  * Topics	: Array, Hash Table, String, Sorting

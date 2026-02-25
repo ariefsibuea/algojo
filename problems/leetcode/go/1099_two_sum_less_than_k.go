@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("TwoSumLessThanK", RunTestTwoSumLessThanK)
+}
+
 /**
  * Problem 			: Two Sum Less Than K
  * Topics           : Sort, Search

@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("3Sum", RunTestThreeSum)
+}
+
 /*
  * Problem	: 3Sum
  * Topics	: Array, Two Pointers, Sorting

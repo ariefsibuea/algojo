@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("FirstBadVersion", RunTestFirstBadVersion)
+}
+
 /**
  * LeetCode Problem : First Bad Version
  * Topic            : Binary Search, Interactive

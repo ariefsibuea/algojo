@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("RepeatedDNASequence", RunTestRepeatedDNASequences)
+}
+
 /*
  * Problem          : Repeated DNA Sequences
  * Topics           : Hash Table, String, Bit Manipulation

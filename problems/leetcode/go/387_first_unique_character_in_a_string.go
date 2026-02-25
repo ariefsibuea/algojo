@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("FirstUniqueCharacterInAString", RunTestFirstUniqChar)
+}
+
 /**
  * Problem 			: First Unique Character in a String
  * Topics           : Hash Table, String, Queue, Counting

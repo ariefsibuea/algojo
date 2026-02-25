@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ImplementQueueUsingStack", RunTestImplementQueueUsingStacks)
+}
+
 type MyQueue struct {
 	stackPush []int
 	stackPop  []int

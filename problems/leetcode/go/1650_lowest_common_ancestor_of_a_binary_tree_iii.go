@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("LowestCommonAncestorIII", RunTestLowestCommonAncestorIII)
+}
+
 /**
  * Problem 			: Lowest Common Ancestor of a Binary Tree III
  * Topics           : Tree, Binary Tree

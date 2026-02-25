@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("MinimumWindowSubstring", RunTestMinWindowSubstring)
+}
+
 /*
  * LeetCode Problem : Minimum Window Substring
  * Topics           : Hash Table, String, Sliding Window

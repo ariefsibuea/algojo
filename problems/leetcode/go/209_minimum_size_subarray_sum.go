@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("MinimumSizeSubarraySum", RunTestMinimumSizeSubarraySum)
+}
+
 /*
  * Problem 			: Minimum Size Subarray Sum
  * Topics           : Array, Binary Search, Sliding Window, Prefix Sum

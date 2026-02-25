@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ReverseString", RunTestReverseString)
+}
+
 /**
  * Problem 			: Reverse String
  * Topics           : Two Pointers, String

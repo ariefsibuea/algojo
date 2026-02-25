@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("NumberOfIsland", RunTestNumberOfIsland)
+}
+
 /*
  * Problem 			: Number of Island
  * Topics           : Array, Depth-First Search, Breadth-First Search, Union Find, Matrix

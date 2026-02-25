@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("LinkedListCycle", RunTestHasCycle)
+}
+
 func hasCycle(head *ListNode) bool {
 	slow := head
 	fast := head

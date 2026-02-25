@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("PalindromeLinkedList", RunTestPalindromeLinkedList)
+}
+
 /*
  * Problem 			: Palindrome Linked List
  * Topics           : Linked List, Two Pointers, Stack, Recursion

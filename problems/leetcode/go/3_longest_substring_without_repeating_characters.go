@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("LongestSubstringWithoutRepeatingCharacters", RunTestLongestSubstringWithoutRepeatingCharacters)
+}
+
 /*
  * Problem	: Longest Substring Without Repeating Characters
  * Topics	: Hash Table, String, Sliding Window

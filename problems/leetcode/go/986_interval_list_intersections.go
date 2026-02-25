@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("IntervalListIntersection", RunTestIntervalListIntersections)
+}
+
 /*
  * Problem          : Interval List Intersections
  * Topics           : Array, Two Pointers

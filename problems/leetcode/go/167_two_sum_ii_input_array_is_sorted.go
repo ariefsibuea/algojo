@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("TwoSumIIInputArrayIsSorted", RunTestTwoSumIIInputArrayIsSorted)
+}
+
 /**
  * LeetCode Problem : Two Sum II - Input Array is Sorted
  * Topics           : Array, Two Pointers, Binary Search
@@ -52,7 +56,7 @@ func twoSumII(numbers []int, target int) []int {
 	return []int{}
 }
 
-func RunTestTwoSumII() {
+func RunTestTwoSumIIInputArrayIsSorted() {
 	testCases := map[string]struct {
 		numbers []int
 		target  int

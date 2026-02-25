@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("SearchInRotatedSortedArray", RunTestSearchInRotatedSortedArray)
+}
+
 /*
  * Problem	: Search in Rotated Sorted Array
  * Topics	: Array, Binary Search

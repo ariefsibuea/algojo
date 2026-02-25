@@ -9,6 +9,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("ReverseOnlyLetters", RunTestReverseOnlyLetters)
+}
+
 /*
  * Problem 			: Reverse Only Letters
  * Topics           : Two Pointers, String

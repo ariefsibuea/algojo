@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("MeetingRooms", RunTestMeetingRooms)
+}
+
 /**
  * Problem 			: Meeting Rooms
  * Topics           : Array, Sorting

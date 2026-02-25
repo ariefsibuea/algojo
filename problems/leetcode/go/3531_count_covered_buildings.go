@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("CountCoveredBuildings", RunTestCountCoveredBuildings)
+}
+
 /*
  * Problem 			: Count Covered Buildings
  * Topics           : Array, Hash Table, Sorting

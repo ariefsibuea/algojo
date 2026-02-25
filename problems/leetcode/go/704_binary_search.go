@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("BinarySearch", RunTestBinarySearch)
+}
+
 /*
 LeetCode Problem : Binary Search
 Topic            : Array, Binary Search

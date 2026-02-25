@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("CloneGraph", RunTestCloneGraph)
+}
+
 /*
  * Problem          : Clone Graph
  * Topics           : Graph, Depth-First Search, Breadth-First Search, Hash Map

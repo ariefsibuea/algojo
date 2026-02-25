@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("NumberOfSmoothDescentPeriodsOfAStock", RunTestNumberOfSmoothDescentPeriodsOfAStock)
+}
+
 /*
  * Problem 			: Number of Smooth Descent Periods of a Stock
  * Topics           : Array, Math, Dynamic Programming

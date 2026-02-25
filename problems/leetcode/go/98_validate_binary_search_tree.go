@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ValidateBinarySearchTree", RunTestIsValidBST)
+}
+
 /**
  * LeetCode Problem : Valide Binary Search Tree
  * Topic            : Tree, Depth-First Search, Binary Search Tree, Binary Tree

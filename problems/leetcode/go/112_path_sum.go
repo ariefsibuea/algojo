@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("PathSum", RunTestPathSum)
+}
+
 /*
  * Problem 			: Path Sum
  * Topics           : Tree, Depth-First Search, Binary Tree

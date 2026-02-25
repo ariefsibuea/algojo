@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("SquaresOfASortedArray", RunTestSquaresOfASortedArray)
+}
+
 /**
  * Problem 			: Squares of a Sorted Array
  * Topics           : Array, Two Pointers, Sorting

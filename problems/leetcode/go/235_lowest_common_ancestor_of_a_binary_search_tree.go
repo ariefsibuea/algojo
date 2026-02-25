@@ -33,6 +33,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("LowestCommonAncestor", RunTestLowestCommonAncestor)
+}
+
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	current := root
 

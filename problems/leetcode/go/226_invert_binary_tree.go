@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("InvertBinaryTree", RunTestInvertTree)
+}
+
 /*
  * LeetCode Problem : Invert Binary Tree
  * Topics           : Tree, Depth-First Search, Breadth-First Search, Binary Tree

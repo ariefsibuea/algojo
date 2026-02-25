@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("RemoveNthNodeFromEndOfList", RunTestRemoveNthNodeFromEndOfList)
+}
+
 /*
  * Problem	: Remove Nth Node From End of List
  * Topics	: Linked List, Two Pointers

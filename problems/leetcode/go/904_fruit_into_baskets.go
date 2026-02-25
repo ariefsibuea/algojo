@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("FruitIntoBasket", RunTestTotalFruit)
+}
+
 /**
  * LeetCode Problem : Fruit Into Baskets
  * Topics           : Array, Hash Table, Sliding Window

@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("LongestRepeatingCharacterReplacement", RunTestCharacterReplacement)
+}
+
 /**
  * LeetCode Problem : Longest Repeating Character Replacement
  * Topics           : Hash Table, String, Sliding Window

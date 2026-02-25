@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ReverseWordsInAString", RunTestReverseWordsInAString)
+}
+
 /**
  * Problem 			: Reverse Words in a String
  * Topics           : Two Pointers, String

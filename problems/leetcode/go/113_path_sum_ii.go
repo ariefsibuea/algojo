@@ -6,6 +6,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("PathSumII", RunTestPathSumII)
+}
+
 /*
  * Problem 			: Path Sum II
  * Topics           : Backtracking, Tree, Depth-First Search, Binary Tree

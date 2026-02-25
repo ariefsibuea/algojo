@@ -10,6 +10,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("TaskScheduler", RunTestTaskScheduler)
+}
+
 /*
  * Problem	: Task Scheduler
  * Topics	: Array, Hash Table, Greedy, Sorting, Priority Queue (Heap), Counting

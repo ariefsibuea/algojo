@@ -10,6 +10,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("FrequencyOfTheMostFrequentElement", RunTestFrequencyOfTheMostFrequentElement)
+}
+
 /*
  * Problem          : Frequency of the Most Frequent Element
  * Topics           : Array, Binary Search, Greedy, Sliding Window, Sorting, Prefix Sum

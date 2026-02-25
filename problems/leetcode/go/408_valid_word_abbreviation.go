@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("ValidWordAbbreviation", RunTestValidWordAbbreviation)
+}
+
 /**
  * Problem 			: Valid Word Abbreviation
  * Topics           : Two Pointers, String

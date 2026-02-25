@@ -10,6 +10,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/format"
 )
 
+func init() {
+	register("CouponCodeValidator", RunTestCouponCodeValidator)
+}
+
 /*
  * Problem 			: Coupon Code Validator
  * Topics           : Array, Hash Table, String, Sorting

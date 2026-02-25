@@ -8,6 +8,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+func init() {
+	register("ValidParentheses", RunTestValidParentheses)
+}
+
 /*
  * Problem	: Valid Parentheses
  * Topics	: String, Stack

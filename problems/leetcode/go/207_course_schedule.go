@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("CourseSchedule", RunTestCourseSchedule)
+}
+
 /*
  * Problem 			: Course Schedule
  * Topics           : Depth-First Search, Breadth-First Search, Graph, Topological Sort

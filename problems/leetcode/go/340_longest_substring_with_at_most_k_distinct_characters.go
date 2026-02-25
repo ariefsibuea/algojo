@@ -7,6 +7,10 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 )
 
+func init() {
+	register("LongestSubstringWithAtMostKDistinctCharacters", RunTestLengthOfLongestSubstringKDistinct)
+}
+
 /**
  * Problem 			: Longest Substring with At Most K Distinct Characters
  * Topics           : Hash Table, String, Sliding Window
