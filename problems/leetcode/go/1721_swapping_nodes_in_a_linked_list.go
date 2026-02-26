@@ -130,6 +130,16 @@ func RunTestSwappingNodesInALinkedList() {
 			k:      3,
 			expect: []int{1, 2, 3, 4, 5},
 		},
+		"three-nodes": {
+			head:   buildSwappingNodesInALinkedListThreeNodes(),
+			k:      2,
+			expect: []int{1, 2, 3},
+		},
+		"all-same-values": {
+			head:   buildSwappingNodesInALinkedListSameValues(),
+			k:      2,
+			expect: []int{7, 7, 7, 7, 7},
+		},
 	}
 
 	var passedCount uint16 = 0
@@ -263,6 +273,36 @@ func buildSwappingNodesInALinkedListOddNodes() *ListNode {
 					Val: 4,
 					Next: &ListNode{
 						Val: 5,
+					},
+				},
+			},
+		},
+	}
+}
+
+func buildSwappingNodesInALinkedListThreeNodes() *ListNode {
+	return &ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+			},
+		},
+	}
+}
+
+func buildSwappingNodesInALinkedListSameValues() *ListNode {
+	return &ListNode{
+		Val: 7,
+		Next: &ListNode{
+			Val: 7,
+			Next: &ListNode{
+				Val: 7,
+				Next: &ListNode{
+					Val: 7,
+					Next: &ListNode{
+						Val: 7,
 					},
 				},
 			},
