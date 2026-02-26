@@ -51,7 +51,7 @@ type reorderListSolution struct{}
 
 var reorderListSolutions = reorderListSolution{}
 
-func (s *reorderListSolution) withTwoPointer(head *ListNode) {
+func (s *reorderListSolution) withTwoPointers(head *ListNode) {
 	// find the middle
 	slow, fast := head, head
 	for fast.Next != nil && fast.Next.Next != nil {
