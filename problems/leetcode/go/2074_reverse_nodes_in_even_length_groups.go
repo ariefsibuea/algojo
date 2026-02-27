@@ -57,12 +57,54 @@ func init() {
  */
 
 func reverseEvenLengthGroups(head *ListNode) *ListNode {
-	return reverseEvenLengthGroupsSolutions.withExtraSpace(head)
+	return reverseEvenLengthGroupsSolutions.withInPlaceReversal(head)
 }
 
 type reverseEvenLengthGroupsSolution struct{}
 
 var reverseEvenLengthGroupsSolutions = reverseEvenLengthGroupsSolution{}
+
+func (s *reverseEvenLengthGroupsSolution) withInPlaceReversal(head *ListNode) *ListNode {
+	dummyHead := &ListNode{Next: head}
+	prev := dummyHead
+	curr := prev.Next
+
+	groupSize := 1
+	for curr != nil {
+		// count actualSize with maximum up to groupSize
+		actualSize := 1
+		temp := curr
+		for temp.Next != nil && actualSize < groupSize {
+			temp = temp.Next
+			actualSize++
+		}
+
+		if actualSize%2 == 0 {
+			groupTail := curr
+			prevGroupTail := prev
+
+			// reverse nodes in range of curr -> temp
+			for i := 0; i < actualSize; i++ {
+				next := curr.Next
+				curr.Next = prev
+				prev = curr
+				curr = next
+			}
+
+			// tailor the tails' direction of the previous group and the next group
+			groupTail.Next = curr
+			prevGroupTail.Next = prev
+			prev = groupTail
+		} else {
+			prev = temp
+			curr = temp.Next
+		}
+
+		groupSize++
+	}
+
+	return dummyHead.Next
+}
 
 func (s *reverseEvenLengthGroupsSolution) withExtraSpace(head *ListNode) *ListNode {
 	// store nodes into slice
@@ -111,39 +153,39 @@ func RunTestReverseNodesInEvenLengthGroups() {
 		expect []int
 	}{
 		"example-1-ten-nodes": {
-			head:   buildReverseNodesInEvenLengthGroupsExample1(),
+			head:   NewListFromSlice([]int{5, 2, 6, 3, 9, 1, 7, 3, 8, 4}),
 			expect: []int{5, 6, 2, 3, 9, 1, 4, 8, 3, 7},
 		},
 		"example-2-four-nodes": {
-			head:   buildReverseNodesInEvenLengthGroupsExample2(),
+			head:   NewListFromSlice([]int{1, 1, 0, 6}),
 			expect: []int{1, 0, 1, 6},
 		},
 		"example-3-two-nodes": {
-			head:   buildReverseNodesInEvenLengthGroupsExample3(),
+			head:   NewListFromSlice([]int{2, 1}),
 			expect: []int{2, 1},
 		},
 		"example-4-single-node": {
-			head:   buildReverseNodesInEvenLengthGroupsExample4(),
+			head:   NewListFromSlice([]int{8}),
 			expect: []int{8},
 		},
 		"all-odd-groups": {
-			head:   buildReverseNodesInEvenLengthGroupsAllOddGroups(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4, 5}),
 			expect: []int{1, 3, 2, 5, 4},
 		},
 		"last-group-even": {
-			head:   buildReverseNodesInEvenLengthGroupsLastGroupEven(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4}),
 			expect: []int{1, 3, 2, 4},
 		},
 		"last-group-larger": {
-			head:   buildReverseNodesInEvenLengthGroupsLastGroupLarger(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4, 5}),
 			expect: []int{1, 3, 2, 5, 4},
 		},
 		"only-one-group": {
-			head:   buildReverseNodesInEvenLengthGroupsOnlyOneGroup(),
+			head:   NewListFromSlice([]int{10}),
 			expect: []int{10},
 		},
 		"two-even-groups": {
-			head:   buildReverseNodesInEvenLengthGroupsTwoEvenGroups(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4}),
 			expect: []int{1, 3, 2, 4},
 		},
 	}
@@ -182,40 +224,4 @@ func RunTestReverseNodesInEvenLengthGroups() {
 
 	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
 	runner.PrintMetrics()
-}
-
-func buildReverseNodesInEvenLengthGroupsExample1() *ListNode {
-	return NewListFromSlice([]int{5, 2, 6, 3, 9, 1, 7, 3, 8, 4})
-}
-
-func buildReverseNodesInEvenLengthGroupsExample2() *ListNode {
-	return NewListFromSlice([]int{1, 1, 0, 6})
-}
-
-func buildReverseNodesInEvenLengthGroupsExample3() *ListNode {
-	return NewListFromSlice([]int{2, 1})
-}
-
-func buildReverseNodesInEvenLengthGroupsExample4() *ListNode {
-	return NewListFromSlice([]int{8})
-}
-
-func buildReverseNodesInEvenLengthGroupsAllOddGroups() *ListNode {
-	return NewListFromSlice([]int{1, 2, 3, 4, 5})
-}
-
-func buildReverseNodesInEvenLengthGroupsLastGroupEven() *ListNode {
-	return NewListFromSlice([]int{1, 2, 3, 4})
-}
-
-func buildReverseNodesInEvenLengthGroupsLastGroupLarger() *ListNode {
-	return NewListFromSlice([]int{1, 2, 3, 4, 5})
-}
-
-func buildReverseNodesInEvenLengthGroupsOnlyOneGroup() *ListNode {
-	return NewListFromSlice([]int{10})
-}
-
-func buildReverseNodesInEvenLengthGroupsTwoEvenGroups() *ListNode {
-	return NewListFromSlice([]int{1, 2, 3, 4})
 }
