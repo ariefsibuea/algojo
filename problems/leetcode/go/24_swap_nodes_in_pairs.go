@@ -77,7 +77,7 @@ func RunTestSwapNodesInPairs() {
 		expect []int
 	}{
 		"example-1-four-nodes": {
-			head:   buildSwapNodesInPairsFourNodes(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4}),
 			expect: []int{2, 1, 4, 3},
 		},
 		"example-2-empty-list": {
@@ -85,23 +85,23 @@ func RunTestSwapNodesInPairs() {
 			expect: []int{},
 		},
 		"example-3-single-node": {
-			head:   buildSwapNodesInPairsSingleNode(),
+			head:   NewListFromSlice([]int{1}),
 			expect: []int{1},
 		},
 		"example-4-three-nodes": {
-			head:   buildSwapNodesInPairsThreeNodes(),
+			head:   NewListFromSlice([]int{1, 2, 3}),
 			expect: []int{2, 1, 3},
 		},
 		"two-nodes": {
-			head:   buildSwapNodesInPairsTwoNodes(),
+			head:   NewListFromSlice([]int{1, 2}),
 			expect: []int{2, 1},
 		},
 		"six-nodes": {
-			head:   buildSwapNodesInPairsSixNodes(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4, 5, 6}),
 			expect: []int{2, 1, 4, 3, 6, 5},
 		},
 		"odd-number-of-nodes-five": {
-			head:   buildSwapNodesInPairsFiveNodes(),
+			head:   NewListFromSlice([]int{1, 2, 3, 4, 5}),
 			expect: []int{2, 1, 4, 3, 5},
 		},
 	}
@@ -126,94 +126,4 @@ func RunTestSwapNodesInPairs() {
 
 	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
 	runner.PrintMetrics()
-}
-
-func buildSwapNodesInPairsFourNodes() *ListNode {
-	return &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-				Next: &ListNode{
-					Val: 4,
-				},
-			},
-		},
-	}
-}
-
-func buildSwapNodesInPairsSingleNode() *ListNode {
-	return &ListNode{
-		Val: 1,
-	}
-}
-
-func buildSwapNodesInPairsThreeNodes() *ListNode {
-	return &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-			},
-		},
-	}
-}
-
-func buildSwapNodesInPairsTwoNodes() *ListNode {
-	return &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-		},
-	}
-}
-
-func buildSwapNodesInPairsSixNodes() *ListNode {
-	return &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-				Next: &ListNode{
-					Val: 4,
-					Next: &ListNode{
-						Val: 5,
-						Next: &ListNode{
-							Val: 6,
-						},
-					},
-				},
-			},
-		},
-	}
-}
-
-func buildSwapNodesInPairsFiveNodes() *ListNode {
-	return &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-				Next: &ListNode{
-					Val: 4,
-					Next: &ListNode{
-						Val: 5,
-					},
-				},
-			},
-		},
-	}
-}
-
-func listNodeToSlice(head *ListNode) []int {
-	result := []int{}
-	for head != nil {
-		result = append(result, head.Val)
-		head = head.Next
-	}
-	return result
 }
