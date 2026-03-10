@@ -41,6 +41,14 @@ func init() {
  */
 
 func longestPalindrome(s string) string {
+	return longestPalindromeSolutions.withPalindromeTable(s)
+}
+
+type longestPalindromeSolution struct{}
+
+var longestPalindromeSolutions = longestPalindromeSolution{}
+
+func (lps *longestPalindromeSolution) withExpandAroundCenter(s string) string {
 	if len(s) == 0 || len(s) == 1 {
 		return s
 	}
@@ -64,6 +72,42 @@ func longestPalindrome(s string) string {
 		if currMaxLength > maxLength {
 			maxLength = currMaxLength
 			start = i - (currMaxLength-1)/2
+		}
+	}
+
+	return s[start : start+maxLength]
+}
+
+func (lps *longestPalindromeSolution) withPalindromeTable(s string) string {
+	if len(s) == 0 || len(s) == 1 {
+		return s
+	}
+
+	table := make([][]bool, len(s))
+	for i := range table {
+		table[i] = make([]bool, len(s))
+		table[i][i] = true
+	}
+
+	maxLength := 1
+	start := 0
+
+	for length := 2; length <= len(s); length++ {
+		for i := 0; i <= len(s)-length; i++ {
+			j := i + length - 1
+
+			if s[i] == s[j] {
+				if j-i == 1 {
+					table[i][j] = true
+				} else {
+					table[i][j] = table[i+1][j-1]
+				}
+			}
+
+			if table[i][j] && length > maxLength {
+				maxLength = length
+				start = i
+			}
 		}
 	}
 
