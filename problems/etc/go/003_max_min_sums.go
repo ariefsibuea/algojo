@@ -3,10 +3,15 @@ package main
 import (
 	"container/heap"
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("MaxMinSums", RunTestMaxMinSums)
+}
 
 /**
  * Problem 			: Max and Min Sums
@@ -118,6 +123,8 @@ func maxMinSums(nums []int, n int, k int) []int {
 }
 
 func RunTestMaxMinSums() {
+	runner.InitMetrics("MaxMinSums")
+
 	testCases := map[string]struct {
 		nums   []int
 		n      int
@@ -186,15 +193,22 @@ func RunTestMaxMinSums() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := maxMinSums(testCase.nums, testCase.n, testCase.k)
+		format.PrintInput(map[string]interface{}{"nums": testCase.nums, "n": testCase.n, "k": testCase.k})
+
+		result := runner.ExecCountMetrics(maxMinSums, testCase.nums, testCase.n, testCase.k).([]int)
 		if !cmp.EqualSlices(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

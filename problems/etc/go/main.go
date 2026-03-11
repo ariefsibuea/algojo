@@ -8,6 +8,8 @@ import (
 	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
+var registry = map[string]runner.TestFunc{}
+
 func main() {
 	var solution = flag.String("solution", "", "Name of the solution to run (e.g., TwoSum)")
 	flag.StringVar(solution, "s", *solution, "Alias for -solution")
@@ -18,7 +20,7 @@ func main() {
 	flag.Parse()
 
 	r := runner.NewSolutionRunner()
-	registerSolutions(&r)
+	r.RegisterSolutions(registry)
 
 	if *list {
 		r.List()
@@ -38,18 +40,9 @@ func main() {
 	}
 }
 
-func registerSolutions(r *runner.SolutionRunner) {
-	solutions := map[string]runner.TestFunc{
-		"LinkedListCycleIV":                  RunTestLinkedListCycleIV,
-		"LinkedListCycleIII":                 RunTestLinkedListCycleIII,
-		"MaxMinSums":                         RunTestMaxMinSums,
-		"MaximumTradesInATimeWindow":         RunTestMaximumTradesInATimeWindow,
-		"NumericHash":                        RunTestNumericHash,
-		"RankStringParsing":                  RunTestRankStringParsing,
-		"StrictlyIncreasingPortfolioWindows": RunTestStrictlyIncreasingPortfolioWindows,
-		"TransactionPairSum":                 RunTestTransactionPairSum,
-		"TransactionSubarraySumEqualsTarget": RunTestTransactionSubarraySumEqualsTarget,
-		"ValidAtmPin":                        RunTestValidAtmPin,
+func register(name string, fn runner.TestFunc) {
+	if _, exists := registry[name]; exists {
+		panic(fmt.Sprintf("solution %q is already registered", name))
 	}
-	r.RegisterSolutions(solutions)
+	registry[name] = fn
 }

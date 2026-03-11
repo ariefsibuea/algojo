@@ -2,13 +2,17 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("RankStringParsing", RunTestRankStringParsing)
+}
 
 /*
  * Problem 			: Rank String Parsing
@@ -69,6 +73,8 @@ func rankStringParsing(s string) int {
 }
 
 func RunTestRankStringParsing() {
+	runner.InitMetrics("RankStringParsing")
+
 	testCases := map[string]struct {
 		s      string
 		expect int
@@ -95,18 +101,22 @@ func RunTestRankStringParsing() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
-		result := rankStringParsing(testCase.s)
 		format.PrintInput(map[string]interface{}{"s": testCase.s})
 
+		result := runner.ExecCountMetrics(rankStringParsing, testCase.s).(int)
 		if !cmp.EqualNumbers(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

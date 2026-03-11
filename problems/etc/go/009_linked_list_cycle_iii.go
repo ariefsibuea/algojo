@@ -5,7 +5,12 @@ import (
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("LinkedListCycleIII", RunTestLinkedListCycleIII)
+}
 
 /*
  * Problem 			: Linked List Cycle III
@@ -46,6 +51,8 @@ func countCycleLength(head *ListNode) int {
 }
 
 func RunTestLinkedListCycleIII() {
+	runner.InitMetrics("LinkedListCycleIII")
+
 	testCases := map[string]struct {
 		head   *ListNode
 		expect int
@@ -72,20 +79,24 @@ func RunTestLinkedListCycleIII() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
-		result := countCycleLength(testCase.head)
 		format.PrintInput(map[string]interface{}{"head": *testCase.head})
 
+		result := runner.ExecCountMetrics(countCycleLength, testCase.head).(int)
 		if !cmp.EqualNumbers(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
 			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
 
 func inputTestLinkedListCycleIIICaseNoCycle() *ListNode {

@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("LinkedListCycleIV", RunTestLinkedListCycleIV)
+}
 
 /*
  * Problem 			: Linked List Cycle IV
@@ -66,6 +70,8 @@ func removeCycle(head *ListNode) *ListNode {
 }
 
 func RunTestLinkedListCycleIV() {
+	runner.InitMetrics("LinkedListCycleIV")
+
 	testCases := map[string]struct {
 		head   *ListNode
 		expect []int
@@ -96,12 +102,13 @@ func RunTestLinkedListCycleIV() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
-		head := removeCycle(testCase.head)
 		format.PrintInput(map[string]interface{}{"head": testCase.head})
 
+		head := runner.ExecCountMetrics(removeCycle, testCase.head).(*ListNode)
 		result := []int{}
 		curr := head
 		for curr != nil {
@@ -110,13 +117,15 @@ func RunTestLinkedListCycleIV() {
 		}
 
 		if !cmp.EqualSlices(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
 
 func inputTestLinkedListCycleIVCaseEmptyListHead() *ListNode {

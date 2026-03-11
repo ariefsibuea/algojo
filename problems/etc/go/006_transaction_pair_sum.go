@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("TransactionPairSum", RunTestTransactionPairSum)
+}
 
 /*
  * Problem 			: Transaction Pair Sum
@@ -71,6 +75,8 @@ func transactionPairSum_BruteForce(transactions []int, target int) int {
 }
 
 func RunTestTransactionPairSum() {
+	runner.InitMetrics("TransactionPairSum")
+
 	testCases := map[string]struct {
 		transactions []int
 		target       int
@@ -93,15 +99,22 @@ func RunTestTransactionPairSum() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := transactionPairSum_HashMap(testCase.transactions, testCase.target)
+		format.PrintInput(map[string]interface{}{"transactions": testCase.transactions, "target": testCase.target})
+
+		result := runner.ExecCountMetrics(transactionPairSum_HashMap, testCase.transactions, testCase.target).(int)
 		if !cmp.EqualNumbers(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

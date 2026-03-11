@@ -2,10 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("ValidAtmPin", RunTestValidAtmPin)
+}
 
 /**
  * Problem 			: Valid ATM PIN
@@ -95,6 +100,8 @@ func validatePin(atmpin string) int {
 }
 
 func RunTestValidAtmPin() {
+	runner.InitMetrics("ValidAtmPin")
+
 	testCases := map[string]struct {
 		atmpin string
 		expect int
@@ -125,15 +132,22 @@ func RunTestValidAtmPin() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := validatePin(testCase.atmpin)
+		format.PrintInput(map[string]interface{}{"atmpin": testCase.atmpin})
+
+		result := runner.ExecCountMetrics(validatePin, testCase.atmpin).(int)
 		if !cmp.EqualNumbers(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

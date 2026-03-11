@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("MaximumTradesInATimeWindow", RunTestMaximumTradesInATimeWindow)
+}
 
 /*
  * Problem 			: Maximum Trades in a Time Window
@@ -70,6 +74,8 @@ func maximumTradesInATimeWindow(times []int, window int) int {
 }
 
 func RunTestMaximumTradesInATimeWindow() {
+	runner.InitMetrics("MaximumTradesInATimeWindow")
+
 	testCases := map[string]struct {
 		times  []int
 		window int
@@ -102,18 +108,22 @@ func RunTestMaximumTradesInATimeWindow() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
-		result := maximumTradesInATimeWindow(testCase.times, testCase.window)
 		format.PrintInput(map[string]interface{}{"times": testCase.times, "window": testCase.window})
 
+		result := runner.ExecCountMetrics(maximumTradesInATimeWindow, testCase.times, testCase.window).(int)
 		if !cmp.EqualNumbers(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

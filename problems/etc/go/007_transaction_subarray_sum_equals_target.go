@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
 	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
+
+func init() {
+	register("TransactionSubarraySumEqualsTarget", RunTestTransactionSubarraySumEqualsTarget)
+}
 
 /*
  * Problem 			: Transaction Subarray Sum Equals Target
@@ -55,6 +59,8 @@ func transactionSubarraySumEqualsTarget(transactions []int, target int) bool {
 }
 
 func RunTestTransactionSubarraySumEqualsTarget() {
+	runner.InitMetrics("TransactionSubarraySumEqualsTarget")
+
 	testCases := map[string]struct {
 		transactions []int
 		target       int
@@ -97,18 +103,22 @@ func RunTestTransactionSubarraySumEqualsTarget() {
 		},
 	}
 
+	var passedCount uint16 = 0
+
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
-
-		result := transactionSubarraySumEqualsTarget(testCase.transactions, testCase.target)
 		format.PrintInput(map[string]interface{}{"transactions": testCase.transactions, "target": testCase.target})
 
+		result := runner.ExecCountMetrics(transactionSubarraySumEqualsTarget, testCase.transactions, testCase.target).(bool)
 		if !cmp.EqualBooleans(result, testCase.expect) {
-			format.PrintFailed("expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+			format.PrintFailed("expect = %v - got = %v", testCase.expect, result)
+			continue
 		}
+
 		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
