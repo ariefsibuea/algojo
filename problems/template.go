@@ -44,7 +44,7 @@ func RunTestXxx() {
 	for name, testCase := range testCases {
 		fmt.Printf("RUN %s\n", name)
 		fmt.Println(testCase)
-		// format.PrintInput(map[string]interface{}{"input-1": testCase.Input1})
+		// format.PrintInput(map[string]any{"input-1": testCase.Input1})
 
 		// result := twoSum(testCase.nums, testCase.target)
 		// if !EqualSlices(result, testCase.expect) {
