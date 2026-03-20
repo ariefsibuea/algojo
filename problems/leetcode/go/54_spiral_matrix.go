@@ -43,14 +43,10 @@ func init() {
  */
 
 func spiralOrder(matrix [][]int) []int {
-	return spiralOrderSolutions.withIteration(matrix)
+	return spiralOrderRecursive(matrix)
 }
 
-type spiralOrderSolution struct{}
-
-var spiralOrderSolutions = spiralOrderSolution{}
-
-func (s *spiralOrderSolution) withRecursive(matrix [][]int) []int {
+func spiralOrderRecursive(matrix [][]int) []int {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return []int{}
 	}
@@ -87,7 +83,7 @@ func (s *spiralOrderSolution) withRecursive(matrix [][]int) []int {
 	return result
 }
 
-func (s *spiralOrderSolution) withIteration(matrix [][]int) []int {
+func spiralOrderIterative(matrix [][]int) []int {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return []int{}
 	}
