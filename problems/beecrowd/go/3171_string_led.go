@@ -46,6 +46,54 @@ func init() {
  */
 
 func execStringLed() string {
+	return execStringLedDFS()
+}
+
+func execStringLedDFS() string {
+	var n, l int
+	fmt.Scanf("%d %d", &n, &l)
+
+	adjacent := make([][]int, n+1)
+	for i := 0; i < l; i++ {
+		var x, y int
+		fmt.Scanf("%d %d", &x, &y)
+		adjacent[x] = append(adjacent[x], y)
+		adjacent[y] = append(adjacent[y], x)
+	}
+
+	visited := make([]bool, n+1)
+	stack := []int{1}
+
+	for len(stack) > 0 {
+		i := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if visited[i] {
+			continue
+		}
+
+		visited[i] = true
+
+		for _, neighbor := range adjacent[i] {
+			if !visited[neighbor] {
+				stack = append(stack, neighbor)
+			}
+		}
+	}
+
+	count := 0
+	for i := 1; i <= n; i++ {
+		if visited[i] {
+			count++
+		}
+	}
+
+	if count != n {
+		return "INCOMPLETO"
+	}
+	return "COMPLETO"
+}
+
+func execStringLedUnionFind() string {
 	var n, l int
 	fmt.Scanf("%d %d", &n, &l)
 
