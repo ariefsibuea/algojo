@@ -16,7 +16,7 @@ func init() {
  * Problem	: Game of Life
  * Topics	: Array, Matrix, Simulation
  * Level	: Medium
- * URL		: https://algo.monster/liteproblems/289
+ * URL		: https://leetcode.com/problems/game-of-life/
  *
  * Description:
  * 		Conway's Game of Life is a cellular automaton played on an m x n grid where each cell is either live (1) or
