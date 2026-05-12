@@ -28,7 +28,7 @@ Strict adherence to these conventions is required for the runner to correctly id
 | **Constants**            | `PascalCase` (exported) or `camelCase` (unexported)              | `Valid4DigitPin`, `maxRetries`             |
 | **Types/Structs**        | `PascalCase`                                                     | `LRUCache`, `ListNode`                     |
 | **Method Receivers**     | 1-2 letter abbreviation                                          | `func (l *LRUCache)`, `func (n *ListNode)` |
-| **Multi-implementation** | `functionName` + `_` + `PascalCaseApproach`                      | `findDuplicate_TortoiseHare`               |
+| **Multi-implementation** | `baseFunctionName` + `PascalCaseApproach`                        | `findDuplicateTortoiseHare`                |
 | **Test Case Names**      | `kebab-case`                                                     | `"case-1"`, `"valid-4-digit"`              |
 | **Test Input Helper**    | `build` + `PascalCaseProblem` + `PascalCaseTestName` + `[Field]` | `buildSplitListEvenNodesHead`              |
 
@@ -159,21 +159,16 @@ type LRUCache struct {
 
 The primary logic. Use clear argument names.
 
-If you implement **multiple approaches** for the same problem, use the suffix naming convention: `_` + `PascalCaseApproach`.
+If you implement **multiple approaches** for the same problem, use the suffix naming convention: `{baseFunctionName}` + `PascalCaseApproach`.
 
 ```go
-// Primary/Best approach
-func leastInterval(tasks []byte, n int) int {
-    return leastInterval_PriorityQueue(tasks, n)
-}
-
 // Specific Approach 1
-func leastInterval_PriorityQueue(tasks []byte, n int) int {
+func leastIntervalPriorityQueue(tasks []byte, n int) int {
     // ...
 }
 
 // Specific Approach 2
-func leastInterval_FillTheSlotAndSort(tasks []byte, n int) int {
+func leastIntervalFillTheSlotAndSort(tasks []byte, n int) int {
     // ...
 }
 ```
