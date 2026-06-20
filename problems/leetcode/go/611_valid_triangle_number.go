@@ -2,35 +2,43 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"sort"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 func init() {
 	register("ValidTriangleNumber", RunTestValidTriangleNumber)
 }
 
-/**
- * LeetCode Problem : Valid Triangle Number
- * Topic            : Array, Two Pointers, Binary Search, Greedy, Sorting
- * Level            : Medium
- * URL              : https://leetcode.com/problems/valid-triangle-number
- * Description      : Given an integer array nums, return the number of triplets chosen from the array that can make
- * 					triangles if we take them as side lengths of a triangle.
- * Examples         :
- * 					Example 1:
- * 					Input: nums = [2,2,3,4]
- * 					Output: 3
- * 					Explanation: Valid combinations are:
- * 					2,3,4 (using the first 2)
- * 					2,3,4 (using the second 2)
- * 					2,2,3
+/*
+ * Problem	: Valid Triangle Number
+ * Topics	: Array, Two Pointers, Binary Search, Greedy, Sorting
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/valid-triangle-number/
  *
- * 					Example 2:
- * 					Input: nums = [4,2,3,4]
- * 					Output: 4
+ * Description:
+ * 		Given an integer array nums, return the number of triplets chosen from the array that can make
+ * 		triangles if we take them as side lengths of a triangle.
+ *
+ * Constraints:
+ * 		- 1 <= nums.length <= 1000
+ * 		- 0 <= nums[i] <= 1000
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: nums = [2,2,3,4]
+ * 		Output: 3
+ * 		Explanation: Valid combinations are:
+ * 		2,3,4 (using the first 2)
+ * 		2,3,4 (using the second 2)
+ * 		2,2,3
+ *
+ * 		Example 2:
+ * 		Input: nums = [4,2,3,4]
+ * 		Output: 4
  */
 
 func triangleNumber(nums []int) int {
@@ -59,29 +67,49 @@ func triangleNumber(nums []int) int {
 }
 
 func RunTestValidTriangleNumber() {
+	runner.InitMetrics("ValidTriangleNumber")
+
 	testCases := map[string]struct {
 		nums   []int
 		expect int
 	}{
-		"case-1": {
+		"basic": {
 			nums:   []int{2, 2, 3, 4},
 			expect: 3,
 		},
-		"case-2": {
+		"duplicate-larger": {
 			nums:   []int{4, 2, 3, 4},
 			expect: 4,
 		},
+		"no-valid-triangle": {
+			nums:   []int{1, 2, 3},
+			expect: 0,
+		},
+		"all-equal-sides": {
+			nums:   []int{3, 3, 3},
+			expect: 1,
+		},
+		"large-array": {
+			nums:   []int{2, 2, 3, 4, 5},
+			expect: 6,
+		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := triangleNumber(testCase.nums)
-		if !cmp.EqualNumbers(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
+		format.PrintInput(map[string]interface{}{"nums": tc.nums})
+
+		result := runner.ExecCountMetrics(triangleNumber, tc.nums).(int)
+		if !cmp.EqualNumbers(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
 		}
-		fmt.Printf("=== PASSED\n")
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }

@@ -195,7 +195,7 @@ func RunTestTaskScheduler() {
         n      int
         expect int
     }{
-        "example-1-basic": {
+        "basic": {
             tasks:  []byte{'A', 'A', 'A', 'B', 'B', 'B'},
             n:      2,
             expect: 8,

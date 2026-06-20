@@ -5,10 +5,10 @@ FILE        ?= challenge.go
 TEMPLATE     = problems/template.go
 PROBLEM     ?= SampleProblem
 
-.PHONY: cc-create cc-exec-leetcode-go cc-exec-etc-go
+.PHONY: problems-create problems-exec-leetcode-go problems-exec-etc-go
 
-# Usage: make cc-create PLATFORM=leetcode PROG_LANG=go FILE=506_subarray_sum_equals_k.go
-cc-create:
+# Usage: make problems-create PLATFORM=leetcode PROG_LANG=go FILE=506_subarray_sum_equals_k.go
+problems-create:
 	@mkdir -p problems/$(PLATFORM)/$(PROG_LANG)
 	@if [ -f $(TEMPLATE) ]; then \
 		cp $(TEMPLATE) problems/$(PLATFORM)/$(PROG_LANG)/$(FILE); \
@@ -17,12 +17,12 @@ cc-create:
 		echo "❌ Error: Template $(TEMPLATE) not found."; \
 	fi
 
-# Usage: make cc-exec-leetcode-go PROBLEM=SampleProblem
-cc-exec-leetcode-go:
+# Usage: make problems-exec-leetcode-go PROBLEM=SampleProblem
+problems-exec-leetcode-go:
 	@echo "⏳ Executing: $(PROBLEM)\n"
 	@go run problems/leetcode/go/*.go --solution $(PROBLEM)
 
 # Usage: make cc-exec-etc-go PROBLEM=SampleProblem
-cc-exec-etc-go:
+problems-exec-etc-go:
 	@echo "⏳ Executing: $(PROBLEM)\n"
 	@go run problems/etc/go/*.go --solution $(PROBLEM)
