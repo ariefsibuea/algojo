@@ -1,18 +1,18 @@
 # Default variables
 PLATFORM    ?= leetcode
-PROG_LANG   ?= go
+LANG   		?= go
 FILE        ?= challenge.go
 TEMPLATE     = problems/template.go
 PROBLEM     ?= SampleProblem
 
 .PHONY: problems-create problems-exec-leetcode-go problems-exec-etc-go
 
-# Usage: make problems-create PLATFORM=leetcode PROG_LANG=go FILE=506_subarray_sum_equals_k.go
+# Usage: make problems-create PLATFORM=leetcode LANG=go FILE=506_subarray_sum_equals_k.go
 problems-create:
-	@mkdir -p problems/$(PLATFORM)/$(PROG_LANG)
+	@mkdir -p problems/$(PLATFORM)/$(LANG)
 	@if [ -f $(TEMPLATE) ]; then \
-		cp $(TEMPLATE) problems/$(PLATFORM)/$(PROG_LANG)/$(FILE); \
-		echo "✅ Created: problems/$(PLATFORM)/$(PROG_LANG)/$(FILE)"; \
+		cp $(TEMPLATE) problems/$(PLATFORM)/$(LANG)/$(FILE); \
+		echo "✅ Created: problems/$(PLATFORM)/$(LANG)/$(FILE)"; \
 	else \
 		echo "❌ Error: Template $(TEMPLATE) not found."; \
 	fi
