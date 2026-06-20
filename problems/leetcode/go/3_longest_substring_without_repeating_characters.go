@@ -66,21 +66,41 @@ func RunTestLongestSubstringWithoutRepeatingCharacters() {
 		s      string
 		expect int
 	}{
-		"case-1": {
+		"repeating": {
 			s:      "abcabcbb",
 			expect: 3,
 		},
-		"case-2": {
+		"all-same": {
 			s:      "bbbbb",
 			expect: 1,
 		},
-		"case-3": {
+		"middle": {
 			s:      "pwwkew",
 			expect: 3,
 		},
-		"case-4": {
+		"palindrome": {
 			s:      "abba",
 			expect: 2,
+		},
+		"empty-string": {
+			s:      "",
+			expect: 0,
+		},
+		"single-character": {
+			s:      "a",
+			expect: 1,
+		},
+		"all-unique": {
+			s:      "abcdef",
+			expect: 6,
+		},
+		"with-spaces": {
+			s:      "a b c",
+			expect: 3,
+		},
+		"with-symbols": {
+			s:      "a@b#c",
+			expect: 5,
 		},
 	}
 
