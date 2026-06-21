@@ -43,7 +43,7 @@ func init() {
 
 func maximumSubarraySum(nums []int, k int) int64 {
 	sum, maxSum := int64(0), int64(0)
-	seen := map[int]int{}
+	seen := make(map[int]int)
 
 	for i := 0; i < k; i++ {
 		sum += int64(nums[i])

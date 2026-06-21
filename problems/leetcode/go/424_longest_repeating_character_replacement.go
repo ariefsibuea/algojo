@@ -2,37 +2,43 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/ariefsibuea/algojo/libs/go/cmp"
+	"github.com/ariefsibuea/algojo/libs/go/format"
+	"github.com/ariefsibuea/algojo/libs/go/runner"
 )
 
 func init() {
 	register("LongestRepeatingCharacterReplacement", RunTestCharacterReplacement)
 }
 
-/**
- * LeetCode Problem : Longest Repeating Character Replacement
- * Topics           : Hash Table, String, Sliding Window
- * Level            : Medium
- * URL              : https://leetcode.com/problems/longest-repeating-character-replacement
- * Description      : You are given a string s and an integer k. You can choose any character of the string and change
- * 					it to any other uppercase English character. You can perform this operation at most k times.
- * 					Return the length of the longest substring containing the same letter you can get after performing
- * 					the above operations.
- * Examples         :
- * 					Example 1:
- * 					Input: s = "ABAB", k = 2
- * 					Output: 4
- * 					Explanation: Replace the two 'A's with two 'B's or vice versa.
+/*
+ * Problem	: Longest Repeating Character Replacement
+ * Topics	: Hash Table, String, Sliding Window
+ * Level	: Medium
+ * URL		: https://leetcode.com/problems/longest-repeating-character-replacement
  *
- * 					Example 2:
- * 					Input: s = "AABABBA", k = 1
- * 					Output: 4
- * 					Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
- * 					The substring "BBBB" has the longest repeating letters, which is 4.
- * 					There may exists other ways to achieve this answer too.
- * Reference		: https://www.hellointerview.com/learn/code/sliding-window/longest-repeating-character-replacement
+ * Description:
+ * 		You are given a string s and an integer k. You can choose any character of the string and change it to any
+ * 		other uppercase English character. You can perform this operation at most k times. Return the length of the
+ * 		longest substring containing the same letter you can get after performing the above operations.
+ *
+ * Constraints:
+ * 		- 1 <= s.length <= 10^5
+ * 		- s consists of only uppercase English letters
+ * 		- 0 <= k <= s.length
+ *
+ * Examples:
+ * 		Example 1:
+ * 		Input: s = "ABAB", k = 2
+ * 		Output: 4
+ * 		Explanation: Replace the two 'A's with two 'B's or vice versa.
+ *
+ * 		Example 2:
+ * 		Input: s = "AABABBA", k = 1
+ * 		Output: 4
+ * 		Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA". The substring "BBBB" has the
+ * 		longest repeating letters, which is 4. There may exists other ways to achieve this answer too.
  */
 
 func characterReplacement(s string, k int) int {
@@ -63,33 +69,65 @@ func characterReplacement(s string, k int) int {
 }
 
 func RunTestCharacterReplacement() {
+	runner.InitMetrics("LongestRepeatingCharacterReplacement")
+
 	testCases := map[string]struct {
 		s      string
 		k      int
 		expect int
 	}{
-		"case-1": {
+		"example-1": {
 			s:      "ABAB",
 			k:      2,
 			expect: 4,
 		},
-		"case-2": {
+		"example-2": {
 			s:      "AABABBA",
 			k:      1,
 			expect: 4,
 		},
+		"single-char": {
+			s:      "A",
+			k:      0,
+			expect: 1,
+		},
+		"all-same": {
+			s:      "AAAA",
+			k:      2,
+			expect: 4,
+		},
+		"k-equals-length": {
+			s:      "ABCD",
+			k:      4,
+			expect: 4,
+		},
+		"k-zero-no-replace": {
+			s:      "AABABBA",
+			k:      0,
+			expect: 2,
+		},
+		"all-different-k-one": {
+			s:      "ABC",
+			k:      1,
+			expect: 2,
+		},
 	}
 
-	for name, testCase := range testCases {
+	var passedCount int
+	for name, tc := range testCases {
 		fmt.Printf("RUN %s\n", name)
-		result := characterReplacement(testCase.s, testCase.k)
-		if !cmp.EqualNumbers(result, testCase.expect) {
-			fmt.Printf("=== FAILED: expect = %v - got = %v\n", testCase.expect, result)
-			os.Exit(1)
-		}
-		fmt.Printf("=== PASSED\n")
+		format.PrintInput(map[string]interface{}{"s": tc.s, "k": tc.k})
 
+		result := runner.ExecCountMetrics(characterReplacement, tc.s, tc.k).(int)
+		if !cmp.EqualNumbers(result, tc.expect) {
+			format.PrintFailed("expect = %v - got = %v", tc.expect, result)
+			continue
+		}
+
+		format.PrintSuccess("test case '%s' passed", name)
+		passedCount++
 	}
 
-	fmt.Printf("\n✅ All tests passed!\n")
+	fmt.Printf("\n📊 Test Summary: %d/%d passed\n", passedCount, len(testCases))
+	runner.PrintMetrics()
 }
